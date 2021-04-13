@@ -64,6 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03381d844094e646995d51faa5e24a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntuacion: 20
+  barraSalud: {fileID: 0}
+  salud: 1
 --- !u!54 &5910491570316588125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,7 +190,6 @@ GameObject:
   - component: {fileID: 6633430350317514278}
   - component: {fileID: 6715374616697739986}
   - component: {fileID: 5203992464484632044}
-  - component: {fileID: 4640122681980560170}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -258,16 +260,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4640122681980560170
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3291309130819240166}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
