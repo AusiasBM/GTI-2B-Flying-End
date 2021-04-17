@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {
-    public float ms = 0.5f;
+    public float velocidadJugador = 6f;
     public Transform LimiteDerecha;
     public Transform LimiteIzquierda;
     public Transform LimiteUp;
@@ -17,13 +17,13 @@ public class Jugador : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
     }
 
     void FixedUpdate(){
 
-        float newX = ms * Input.GetAxis(GameConstants.AXE_H) * Time.deltaTime;
-        float newY = ms * Input.GetAxis(GameConstants.AXE_V) * Time.deltaTime;
+        float newX = velocidadJugador * Input.GetAxis(GameConstants.AXE_H) * Time.deltaTime;
+        float newY = velocidadJugador * Input.GetAxis(GameConstants.AXE_V) * Time.deltaTime;
 
         //Limitar movimientos en el eje X
         if (transform.position.x + newX > LimiteIzquierda.position.x
@@ -42,13 +42,6 @@ public class Jugador : MonoBehaviour
 
 
         //Evitar que salga de los límites por posibles colisiones
-        //Eje z
-        if (transform.position.z > 0f
-            || transform.position.z < -0.2f)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        }
-
         //Eje x
         if (transform.position.x > LimiteDerecha.position.x)
         {
@@ -68,20 +61,8 @@ public class Jugador : MonoBehaviour
             transform.position = new Vector3(transform.position.x, LimiteDown.position.y, 0);
         }
 
-
-
-
-        /*if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > limLeft){
-            Debug.Log("Left");
-            transform.Translate(Vector3.left * ms * Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < limRight){
-            Debug.Log("Right");
-            transform.Translate(Vector3.right * ms * Time.deltaTime);
-        }*/
-
     }
+
 }
 
 public class GameConstants

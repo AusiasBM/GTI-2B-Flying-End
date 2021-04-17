@@ -7,11 +7,12 @@ public class PiezaAvion : MonoBehaviour
     //Velocidad del pájaro
     public float velocidad = 6f;
 
-
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     // Update is called once per frame
