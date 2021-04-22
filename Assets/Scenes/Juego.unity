@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4018ad991b3ba2143aabb222d4d454d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieza: {fileID: 227779960550607560, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
+  pieza: {fileID: 771990017302814299, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
   rangoCreacion: 8
 --- !u!1 &314828822
 GameObject:
@@ -719,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 5561418231486449363, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
       propertyPath: velocidadJugador
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5910491570316588125, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
@@ -1006,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462508191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.692, y: 5.271, z: 0}
+  m_LocalPosition: {x: 1.86, y: 3.95, z: 0}
   m_LocalScale: {x: 0.4687425, y: 0.49200436, z: 1}
   m_Children: []
   m_Father: {fileID: 1913849208}
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8d37d7e4e08524a8dc595b91a4b821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerza: 6
+  fuerza: 4
 --- !u!1 &1913849207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913849207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.86, y: 1.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1462508192}
