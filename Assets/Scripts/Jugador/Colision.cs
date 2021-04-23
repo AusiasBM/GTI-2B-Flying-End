@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Colision : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class Colision : MonoBehaviour
             if (salud == 0)
             {
                 Destroy(gameObject);
+                SceneManager.LoadScene("GameOver");
             }
             barraSalud.fillAmount = salud;
         }
@@ -60,7 +62,7 @@ public class Colision : MonoBehaviour
 
         if (pieza != null)
         {
-            Salud -= 0.10f;
+            Salud -= 0.50f;
             Debug.Log("IMPACTO!!");
             rb.AddForce(transform.up * -fuerzaImpactoPieza, ForceMode.Impulse);
             Destroy(collision.gameObject);
@@ -68,7 +70,7 @@ public class Colision : MonoBehaviour
 
         if (pD != null)
         {
-            Salud -= 0.10f;
+            Salud -= 0.25f;
             Debug.Log("IMPACTO!!");
             rb.AddForce(transform.right * -fuerzaImpactoPajaro, ForceMode.Impulse);
             Destroy(collision.gameObject);
@@ -76,7 +78,7 @@ public class Colision : MonoBehaviour
 
         if (pI != null)
         {
-            Salud -= 0.10f;
+            Salud -= 0.25f;
             Debug.Log("IMPACTO!!");
             rb.AddForce(transform.right* fuerzaImpactoPajaro, ForceMode.Impulse);
             Destroy(collision.gameObject);
