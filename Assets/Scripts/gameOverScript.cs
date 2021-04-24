@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class gameOverScript : MonoBehaviour
 {
-    public GameObject GameOverText;
+    //public GameObject GameOverText;
     public static GameObject GameOverStatic;
 
     void Start()
     {
-        gameOverScript.GameOverStatic = GameOverText;
-        gameOverScript.GameOverStatic.SetActive(true);
+        //gameOverScript.GameOverStatic = GameOverText;
+        //gameOverScript.GameOverStatic.SetActive(true);
  
     }
 
