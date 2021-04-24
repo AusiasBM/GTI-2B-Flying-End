@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 00d39570fe16254458028af1e1ec16f1
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -5036025971656797749
+    second: AlaAvio
   externalObjects: {}
   materials:
     materialImportMode: 2

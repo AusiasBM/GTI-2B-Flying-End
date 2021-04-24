@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class Colision : MonoBehaviour
 {
     public int puntuacion = 20;
+
+    public GameObject particulasMoneda;
 
     public Image barraSalud;
 
@@ -55,9 +57,12 @@ public class Colision : MonoBehaviour
 
         if (moneda != null)
         {
+            Vector3 pos = new Vector3(moneda.transform.position.x, moneda.transform.position.y, 0);
+            GameObject particulas = Instantiate(particulasMoneda, pos, Quaternion.identity);
             GameController.Score += puntuacion;
             Debug.Log("MONEDA!!");
             Destroy(collision.gameObject);
+            StartCoroutine(delay(particulas, 1));
         }
 
         if (pieza != null)
@@ -89,9 +94,10 @@ public class Colision : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    IEnumerator delay(GameObject particulas, int seconds)
     {
-        
+        yield return new WaitForSeconds(seconds);
+        Destroy(particulas);
     }
 
 

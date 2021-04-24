@@ -77,6 +77,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -951608786083511892, guid: d13ee6ddfae707f45bd5cbbce0add2b4, type: 3}
+--- !u!95 &1170116502980281452
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968160946090503391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25d1afd6a51978e45bd838fce118fcf4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7085835637077594510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,7 +131,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d13ee6ddfae707f45bd5cbbce0add2b4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d13ee6ddfae707f45bd5cbbce0add2b4,
         type: 3}

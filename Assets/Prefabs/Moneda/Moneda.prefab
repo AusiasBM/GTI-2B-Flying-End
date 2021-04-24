@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5595673644585450368}
   - component: {fileID: 8901128052915511037}
   - component: {fileID: 8537326018848976769}
+  - component: {fileID: 4568433125540755083}
   m_Layer: 0
   m_Name: Moneda
   m_TagString: Untagged
@@ -62,6 +63,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
+--- !u!122 &4568433125540755083
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544811284953177181}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286114303
+  m_Size: 0.7
 --- !u!1 &7656156048790621201
 GameObject:
   m_ObjectHideFlags: 0
