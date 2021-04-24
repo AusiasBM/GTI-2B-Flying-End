@@ -11,6 +11,7 @@ public class isPaused : MonoBehaviour
         {
             Time.timeScale = 1;
             pausado = false;
+
         }
         else
         {
