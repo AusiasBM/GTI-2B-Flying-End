@@ -5,19 +5,28 @@ using UnityEngine;
 public class CrearPajaros : MonoBehaviour
 {
 
-    public GameObject pajaro;
-    public GameObject pajaroLento;
-    public GameObject pajaroRapido;
+    private GameObject pajaro;
+
+    public GameObject[] listaPajaros;
+    public int[] listaPrioridades;
 
     //Radio de la circunferencia
     public float rangoCreacion = 5.25f;
 
+    private Dictionary<GameObject, int> pajarosPrioridades = new Dictionary<GameObject, int>();
 
     // Start is called before the first frame update
     void Start()
     {
+
+        for (int i = 0; i < listaPajaros.Length; i++)
+        {
+            pajarosPrioridades.Add(listaPajaros[i], listaPrioridades[i]);
+        }
+
         //Repetir la invocación del método crearPajaro cada cierto tiempo (tiempo inicial de espera de 2s)
         Invoke("crearPajaro", Random.Range(2f, 3.5f));
+
     }
 
     // Update is called once per frame
@@ -25,10 +34,11 @@ public class CrearPajaros : MonoBehaviour
     {
 
     }
-    
+
     void crearPajaro()
     {
-        
+        pajaro = RandomObjects.ChooseWeigther(pajarosPrioridades);
+
         Vector3 spawnPos = new Vector3(0, 0, 0);
 
         // Definimos la posición random desde la que saldrá el pajaro 
@@ -39,24 +49,10 @@ public class CrearPajaros : MonoBehaviour
         spawnPos = new Vector3(this.transform.position.x, spawnPos.y, 0);
 
         //Crear una instancia del obejeto pájaro en la posición definida
-        randomPajaro(spawnPos);
+        GameObject pajaros = Instantiate(pajaro, spawnPos, Quaternion.identity);
 
         Invoke("crearPajaro", Random.Range(2f, 5.0f));
-        
-    }
-    GameObject randomPajaro(Vector3 spawnPos)
-    {
-        
-        switch (Random.Range(1, 4))
-        {
-            case 1: GameObject pajaros = Instantiate(pajaro, spawnPos, Quaternion.identity);
-                return pajaros;
-            case 2: GameObject pajarosLentos = Instantiate(pajaroLento, spawnPos, Quaternion.identity);
-                return pajarosLentos;
-            case 3: GameObject pajarosRapidos = Instantiate(pajaroRapido, spawnPos, Quaternion.identity);
-                return pajarosRapidos;
-            default: return null;
-        }
+
     }
 
 }

@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrearMonedas : MonoBehaviour
+public class CrearBotin : MonoBehaviour
 {
-    public GameObject moneda;
+    //Puede ser moneda o diamante
+    private GameObject botin;
+
+    public GameObject[] listaBotin;
+    public int[] listaPrioridades;
+
+    private Dictionary<GameObject, int> botinPrioridades = new Dictionary<GameObject, int>();
 
     public float rangoCreacion = 8f;
 
@@ -12,8 +18,13 @@ public class CrearMonedas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < listaBotin.Length; i++)
+        {
+            botinPrioridades.Add(listaBotin[i], listaPrioridades[i]);
+        }
+
         //Repetir la invocación del método crearPajaro cada cierto tiempo (tiempo inicial de espera de 2s)
-        Invoke("crearMoneda", Random.Range(5f, 8f));
+        Invoke("crearBotin", Random.Range(5f, 8f));
     }
 
     // Update is called once per frame
@@ -22,8 +33,9 @@ public class CrearMonedas : MonoBehaviour
 
     }
 
-    void crearMoneda()
+    void crearBotin()
     {
+        botin = RandomObjects.ChooseWeigther(botinPrioridades);
 
         Vector3 spawnPos = new Vector3(0, 0, 0);
 
@@ -35,9 +47,10 @@ public class CrearMonedas : MonoBehaviour
         spawnPos = new Vector3(spawnPos.x, this.transform.position.y, 0);
 
         //Crear una instancia del obejeto pájaro en la posición definida
-        GameObject monedas = Instantiate(moneda, spawnPos, Quaternion.identity);
+        GameObject monedas = Instantiate(botin, spawnPos, Quaternion.identity);
 
-        Invoke("crearMoneda", Random.Range(4f, 7f));
+        Invoke("crearBotin", Random.Range(4f, 7f));
 
     }
+
 }
