@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CrearNubes : MonoBehaviour
 {
-    public GameObject nube;
+    private GameObject nube;
 
+    public GameObject[] nubes;
     public float rangoCreacion = 8f;
 
 
@@ -24,6 +25,7 @@ public class CrearNubes : MonoBehaviour
 
     void crearNube()
     {
+        nube = RandomObjects.Choose(nubes);
 
         Vector3 spawnPos = new Vector3(0, 0, 0);
 

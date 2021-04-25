@@ -11,6 +11,7 @@ public class Colision : MonoBehaviour
     public int puntuacionDiamante = 1;
 
     public GameObject particulasMoneda;
+    public GameObject particulasDiamante;
     public GameObject ParticulasAvion;
     public GameObject ParticulasPajaro;
     public GameObject Jugador;
@@ -75,16 +76,16 @@ public class Colision : MonoBehaviour
         if (diamante != null)
         {
             Vector3 pos = new Vector3(diamante.transform.position.x, diamante.transform.position.y, 0);
-            //GameObject particulas = Instantiate(particulasMoneda, pos, Quaternion.identity);
+            GameObject particulas = Instantiate(particulasDiamante, pos, Quaternion.identity);
             GameController.ScoreDiamante += puntuacionDiamante;
             Debug.Log("DIAMANTE!!");
             Destroy(collision.gameObject);
-            //StartCoroutine(delay(particulas, 1));
+            StartCoroutine(delay(particulas, 1));
         }
 
         if (pieza != null)
         {
-            Salud -= 0.50f;
+            Salud -= 0.2f;
             Vector3 pos = new Vector3(Jugador.transform.position.x, Jugador.transform.position.y+1f, 0);
             GameObject particulas = Instantiate(ParticulasAvion, pos, Quaternion.identity);
             Debug.Log("IMPACTO!!");
@@ -104,10 +105,10 @@ public class Colision : MonoBehaviour
 
         if (pD != null)
         {
-            Salud -= 0.25f;
+            Salud -= 0.1f;
             Vector3 pos = new Vector3(pD.transform.position.x, pD.transform.position.y, 0);
             GameObject particulas = Instantiate(ParticulasPajaro, pos, Quaternion.identity);
-            Debug.Log("IMPACTO!!");
+            Debug.Log("PajaroDcha!!");
             rb.AddForce(transform.right * -fuerzaImpactoPajaro, ForceMode.Impulse);
             Destroy(collision.gameObject);
             StartCoroutine(delay(particulas, 1));
@@ -115,11 +116,11 @@ public class Colision : MonoBehaviour
 
         if (pI != null)
         {
-            Salud -= 0.25f;
+            Salud -= 0.1f;
             Vector3 pos = new Vector3(pI.transform.position.x, pI.transform.position.y, 0);
             GameObject particulas = Instantiate(ParticulasPajaro, pos, Quaternion.identity);
 
-            Debug.Log("IMPACTO!!");
+            Debug.Log("PajaroIzda!!");
             rb.AddForce(transform.right* fuerzaImpactoPajaro, ForceMode.Impulse);
             Destroy(collision.gameObject);
             StartCoroutine(delay(particulas, 1));

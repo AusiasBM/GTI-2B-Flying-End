@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CrearPiezas : MonoBehaviour
 {
-    public GameObject pieza;
+    private GameObject pieza;
 
     public float rangoCreacion = 8f;
 
@@ -35,6 +35,7 @@ public class CrearPiezas : MonoBehaviour
 
         //Crear la posición desde la que saldrá el pajaro que va a crearse. Solo variará en el eje y, mientras que la del eje X es la del spawner
         spawnPos = new Vector3(spawnPos.x, this.transform.position.y, 0);
+
 
         int rotacion = Random.Range(-1, 2) * Random.Range(10, 45);
 

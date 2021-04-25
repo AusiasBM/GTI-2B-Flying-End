@@ -362,9 +362,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 129997598}
-  - component: {fileID: 129997597}
-  - component: {fileID: 129997600}
   - component: {fileID: 129997599}
+  - component: {fileID: 129997597}
   m_Layer: 0
   m_Name: CarrilDown
   m_TagString: Untagged
@@ -381,10 +380,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 129997596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ff995fe69f89b439742a773bbc9df0, type: 3}
+  m_Script: {fileID: 11500000, guid: a2dc0aff516a7c144b7f8c5687a6a1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneda: {fileID: 3544811284953177181, guid: 8cac918591ef0de4fbacac8b778f5fa4, type: 3}
+  listaBotin:
+  - {fileID: 3544811284953177181, guid: 8cac918591ef0de4fbacac8b778f5fa4, type: 3}
+  - {fileID: 2343282749467999478, guid: fbeb705d18faf0e4d9a7b4a6de07fd03, type: 3}
+  listaPrioridades: 0400000001000000
   rangoCreacion: 8
 --- !u!4 &129997598
 Transform:
@@ -412,22 +414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f80ee361f3aed84da90dc4ed44f8fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nube: {fileID: 397063032794314274, guid: e8edcc1df7c587043b24ee46bd71ef01, type: 3}
-  rangoCreacion: 8
---- !u!114 &129997600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129997596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d2e5a8abc49a534191654e3ddebfa60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diamante: {fileID: 2343282749467999478, guid: f9a5a01eb37b440478548cb2b64b0f25,
-    type: 3}
+  nubes:
+  - {fileID: 5128663649985790671, guid: 9f56fee137dac6f4f9d53febbcd6f80f, type: 3}
+  - {fileID: 5690386317499810087, guid: ff861419d17f132458a82d707c4e6f6c, type: 3}
+  - {fileID: 3337795865340075317, guid: 5d7ebc6ff3d3dad41892a67100222483, type: 3}
   rangoCreacion: 8
 --- !u!850595691 &179380504
 LightingSettings:
@@ -533,8 +523,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4018ad991b3ba2143aabb222d4d454d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieza: {fileID: 6701690948012980539, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
   rangoCreacion: 8
+  piezasAvion:
+  - {fileID: 6701690948012980539, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
+  - {fileID: 6407376096148926779, guid: c159387fe6b461341a4d94f492d8016f, type: 3}
 --- !u!1 &314828822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1038,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
+      propertyPath: particulasDiamante
+      value: 
+      objectReference: {fileID: 6066985761684802205, guid: ddc47be2297ffdc42b15b27ccd7aedc8,
+        type: 3}
+    - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
       propertyPath: fuerzaImpactoPajaro
       value: 5
       objectReference: {fileID: 0}
@@ -1148,11 +1146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973e41d93489cc845be6af347a51855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pajaro: {fileID: 6610810175677894665, guid: 794f2e7cb8a3a464cb548d50de804769, type: 3}
-  pajaroLento: {fileID: 5296525793145230785, guid: c1bbbfd2b7df84a48a38c5865f27e537,
-    type: 3}
-  pajaroRapido: {fileID: 6263236608512586234, guid: 12147a19e7a8c10498afca82b2adbd3a,
-    type: 3}
+  listaPajaros:
+  - {fileID: 5296525793145230785, guid: c1bbbfd2b7df84a48a38c5865f27e537, type: 3}
+  - {fileID: 6610810175677894665, guid: 794f2e7cb8a3a464cb548d50de804769, type: 3}
+  - {fileID: 6263236608512586234, guid: 12147a19e7a8c10498afca82b2adbd3a, type: 3}
+  listaPrioridades: 050000000300000002000000
   rangoCreacion: 5.5
 --- !u!1 &833457034
 GameObject:
@@ -1720,11 +1718,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973e41d93489cc845be6af347a51855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pajaro: {fileID: 7428838193937339180, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
-  pajaroLento: {fileID: 2000122707021763019, guid: 4fd29ece5abf0964a842219e37deb839,
-    type: 3}
-  pajaroRapido: {fileID: 636517733563486495, guid: 973f6b4f14ddae4408fd7d174a7ae169,
-    type: 3}
+  listaPajaros:
+  - {fileID: 2000122707021763019, guid: 4fd29ece5abf0964a842219e37deb839, type: 3}
+  - {fileID: 7428838193937339180, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
+  - {fileID: 636517733563486495, guid: 973f6b4f14ddae4408fd7d174a7ae169, type: 3}
+  listaPrioridades: 050000000300000002000000
   rangoCreacion: 5.5
 --- !u!1 &1352950444
 GameObject:

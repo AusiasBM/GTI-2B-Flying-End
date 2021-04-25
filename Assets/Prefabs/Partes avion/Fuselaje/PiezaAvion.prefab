@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9044115010381140763}
   - component: {fileID: 271294932655394655}
   m_Layer: 0
-  m_Name: Fuselaje
+  m_Name: PiezaAvion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
