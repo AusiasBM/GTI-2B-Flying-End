@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public static int Score = 0;
+    public static int ScoreDiamante = 0;
     public string ScoreString = " 0";
+    public string ScoreDiamanteString = " 0";
     public Text TextScore;
+    public Text TextScoreDiamante;
     public static GameController Gamecontroller;
     void Awake()
     {
@@ -26,6 +29,7 @@ public class GameController : MonoBehaviour
         if (TextScore!=null)
         {
             TextScore.text = Score.ToString();
+            TextScoreDiamante.text = ScoreDiamante.ToString();
         }
     }
 }

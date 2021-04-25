@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 973e41d93489cc845be6af347a51855e
+guid: decec14a227ee3b489ea47652dd0c1b2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - pajaro: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

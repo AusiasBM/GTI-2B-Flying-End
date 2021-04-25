@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Moneda : MonoBehaviour
 {
-    //Velocidad del pájaro
+    //Velocidad del moneda
     public float velocidad = 3f;
 
     Rigidbody rb;

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Colision : MonoBehaviour
 {
     public int puntuacion = 20;
+    public int puntuacionDiamante = 1;
 
     public GameObject particulasMoneda;
     public GameObject ParticulasAvion;
@@ -56,6 +57,7 @@ public class Colision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Moneda moneda = collision.gameObject.GetComponent<Moneda>();
+        Diamante diamante = collision.gameObject.GetComponent<Diamante>();
         PiezaAvion pieza = collision.gameObject.GetComponent<PiezaAvion>();
         PajaroDcha pD = collision.gameObject.GetComponent<PajaroDcha>();
         PajaroIzda pI = collision.gameObject.GetComponent<PajaroIzda>();
@@ -68,6 +70,16 @@ public class Colision : MonoBehaviour
             Debug.Log("MONEDA!!");
             Destroy(collision.gameObject);
             StartCoroutine(delay(particulas, 1));
+        }
+
+        if (diamante != null)
+        {
+            Vector3 pos = new Vector3(diamante.transform.position.x, diamante.transform.position.y, 0);
+            //GameObject particulas = Instantiate(particulasMoneda, pos, Quaternion.identity);
+            GameController.ScoreDiamante += puntuacionDiamante;
+            Debug.Log("DIAMANTE!!");
+            Destroy(collision.gameObject);
+            //StartCoroutine(delay(particulas, 1));
         }
 
         if (pieza != null)
