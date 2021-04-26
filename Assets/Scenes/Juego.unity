@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 129997598}
   - component: {fileID: 129997599}
   - component: {fileID: 129997597}
+  - component: {fileID: 129997600}
   m_Layer: 0
   m_Name: CarrilDown
   m_TagString: Untagged
@@ -418,6 +419,23 @@ MonoBehaviour:
   - {fileID: 5128663649985790671, guid: 9f56fee137dac6f4f9d53febbcd6f80f, type: 3}
   - {fileID: 5690386317499810087, guid: ff861419d17f132458a82d707c4e6f6c, type: 3}
   - {fileID: 3337795865340075317, guid: 5d7ebc6ff3d3dad41892a67100222483, type: 3}
+  rangoCreacion: 8
+--- !u!114 &129997600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129997596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8bc1672a17845a680feb80d5158a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listaBoost:
+  - {fileID: 8766002565816832040, guid: 9024719d330274565b8911544820b5d6, type: 3}
+  - {fileID: 3934927027398199062, guid: 2b0d027d30917412ebab1d3051d0a2b4, type: 3}
+  listaPrioridades: 0300000002000000
   rangoCreacion: 8
 --- !u!850595691 &179380504
 LightingSettings:
