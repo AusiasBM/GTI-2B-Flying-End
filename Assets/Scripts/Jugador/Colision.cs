@@ -59,6 +59,8 @@ public class Colision : MonoBehaviour
     {
         Moneda moneda = collision.gameObject.GetComponent<Moneda>();
         Diamante diamante = collision.gameObject.GetComponent<Diamante>();
+        Iman iman = collision.gameObject.GetComponent<Iman>();
+        Inmunidad inmunidad = collision.gameObject.GetComponent<Inmunidad>();
         PiezaAvion pieza = collision.gameObject.GetComponent<PiezaAvion>();
         PajaroDcha pD = collision.gameObject.GetComponent<PajaroDcha>();
         PajaroIzda pI = collision.gameObject.GetComponent<PajaroIzda>();
@@ -81,6 +83,26 @@ public class Colision : MonoBehaviour
             Debug.Log("DIAMANTE!!");
             Destroy(collision.gameObject);
             StartCoroutine(delay(particulas, 1));
+        }
+
+        if (iman != null)
+        {
+            Vector3 pos = new Vector3(iman.transform.position.x, iman.transform.position.y, 0);
+            //GameObject particulas = Instantiate(particulasDiamante, pos, Quaternion.identity);
+            //GameController.ScoreDiamante += puntuacionDiamante;
+            Debug.Log("IMAN!!");
+            Destroy(collision.gameObject);
+            //StartCoroutine(delay(particulas, 1));
+        }
+
+        if (inmunidad != null)
+        {
+            Vector3 pos = new Vector3(inmunidad.transform.position.x, inmunidad.transform.position.y, 0);
+            //GameObject particulas = Instantiate(particulasDiamante, pos, Quaternion.identity);
+            //GameController.ScoreDiamante += puntuacionDiamante;
+            Debug.Log("INMUNIDAD!!");
+            Destroy(collision.gameObject);
+            //StartCoroutine(delay(particulas, 1));
         }
 
         if (pieza != null)
