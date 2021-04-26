@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PajaroIzda : MonoBehaviour
 {
-    //Velocidad del pájaro
+    //Velocidad del p?jaro
     public float velocidad = 6f;
-
+    public float destruir = 14f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class PajaroIzda : MonoBehaviour
         // En menos(-=) desplazamiento a la izquierda; en mas (+=) a la derecha
         transform.position += transform.right * velocidad * Time.deltaTime;
 
-        if (transform.position.x > 11f)
+        if (transform.position.x > destruir)
         {
             Destroy(gameObject);
         }

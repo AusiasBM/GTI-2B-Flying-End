@@ -6,6 +6,7 @@ public class Nubes : MonoBehaviour
 {
     //Velocidad de la nube
     public float velocidad = 2f;
+    public float destruir = 20f;
 
     //Rigidbody rb;
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class Nubes : MonoBehaviour
         // En menos(-=) desplazamiento hacia abajo; en mas (+=) hacia arriba
         transform.position += transform.up * velocidad * Time.deltaTime;
 
-        if (transform.position.y > 7f)
+        if (transform.position.y > destruir)
         {
             Destroy(gameObject);
         }
