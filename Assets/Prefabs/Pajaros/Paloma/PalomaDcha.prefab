@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 2122073909364269872}
   - component: {fileID: -6642268808244769764}
   m_Layer: 0
-  m_Name: PajaroDerechaLento
+  m_Name: PalomaDcha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,4 +238,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3d83779a879534fa7ea787a5db709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 3
+  velocidad: 6

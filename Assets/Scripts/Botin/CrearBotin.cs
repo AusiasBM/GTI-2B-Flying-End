@@ -49,7 +49,7 @@ public class CrearBotin : MonoBehaviour
         //Crear una instancia del obejeto pájaro en la posición definida
         GameObject monedas = Instantiate(botin, spawnPos, Quaternion.identity);
 
-        Invoke("crearBotin", Random.Range(4f, 7f));
+        Invoke("crearBotin", Random.Range(1f, 2f));
 
     }
 

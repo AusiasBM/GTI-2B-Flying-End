@@ -386,7 +386,7 @@ MonoBehaviour:
   listaBotin:
   - {fileID: 3544811284953177181, guid: 8cac918591ef0de4fbacac8b778f5fa4, type: 3}
   - {fileID: 2343282749467999478, guid: fbeb705d18faf0e4d9a7b4a6de07fd03, type: 3}
-  listaPrioridades: 0400000001000000
+  listaPrioridades: 0900000001000000
   rangoCreacion: 8
 --- !u!4 &129997598
 Transform:
@@ -778,8 +778,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 35
+  orthographic: 0
   orthographic size: 5.1711154
   m_Depth: -1
   m_CullingMask:
@@ -1097,7 +1097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803148621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -1526,7 +1526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082402121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}

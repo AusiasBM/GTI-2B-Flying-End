@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 947921386747141614}
   - component: {fileID: -3205321965274801661}
   m_Layer: 0
-  m_Name: PajaroDerechaRapido
+  m_Name: HalconDcha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3d83779a879534fa7ea787a5db709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 9
+  velocidad: 14
 --- !u!1 &8411537922751107887
 GameObject:
   m_ObjectHideFlags: 0

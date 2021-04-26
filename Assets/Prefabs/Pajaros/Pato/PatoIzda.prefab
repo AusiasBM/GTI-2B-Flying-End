@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 987668579050059446}
   - component: {fileID: 573016927373926020}
   m_Layer: 0
-  m_Name: PajaroIzquierda
+  m_Name: PatoIzda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1bccb7f0fcfff4fa5d7bebb8e26fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 6
+  velocidad: 10
 --- !u!54 &987668579050059446
 Rigidbody:
   m_ObjectHideFlags: 0
