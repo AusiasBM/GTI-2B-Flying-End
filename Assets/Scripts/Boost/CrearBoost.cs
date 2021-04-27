@@ -24,7 +24,7 @@ public class CrearBoost : MonoBehaviour
         }
 
         //Repetir la invocaci?n del m?todo crearPajaro cada cierto tiempo (tiempo inicial de espera de 2s)
-        Invoke("crearBoost", Random.Range(5f, 7f));
+        Invoke("crearBoost", Random.Range(15f, 20f));
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class CrearBoost : MonoBehaviour
         //Crear una instancia del obejeto p?jaro en la posici?n definida
         GameObject boosts = Instantiate(boost, spawnPos, Quaternion.identity);
 
-        Invoke("crearBoost", Random.Range(5f, 7f));
+        Invoke("crearBoost", Random.Range(15f, 20f));
 
     }
 }
