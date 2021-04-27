@@ -23,6 +23,8 @@ public class Colision : MonoBehaviour
     public float fuerzaImpactoPajaro = 3f;
     public float fuerzaImpactoPieza = 2f;
 
+    private bool isInmune = false;
+
     [Range(0, 1)]
     [SerializeField]
     private float salud = 1f;
@@ -92,12 +94,13 @@ public class Colision : MonoBehaviour
 
         if (iman != null)
         {
-            Vector3 pos = new Vector3(iman.transform.position.x, iman.transform.position.y, 0);
+            //Vector3 pos = new Vector3(iman.transform.position.x, iman.transform.position.y, 0);
             //GameObject particulas = Instantiate(particulasDiamante, pos, Quaternion.identity);
             //GameController.ScoreDiamante += puntuacionDiamante;
+            //StartCoroutine(delay(particulas, 1));
+
             Debug.Log("IMAN!!");
             Destroy(collision.gameObject);
-            //StartCoroutine(delay(particulas, 1));
             UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/iman");
             UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/barra");
             StartCoroutine(delayImgBoost(5));
@@ -106,20 +109,27 @@ public class Colision : MonoBehaviour
 
         if (inmunidad != null)
         {
-            Vector3 pos = new Vector3(inmunidad.transform.position.x, inmunidad.transform.position.y, 0);
+            //Efecto particulas
+            //Vector3 pos = new Vector3(inmunidad.transform.position.x, inmunidad.transform.position.y, 0);
             //GameObject particulas = Instantiate(particulasDiamante, pos, Quaternion.identity);
             //GameController.ScoreDiamante += puntuacionDiamante;
+            //StartCoroutine(delay(particulas, 1));
+
+            isInmune = true;
+            StartCoroutine(delayInmunidad(10));
             Debug.Log("INMUNIDAD!!");
             Destroy(collision.gameObject);
-            //StartCoroutine(delay(particulas, 1));
             UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/inmunidad");
             UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/barra");
-            StartCoroutine(delayImgBoost(5));
+            StartCoroutine(delayImgBoost(10));
         }
 
         if (pieza != null)
         {
-            Salud -= 0.2f;
+            if (!isInmune)
+            {
+                Salud -= 0.2f;
+            }
             Vector3 pos = new Vector3(Jugador.transform.position.x, Jugador.transform.position.y+1f, 0);
             GameObject particulas = Instantiate(ParticulasAvion, pos, Quaternion.identity);
             Debug.Log("IMPACTO!!");
@@ -139,7 +149,10 @@ public class Colision : MonoBehaviour
 
         if (pD != null)
         {
-            Salud -= 0.1f;
+            if (!isInmune)
+            {
+                Salud -= 0.1f;
+            }
             Vector3 pos = new Vector3(pD.transform.position.x, pD.transform.position.y, 0);
             GameObject particulas = Instantiate(ParticulasPajaro, pos, Quaternion.identity);
             Debug.Log("PajaroDcha!!");
@@ -150,7 +163,10 @@ public class Colision : MonoBehaviour
 
         if (pI != null)
         {
-            Salud -= 0.1f;
+            if (!isInmune)
+            {
+                Salud -= 0.1f;
+            }
             Vector3 pos = new Vector3(pI.transform.position.x, pI.transform.position.y, 0);
             GameObject particulas = Instantiate(ParticulasPajaro, pos, Quaternion.identity);
 
@@ -176,6 +192,13 @@ public class Colision : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/base");
         UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/base");
+    }
+
+    IEnumerator delayInmunidad(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        isInmune = false;
+        Debug.Log("NO INMUNEEEE!!");
     }
 
 

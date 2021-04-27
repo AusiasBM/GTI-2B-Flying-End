@@ -437,7 +437,7 @@ MonoBehaviour:
   listaBoost:
   - {fileID: 8766002565816832040, guid: 9024719d330274565b8911544820b5d6, type: 3}
   - {fileID: 3934927027398199062, guid: 2b0d027d30917412ebab1d3051d0a2b4, type: 3}
-  listaPrioridades: 0300000002000000
+  listaPrioridades: 0300000005000000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
@@ -1123,6 +1123,11 @@ PrefabInstance:
       objectReference: {fileID: 1980580998}
     - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
+      propertyPath: UIImageBoost
+      value: 
+      objectReference: {fileID: 913243388}
+    - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
       propertyPath: ParticulasAvion
       value: 
       objectReference: {fileID: 6774833530543770311, guid: b75b3c7843dc943939be08989ccb00d8,
@@ -1133,6 +1138,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6774833530543770311, guid: b75b3c7843dc943939be08989ccb00d8,
         type: 3}
+    - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: UIImageBoostVida
+      value: 
+      objectReference: {fileID: 2096535091}
     - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
       propertyPath: particulasMoneda
