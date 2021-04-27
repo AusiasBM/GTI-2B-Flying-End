@@ -6,6 +6,7 @@ public class Iman : MonoBehaviour
 {
     //Velocidad del moneda
     public float velocidad = 3f;
+    public float destruir = 9f;
 
     Rigidbody rb;
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class Iman : MonoBehaviour
         // En menos(-=) desplazamiento hacia abajo; en mas (+=) hacia arriba
         transform.position += transform.up * velocidad * Time.deltaTime;
 
-        if (transform.position.y > 7f)
+        if (transform.position.y > destruir)
         {
             Destroy(gameObject);
         }
