@@ -15,6 +15,8 @@ public class Colision : MonoBehaviour
     public GameObject ParticulasAvion;
     public GameObject ParticulasPajaro;
     public GameObject Jugador;
+    public Image UIImageBoost;
+    public Image UIImageBoostVida;
 
     public Image barraSalud;
 
@@ -53,6 +55,9 @@ public class Colision : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+        UIImageBoost = GameObject.Find("ImgBoost").GetComponent<Image>();
+        UIImageBoostVida = GameObject.Find("barraVidaBoost").GetComponent<Image>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -93,6 +98,10 @@ public class Colision : MonoBehaviour
             Debug.Log("IMAN!!");
             Destroy(collision.gameObject);
             //StartCoroutine(delay(particulas, 1));
+            UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/iman");
+            UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/barra");
+            StartCoroutine(delayImgBoost(5));
+
         }
 
         if (inmunidad != null)
@@ -103,6 +112,9 @@ public class Colision : MonoBehaviour
             Debug.Log("INMUNIDAD!!");
             Destroy(collision.gameObject);
             //StartCoroutine(delay(particulas, 1));
+            UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/inmunidad");
+            UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/barra");
+            StartCoroutine(delayImgBoost(5));
         }
 
         if (pieza != null)
@@ -157,6 +169,13 @@ public class Colision : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         Destroy(particulas);
+    }
+
+    IEnumerator delayImgBoost(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/base");
+        UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/base");
     }
 
 
