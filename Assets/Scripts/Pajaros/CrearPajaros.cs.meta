@@ -3,7 +3,8 @@ guid: 973e41d93489cc845be6af347a51855e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pajaro: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

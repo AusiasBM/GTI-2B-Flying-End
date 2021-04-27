@@ -5,17 +5,28 @@ using UnityEngine;
 public class CrearPajaros : MonoBehaviour
 {
 
-    public GameObject pajaro;
+    private GameObject pajaro;
+
+    public GameObject[] listaPajaros;
+    public int[] listaPrioridades;
 
     //Radio de la circunferencia
     public float rangoCreacion = 5.25f;
 
+    private Dictionary<GameObject, int> pajarosPrioridades = new Dictionary<GameObject, int>();
 
     // Start is called before the first frame update
     void Start()
     {
+
+        for (int i = 0; i < listaPajaros.Length; i++)
+        {
+            pajarosPrioridades.Add(listaPajaros[i], listaPrioridades[i]);
+        }
+
         //Repetir la invocación del método crearPajaro cada cierto tiempo (tiempo inicial de espera de 2s)
         Invoke("crearPajaro", Random.Range(2f, 3.5f));
+
     }
 
     // Update is called once per frame
@@ -26,7 +37,8 @@ public class CrearPajaros : MonoBehaviour
 
     void crearPajaro()
     {
-        
+        pajaro = RandomObjects.ChooseWeigther(pajarosPrioridades);
+
         Vector3 spawnPos = new Vector3(0, 0, 0);
 
         // Definimos la posición random desde la que saldrá el pajaro 
@@ -40,7 +52,7 @@ public class CrearPajaros : MonoBehaviour
         GameObject pajaros = Instantiate(pajaro, spawnPos, Quaternion.identity);
 
         Invoke("crearPajaro", Random.Range(2f, 5.0f));
-        
+
     }
 
 }
