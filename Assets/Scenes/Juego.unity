@@ -1545,7 +1545,7 @@ GameObject:
   - component: {fileID: 913243389}
   - component: {fileID: 913243388}
   m_Layer: 5
-  m_Name: ImgProvaIman
+  m_Name: ImgBoost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1590,7 +1590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc9376ce62434ca42ad299e725f9c4d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbaf413ddaa19417b92e01c16bd5ba11, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8190,7 +8190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d731aae40f2644744b25dc5d67b32613, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbaf413ddaa19417b92e01c16bd5ba11, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
