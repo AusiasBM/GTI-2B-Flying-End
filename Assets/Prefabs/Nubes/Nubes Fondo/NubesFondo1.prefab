@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 178a13046f3c76449936e33734a63f18,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 178a13046f3c76449936e33734a63f18,
         type: 3}
@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 656528a1b7085ac4d833f3836e7db5b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 656528a1b7085ac4d833f3836e7db5b0,
         type: 3}
@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 15ca87d0dc732a544b50b06b143f0f05,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15ca87d0dc732a544b50b06b143f0f05,
         type: 3}
@@ -341,7 +341,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 073f16c36187b42479a4a28598327895,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 073f16c36187b42479a4a28598327895,
         type: 3}
@@ -436,7 +436,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 073f16c36187b42479a4a28598327895,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 073f16c36187b42479a4a28598327895,
         type: 3}
@@ -526,7 +526,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 073f16c36187b42479a4a28598327895,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 073f16c36187b42479a4a28598327895,
         type: 3}

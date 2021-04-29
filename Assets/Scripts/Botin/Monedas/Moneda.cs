@@ -27,9 +27,4 @@ public class Moneda : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        Destroy(gameObject);
-    }*/
 }

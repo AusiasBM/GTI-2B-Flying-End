@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CrearBoost : MonoBehaviour
 {
-    //Puede ser moneda o diamante
-    private GameObject boost;
-
     public GameObject[] listaBoost;
     public int[] listaPrioridades;
 
@@ -14,7 +11,7 @@ public class CrearBoost : MonoBehaviour
 
     public float rangoCreacion = 8f;
 
-
+    CrearGameObject crear = new CrearGameObject();
     // Start is called before the first frame update
     void Start()
     {
@@ -23,33 +20,14 @@ public class CrearBoost : MonoBehaviour
             boostPrioridades.Add(listaBoost[i], listaPrioridades[i]);
         }
 
-        //Repetir la invocaci?n del m?todo crearPajaro cada cierto tiempo (tiempo inicial de espera de 2s)
+        //Repetir la invocaci?n del m?todo 
         Invoke("crearBoost", Random.Range(15f, 20f));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void crearBoost()
     {
-        boost = RandomObjects.ChooseWeigther(boostPrioridades);
-
-        Vector3 spawnPos = new Vector3(0, 0, 0);
-
-        // Definimos la posici?n random desde la que saldr? el pajaro 
-        // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreaci?n es el radio de la esfera)
-        spawnPos = this.transform.position + Random.onUnitSphere * rangoCreacion;
-
-        //Crear la posici?n desde la que saldr? el pajaro que va a crearse. Solo variar? en el eje y, mientras que la del eje X es la del spawner
-        spawnPos = new Vector3(spawnPos.x, this.transform.position.y, 0);
-
-        //Crear una instancia del obejeto p?jaro en la posici?n definida
-        GameObject boosts = Instantiate(boost, spawnPos, Quaternion.identity);
-
+        StartCoroutine(crear.crearObjetoPrioridad(this.transform, boostPrioridades, rangoCreacion, 1));
         Invoke("crearBoost", Random.Range(15f, 20f));
-
     }
 }
