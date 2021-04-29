@@ -5,46 +5,78 @@ using System.Linq;
 
 public class CrearGameObject : MonoBehaviour
 {
+    /*Método para crear objetos sin un factor de prioridad asociado.
+      Se pasa por parámetros:
+    - Transform del spawner desde donde se creará;
+    - La lista (array o List) con los objetos que se crearán
+    - El radio (float) desde del spawner desde doonde se creará de forma aleatoria
+    - Si el objeto se puede crear con una rotación aleatoria respecto su eje y
+    - Si el objeto se desplaza por el eje X (horizontal) o Y(vertical)
+    - Tiempo de espera
+    */
 
-    public IEnumerator crearObjeto(Transform spawner, IList<GameObject> array, float radio, bool rotarObjeto, float tiempoEspera)
+    public IEnumerator crearObjeto(Transform spawner, IList<GameObject> array, float radio, bool rotarObjeto, bool isVertical, float tiempoEspera)
     {
         yield return new WaitForSeconds(tiempoEspera);
 
         GameObject objeto = choose(array);
 
-        Vector3 spawnPos = new Vector3(0, 0, 0);
+        Vector3 pos = new Vector3(0, 0, 0);
 
-        // Definimos la posición random desde la que saldrá el pajaro 
+        // Definimos la posición random desde la que saldrá
         // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
-        spawnPos = spawner.position + Random.onUnitSphere * radio;
+        pos = spawner.position + Random.onUnitSphere * radio;
 
-        //Crear la posición desde la que saldrá el pajaro que va a crearse. Solo variará en el eje y, mientras que la del eje X es la del spawner
-        spawnPos = new Vector3(spawnPos.x, spawner.transform.position.y, 0);
+        if (isVertical)
+        {
+            //Crear la posición desde la que saldrá. Solo variará en el eje x, mientras que la del eje y es la del spawner
+            pos = new Vector3(pos.x, spawner.transform.position.y, 0);
+        }
+        else
+        {
+            pos = new Vector3(spawner.transform.position.x, pos.y, 0);
+        }
 
         int rotacion = randomRotation(rotarObjeto);
 
-        //Crear una instancia del obejeto pájaro en la posición definida
-        Instantiate(objeto, spawnPos, Quaternion.AngleAxis(rotacion, Vector3.up));
+        //Crear una instancia del obejeto en la posición definida
+        Instantiate(objeto, pos, Quaternion.AngleAxis(rotacion, Vector3.up));
     }
 
 
-    public IEnumerator crearObjetoPrioridad(Transform spawner, Dictionary<GameObject, int> pairs, float radio, float tiempoEspera)
+    /*Método para crear objetos con un factor de prioridad asociado.
+      Se pasa por parámetros:
+    - Transform del spawner desde donde se creará;
+    - El diccionario con los objetos y sus respectivas prioridades
+    - El radio (float) desde del spawner desde doonde se creará de forma aleatoria
+    - Si el objeto se desplaza por el eje X (horizontal) o Y(vertical)
+    - Tiempo de espera
+    */
+    public IEnumerator crearObjetoPrioridad(Transform spawner, Dictionary<GameObject,int> pairs, float radio, bool isVertical, float tiempoEspera)
     {
         yield return new WaitForSeconds(tiempoEspera);
 
         GameObject objeto = chooseWeigther(pairs);
 
-        Vector3 spawnPos = new Vector3(0, 0, 0);
+        Vector3 pos = new Vector3(0, 0, 0);
 
-        // Definimos la posición random desde la que saldrá el pajaro 
+        // Definimos la posición random desde la que saldrá 
         // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
-        spawnPos = spawner.position + Random.onUnitSphere * radio;
+        pos = spawner.position + Random.onUnitSphere * radio;
 
-        //Crear la posición desde la que saldrá el pajaro que va a crearse. Solo variará en el eje y, mientras que la del eje X es la del spawner
-        spawnPos = new Vector3(spawnPos.x, spawner.transform.position.y, 0);
+        if (isVertical)
+        {
+            //Crear la posición desde la que saldrá. Solo variará en el eje x, mientras que la del eje y es la del spawner
+            pos = new Vector3(pos.x, spawner.transform.position.y, 0);
+        }
+        else
+        {
+            pos = new Vector3(spawner.transform.position.x, pos.y, 0);
+        }
+        
 
-        //Crear una instancia del obejeto pájaro en la posición definida
-        Instantiate(objeto, spawnPos, Quaternion.identity);
+        //Crear una instancia del obejeto en la posición definida
+        Instantiate(objeto, pos, Quaternion.identity);
     }
 
     private int randomRotation(bool rotate)

@@ -30,7 +30,7 @@ public class CrearPajaros : MonoBehaviour
 
     void crearPajaro()
     {
-        StartCoroutine(crear.crearObjetoPrioridad(this.transform, pajarosPrioridades, rangoCreacion, 1));
+        StartCoroutine(crear.crearObjetoPrioridad(this.transform, pajarosPrioridades, rangoCreacion, false, 1));
         Invoke("crearPajaro", Random.Range(2f, 5.0f));
 
     }

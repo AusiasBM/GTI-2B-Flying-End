@@ -21,7 +21,7 @@ public class CrearPiezas : MonoBehaviour
 
     void crearPiezaAvion()
     {
-        StartCoroutine(crear.crearObjeto(this.transform, piezasAvion, rangoCreacion, true, 1f));
+        StartCoroutine(crear.crearObjeto(this.transform, piezasAvion, rangoCreacion, true, true, 1f));
         Invoke("crearPiezaAvion", Random.Range(4f, 7f));
     }
 }

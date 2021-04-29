@@ -27,7 +27,7 @@ public class CrearBoost : MonoBehaviour
 
     void crearBoost()
     {
-        StartCoroutine(crear.crearObjetoPrioridad(this.transform, boostPrioridades, rangoCreacion, 1));
+        StartCoroutine(crear.crearObjetoPrioridad(this.transform, boostPrioridades, rangoCreacion, true, 1));
         Invoke("crearBoost", Random.Range(15f, 20f));
     }
 }

@@ -20,7 +20,7 @@ public class CrearNubesFondo : MonoBehaviour
 
     void crearNube()
     {
-        StartCoroutine(crear.crearObjeto(this.transform, nubes, rangoCreacion, false, 1f));
+        StartCoroutine(crear.crearObjeto(this.transform, nubes, rangoCreacion, false, true, 1f));
         Invoke("crearNube", Random.Range(4f, 6f));
     }
 }

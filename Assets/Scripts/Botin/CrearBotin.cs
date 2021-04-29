@@ -30,7 +30,7 @@ public class CrearBotin : MonoBehaviour
 
     void crearBotin()
     {
-        StartCoroutine(crear.crearObjetoPrioridad(this.transform, botinPrioridades, rangoCreacion, 1f));
+        StartCoroutine(crear.crearObjetoPrioridad(this.transform, botinPrioridades, rangoCreacion, true, 1f));
         Invoke("crearBotin", Random.Range(1f, 2f));
 
     }
