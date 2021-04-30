@@ -174,10 +174,10 @@ GameObject:
   - component: {fileID: 8971233382250746961}
   - component: {fileID: 8703257767783131560}
   - component: {fileID: 2122073909364269872}
-  - component: {fileID: -6642268808244769764}
+  - component: {fileID: 7749712138881576515}
   m_Layer: 0
   m_Name: PalomaDcha
-  m_TagString: Untagged
+  m_TagString: Pajaro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,7 +226,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6642268808244769764
+--- !u!114 &7749712138881576515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,7 +235,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5296525793145230785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3d83779a879534fa7ea787a5db709c, type: 3}
+  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 6
+  destruir: -14
+  ralentizar: 0
+  velocidadRanetizado: 1
+  isVertical: 0
+  moveUpToDown: 0
+  moveLeftToRight: 0
+  tipoObjeto: 1

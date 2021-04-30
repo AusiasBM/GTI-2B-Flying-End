@@ -93,10 +93,10 @@ GameObject:
   - component: {fileID: 4049546709472632816}
   - component: {fileID: 653798025810687907}
   - component: {fileID: -6066606141361291262}
-  - component: {fileID: -8371523114898966747}
+  - component: {fileID: 70826370026149229}
   m_Layer: 0
   m_Name: PalomaIzda
-  m_TagString: Untagged
+  m_TagString: Pajaro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-8371523114898966747
+--- !u!114 &70826370026149229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,10 +154,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000122707021763019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c1bccb7f0fcfff4fa5d7bebb8e26fc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 6
+  destruir: 14
+  ralentizar: 0
+  velocidadRanetizado: 1
+  isVertical: 0
+  moveUpToDown: 0
+  moveLeftToRight: 1
+  tipoObjeto: 1
 --- !u!1 &7508238160905137920
 GameObject:
   m_ObjectHideFlags: 0

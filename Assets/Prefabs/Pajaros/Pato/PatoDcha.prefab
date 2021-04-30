@@ -16,7 +16,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1939255870752544908
+--- !u!114 &6744253530847182249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25,10 +25,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6610810175677894665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3d83779a879534fa7ea787a5db709c, type: 3}
+  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 10
+  destruir: -14
+  ralentizar: 0
+  velocidadRanetizado: 1
+  isVertical: 0
+  moveUpToDown: 0
+  moveLeftToRight: 0
+  tipoObjeto: 1
 --- !u!1001 &4370418180719166245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,6 +153,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatoDcha
       objectReference: {fileID: 0}
+    - target: {fileID: 7428838193937339180, guid: a6052d7031d2d4840a52b007f234631b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pajaro
+      objectReference: {fileID: 0}
     - target: {fileID: 8212632003616335091, guid: a6052d7031d2d4840a52b007f234631b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -161,6 +173,9 @@ PrefabInstance:
     - {fileID: 8659055532859589422, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
     - {fileID: 304544228143686070, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
     - {fileID: 2333107977025277112, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
+    - {fileID: 1701223294009786672, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
+    - {fileID: 8478373465737471811, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
+    - {fileID: 826308562926353363, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a6052d7031d2d4840a52b007f234631b, type: 3}
 --- !u!1 &6610810175677894665 stripped
 GameObject:

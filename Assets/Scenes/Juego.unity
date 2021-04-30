@@ -437,7 +437,8 @@ MonoBehaviour:
   listaBoost:
   - {fileID: 8766002565816832040, guid: 9024719d330274565b8911544820b5d6, type: 3}
   - {fileID: 3934927027398199062, guid: 2b0d027d30917412ebab1d3051d0a2b4, type: 3}
-  listaPrioridades: 0300000005000000
+  - {fileID: 5209463965809670293, guid: daa057a81757f094495f354dab4483f8, type: 3}
+  listaPrioridades: 030000000500000064000000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
@@ -530,7 +531,7 @@ GameObject:
   - component: {fileID: 222552294}
   m_Layer: 0
   m_Name: CarrilUp
-  m_TagString: Untagged
+  m_TagString: Superior
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,6 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangoCreacion: 8
+  ralentizar: 0
   piezasAvion:
   - {fileID: 6701690948012980539, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
   - {fileID: 6407376096148926779, guid: c159387fe6b461341a4d94f492d8016f, type: 3}
@@ -1123,6 +1125,12 @@ PrefabInstance:
       objectReference: {fileID: 1626123653}
     - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 336125250779687262, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+    - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
       propertyPath: barraSalud
       value: 
       objectReference: {fileID: 1980580998}
@@ -1134,6 +1142,12 @@ PrefabInstance:
     - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
       propertyPath: ParticulasAvion
+      value: 
+      objectReference: {fileID: 6774833530543770311, guid: b75b3c7843dc943939be08989ccb00d8,
+        type: 3}
+    - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: particulasAvion
       value: 
       objectReference: {fileID: 6774833530543770311, guid: b75b3c7843dc943939be08989ccb00d8,
         type: 3}
@@ -1153,6 +1167,12 @@ PrefabInstance:
       propertyPath: particulasMoneda
       value: 
       objectReference: {fileID: 6774833530543770311, guid: c1d61802a6cd5364c9902c0660e92537,
+        type: 3}
+    - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: particulasPajaro
+      value: 
+      objectReference: {fileID: 6774833530543770311, guid: b75b3c7843dc943939be08989ccb00d8,
         type: 3}
     - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
@@ -1238,7 +1258,7 @@ GameObject:
   - component: {fileID: 803615605}
   m_Layer: 0
   m_Name: 'CarrilDrcha1 '
-  m_TagString: Untagged
+  m_TagString: Lateral
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1275,6 +1295,7 @@ MonoBehaviour:
   - {fileID: 6263236608512586234, guid: 12147a19e7a8c10498afca82b2adbd3a, type: 3}
   listaPrioridades: 050000000300000002000000
   rangoCreacion: 5.5
+  ralentizar: 0
 --- !u!1 &833457034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,7 +1913,7 @@ GameObject:
   - component: {fileID: 1257978099}
   m_Layer: 0
   m_Name: CarrilIzda1
-  m_TagString: Untagged
+  m_TagString: Lateral
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1929,6 +1950,7 @@ MonoBehaviour:
   - {fileID: 636517733563486495, guid: 973f6b4f14ddae4408fd7d174a7ae169, type: 3}
   listaPrioridades: 050000000300000002000000
   rangoCreacion: 5.5
+  ralentizar: 0
 --- !u!1 &1352950444
 GameObject:
   m_ObjectHideFlags: 0

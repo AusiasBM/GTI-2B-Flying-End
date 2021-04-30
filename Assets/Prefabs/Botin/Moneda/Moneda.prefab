@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5595673644585450368}
   - component: {fileID: 8901128052915511037}
-  - component: {fileID: 8537326018848976769}
   - component: {fileID: 4568433125540755083}
+  - component: {fileID: 5362464601417023092}
   m_Layer: 0
   m_Name: Moneda
   m_TagString: Untagged
@@ -50,19 +50,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8537326018848976769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3544811284953177181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10210f338288688448db097f6ee7f481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 3
 --- !u!122 &4568433125540755083
 Halo:
   m_ObjectHideFlags: 0
@@ -75,6 +62,26 @@ Halo:
     serializedVersion: 2
     rgba: 4286114303
   m_Size: 0.7
+--- !u!114 &5362464601417023092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544811284953177181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 3
+  destruir: 9.5
+  ralentizar: 0
+  velocidadRanetizado: 0
+  isVertical: 1
+  moveUpToDown: 0
+  moveLeftToRight: 0
+  tipoObjeto: 2
 --- !u!1 &7656156048790621201
 GameObject:
   m_ObjectHideFlags: 0

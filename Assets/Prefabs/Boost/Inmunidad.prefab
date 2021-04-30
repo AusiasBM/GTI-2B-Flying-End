@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3753596465633845059}
-  - component: {fileID: -8069376302423567302}
   - component: {fileID: -1360426794455049674}
   - component: {fileID: -7235635735868415692}
+  - component: {fileID: 7215305432844959166}
   m_Layer: 0
   m_Name: Inmunidad
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8069376302423567302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3934927027398199062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf7fb3208b8c49f29c83cb98ae73250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 3
 --- !u!54 &-1360426794455049674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,6 +63,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7215305432844959166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934927027398199062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 3
+  destruir: 9.5
+  ralentizar: 0
+  velocidadRanetizado: 0
+  isVertical: 1
+  moveUpToDown: 0
+  moveLeftToRight: 0
+  tipoObjeto: 4
 --- !u!1 &7989118171816163788
 GameObject:
   m_ObjectHideFlags: 0

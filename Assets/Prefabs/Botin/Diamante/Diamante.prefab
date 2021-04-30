@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4762552714944515328}
   - component: {fileID: -2729424651191919428}
-  - component: {fileID: -5690436936743991985}
+  - component: {fileID: 7494725000095434334}
   m_Layer: 0
   m_Name: Diamante
   m_TagString: Untagged
@@ -49,7 +49,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-5690436936743991985
+--- !u!114 &7494725000095434334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,10 +58,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2343282749467999478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decec14a227ee3b489ea47652dd0c1b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
+  destruir: 9.5
+  ralentizar: 0
+  velocidadRanetizado: 0
+  isVertical: 1
+  moveUpToDown: 0
+  moveLeftToRight: 0
+  tipoObjeto: 3
 --- !u!1 &5905776880025237564
 GameObject:
   m_ObjectHideFlags: 0
