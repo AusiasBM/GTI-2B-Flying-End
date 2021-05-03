@@ -282,8 +282,8 @@ MonoBehaviour:
   listaBoost:
   - {fileID: 4844643883530458213, guid: 026da45ba0ff4b048a992438d7f75933, type: 3}
   - {fileID: 2533754496081381325, guid: e1103ac762ed649ebbf711a59c6a7337, type: 3}
-  - {fileID: 5209463965809670293, guid: daa057a81757f094495f354dab4483f8, type: 3}
-  listaPrioridades: c8000000f401000064000000
+  - {fileID: 5905265489006865330, guid: 3966f477103127b41a7abebd8c717eb1, type: 3}
+  listaPrioridades: c8000000f4010000e8030000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
