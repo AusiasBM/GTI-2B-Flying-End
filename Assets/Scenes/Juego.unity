@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listaBotin:
   - {fileID: 3544811284953177181, guid: 8cac918591ef0de4fbacac8b778f5fa4, type: 3}
-  - {fileID: 2343282749467999478, guid: fbeb705d18faf0e4d9a7b4a6de07fd03, type: 3}
+  - {fileID: 684669883572772485, guid: 2fe66ef5208838547a629856c6e5edf3, type: 3}
   listaPrioridades: 0900000001000000
   rangoCreacion: 8
 --- !u!4 &129997598
@@ -280,10 +280,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaBoost:
-  - {fileID: 8766002565816832040, guid: 9024719d330274565b8911544820b5d6, type: 3}
+  - {fileID: 4844643883530458213, guid: 026da45ba0ff4b048a992438d7f75933, type: 3}
   - {fileID: 3934927027398199062, guid: 2b0d027d30917412ebab1d3051d0a2b4, type: 3}
   - {fileID: 5209463965809670293, guid: daa057a81757f094495f354dab4483f8, type: 3}
-  listaPrioridades: 030000000500000064000000
+  listaPrioridades: c80000000500000064000000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
@@ -2110,7 +2110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7081fe3b49d1d5047a36406d3208780b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausado: 0
 --- !u!114 &837325431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3797,7 +3796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7081fe3b49d1d5047a36406d3208780b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausado: 0
 --- !u!114 &1861343143
 MonoBehaviour:
   m_ObjectHideFlags: 0
