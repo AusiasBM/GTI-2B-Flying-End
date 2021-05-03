@@ -834,7 +834,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348699071}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1465591508}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: panel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &348699071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,7 +1049,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 407528149}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1465591508}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: mPrincipal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &407528149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1859,7 +1883,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 783055473}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1465591508}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: salirPsi
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &783055473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,6 +2110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7081fe3b49d1d5047a36406d3208780b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausado: 0
 --- !u!114 &837325431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,9 +2155,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 837325430}
-        m_TargetAssemblyTypeName: isPaused, Assembly-CSharp
-        m_MethodName: pausedGame
+      - m_Target: {fileID: 1465591508}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: SwitchPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2977,6 +3014,7 @@ GameObject:
   - component: {fileID: 1465591505}
   - component: {fileID: 1465591507}
   - component: {fileID: 1465591506}
+  - component: {fileID: 1465591508}
   m_Layer: 5
   m_Name: PanelMenu
   m_TagString: Untagged
@@ -3045,6 +3083,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465591504}
   m_CullTransparentMesh: 1
+--- !u!114 &1465591508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465591504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ed54b22937e4447962153474b49133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuP: {fileID: 1465591504}
+  seguroP: {fileID: 1806381295}
 --- !u!1 &1547688942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,7 +3583,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1825539196}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1465591508}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: salirPno
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1825539196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3733,6 +3797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7081fe3b49d1d5047a36406d3208780b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausado: 0
 --- !u!114 &1861343143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3777,9 +3842,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1861343142}
-        m_TargetAssemblyTypeName: isPaused, Assembly-CSharp
-        m_MethodName: pausedGame
+      - m_Target: {fileID: 1465591508}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: SwitchPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
