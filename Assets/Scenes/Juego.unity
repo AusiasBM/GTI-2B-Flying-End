@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaBotin:
-  - {fileID: 3544811284953177181, guid: 8cac918591ef0de4fbacac8b778f5fa4, type: 3}
+  - {fileID: 785572107618429042, guid: ca013942ecf098c4a8cc415b581e9522, type: 3}
   - {fileID: 684669883572772485, guid: 2fe66ef5208838547a629856c6e5edf3, type: 3}
   listaPrioridades: 0900000001000000
   rangoCreacion: 8
