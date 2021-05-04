@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 129997597}
   - component: {fileID: 129997600}
   - component: {fileID: 129997601}
+  - component: {fileID: 129997602}
   m_Layer: 0
   m_Name: CarrilDown
   m_TagString: Untagged
@@ -228,6 +229,22 @@ MonoBehaviour:
   - {fileID: 9007023186680884966, guid: 2b3b3900af347c347bb92ac2648353c6, type: 3}
   rangoCreacion: 10
   posicionZ: 2
+--- !u!114 &129997602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129997596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698513f8f44af4cfaa7479e78706c85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nieblas:
+  - {fileID: 7956606639171865804, guid: 4101beb39074242fba17a47449879dc4, type: 3}
+  rangoCreacion: 8
+  activo: 1
 --- !u!1 &131439465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,13 +1151,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b4193de87baf114781171b0bdef9259, type: 3}
+  m_Script: {fileID: 11500000, guid: e05a8979bc4bb499f970ebb5885efadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
   posRecolocar: -43
   fondo1: {fileID: 1082402121}
   fondo2: {fileID: 389436040}
+  CarrilDownNiebla: {fileID: 129997596}
   sprite1: {fileID: 21300000, guid: 449205827b89944ac8eaa9f391338bf2, type: 3}
   sprite2: {fileID: 21300000, guid: 449205827b89944ac8eaa9f391338bf2, type: 3}
 --- !u!1 &533203736
@@ -1501,6 +1519,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630666450}
+  m_CullTransparentMesh: 1
+--- !u!1 &670685457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670685458}
+  - component: {fileID: 670685460}
+  - component: {fileID: 670685459}
+  m_Layer: 5
+  m_Name: ScoreMetros
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &670685458
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670685457}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2092152143}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 253, y: 424}
+  m_SizeDelta: {x: 700, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &670685459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670685457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &670685460
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670685457}
   m_CullTransparentMesh: 1
 --- !u!224 &727356520 stripped
 RectTransform:
@@ -1941,10 +2038,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a663021322a5c4fa426da1565cbf1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreString: Score
-  ScoreDiamanteString: ScoreDiamante
   TextScore: {fileID: 1410458762}
   TextScoreDiamante: {fileID: 1352950446}
+  TextScoreMetros: {fileID: 670685459}
 --- !u!4 &877761438
 Transform:
   m_ObjectHideFlags: 0
@@ -1989,7 +2085,7 @@ RectTransform:
   m_LocalScale: {x: 0.8166667, y: 0.76177084, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 2092152143}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3029,7 +3125,7 @@ RectTransform:
   m_LocalScale: {x: 2.4365604, y: 8.753465, z: 1.7719}
   m_Children: []
   m_Father: {fileID: 2092152143}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -8121,6 +8217,7 @@ RectTransform:
   - {fileID: 1255236378}
   - {fileID: 1410458761}
   - {fileID: 1352950445}
+  - {fileID: 670685458}
   - {fileID: 913243387}
   - {fileID: 2096535090}
   - {fileID: 1861343141}
@@ -8162,11 +8259,11 @@ RectTransform:
   m_LocalScale: {x: 0.16963351, y: 0.30196384, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 2092152143}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18.666748, y: -682.6666}
+  m_AnchoredPosition: {x: 18.667969, y: -682.667}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2096535091

@@ -11,6 +11,8 @@ public class Fondo : MonoBehaviour
     private bool estaFondo2 = false;
     private bool estaFondo1 = false;
 
+    public GameObject CarrilDownNiebla;
+
     public Sprite sprite1;
 
     private SpriteRenderer spriteRenderer1;
@@ -18,6 +20,7 @@ public class Fondo : MonoBehaviour
     public Sprite sprite2;
 
     private SpriteRenderer spriteRenderer2;
+
 
     void Start()
     {
@@ -33,6 +36,8 @@ public class Fondo : MonoBehaviour
         fondo1.transform.Translate(fondo1.transform.up * velocidad * Time.deltaTime);
         fondo2.transform.Translate(fondo2.transform.up * velocidad * Time.deltaTime);
 
+        GameController.ScoreMetros += 0.1f;
+
         if (fondo2.transform.position.y >= 0 && !estaFondo2)
         {
             Debug.Log("CAMBIA DE FONDO");
@@ -40,7 +45,7 @@ public class Fondo : MonoBehaviour
             //fondo1.position = new Vector3(0, posRecolocar, fondo1.position.z);
             estaFondo2 = true;
             estaFondo1 = false;
-            spriteRenderer1.sprite = sprite1;
+            //spriteRenderer1.sprite = sprite1;
 
         }
 
@@ -50,7 +55,16 @@ public class Fondo : MonoBehaviour
             fondo2.transform.Translate(0, posRecolocar, 0);
             estaFondo1 = true;
             estaFondo2 = false;
-            spriteRenderer2.sprite = sprite2;
+            //spriteRenderer2.sprite = sprite2;
+        }
+
+        if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 20f)
+        {
+            CarrilDownNiebla.GetComponent<CrearNiebla>().activo = true;
+        }
+        else
+        {
+            CarrilDownNiebla.GetComponent<CrearNiebla>().activo = false;
         }
     }
 
