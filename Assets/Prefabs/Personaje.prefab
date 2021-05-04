@@ -74,10 +74,9 @@ MonoBehaviour:
   jugador: {fileID: 0}
   UIImageBoost: {fileID: 0}
   UIImageBoostVida: {fileID: 0}
-  barraSalud: {fileID: 0}
+  vida: {fileID: 0}
   fuerzaImpactoPajaro: 3
   fuerzaImpactoPieza: 2
-  salud: 1
 --- !u!54 &5910491570316588125
 Rigidbody:
   m_ObjectHideFlags: 0
