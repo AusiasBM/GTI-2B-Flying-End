@@ -21,7 +21,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Score = 0;
+        ScoreDiamante = 0;
+        ScoreMetros = 0f;
     }
 
     // Update is called once per frame
