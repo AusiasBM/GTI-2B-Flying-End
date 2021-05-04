@@ -18,7 +18,8 @@ public class Colision : MonoBehaviour
     public Image UIImageBoost;
     public Image UIImageBoostVida;
 
-    public Image barraSalud;
+    public GameObject vida;
+    private Image barraSalud;
 
     public float fuerzaImpactoPajaro = 3f;
     public float fuerzaImpactoPieza = 2f;
@@ -31,29 +32,23 @@ public class Colision : MonoBehaviour
     GameObject[] piezas;
     GameObject[] pajaros;
     GameObject[] spawnLateral;
-
-    [Range(0, 1)]
-    [SerializeField]
-    private float salud = 1f;
+    
+    private int salud = 9;
 
     private TiemblaCamara tiemblaCamara;
-    public float Salud
+
+    private void quitarVida(int vidaMenos)
     {
-        get
+
+        salud = salud - vidaMenos;
+
+        if (salud == 0)
         {
-            return salud;
+            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
 
-        set
-        {
-            salud = Mathf.Clamp01(value);
-            if (salud == 0)
-            {
-                Destroy(gameObject);
-                SceneManager.LoadScene("GameOver");
-            }
-            barraSalud.fillAmount = salud;
-        }
+        barraSalud.sprite = Resources.Load<Sprite>("Sprites/Hud/Vida/vida" + salud);
     }
 
     Rigidbody rb;
@@ -67,6 +62,7 @@ public class Colision : MonoBehaviour
 
         UIImageBoost = GameObject.Find("ImgBoost").GetComponent<Image>();
         UIImageBoostVida = GameObject.Find("barraVidaBoost").GetComponent<Image>();
+        barraSalud = vida.GetComponent<Image>();
     }
 
 
@@ -105,7 +101,7 @@ public class Colision : MonoBehaviour
                 case ObjetoJuego.Tipo.PiezaAvion:
                     if (!isInmune)
                     {
-                        Salud -= 0.2f;
+                        quitarVida(2);
                     }
 
                     GameObject particulas = generarParticulas(particulasAvion, oj.transform);
@@ -127,7 +123,7 @@ public class Colision : MonoBehaviour
                 case ObjetoJuego.Tipo.Pajaro:
                     if (!isInmune)
                     {
-                        Salud -= 0.1f;
+                        quitarVida(1);
                     }
 
                     GameObject p2 = generarParticulas(particulasPajaro, oj.transform);
