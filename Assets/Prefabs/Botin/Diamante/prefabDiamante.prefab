@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3632634718471029901}
   - component: {fileID: 8815539473037879456}
-  - component: {fileID: 3586276504468829744}
+  - component: {fileID: -1919373419409342813}
+  - component: {fileID: 7365515399926761728}
+  - component: {fileID: -8495028904529799302}
   m_Layer: 0
   m_Name: prefabDiamante
   m_TagString: Untagged
@@ -49,7 +51,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3586276504468829744
+--- !u!114 &-1919373419409342813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,17 +60,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 684669883572772485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d7aa788f24be5d546a480a80286edd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 3
-  destruir: 9.5
-  ralentizar: 0
-  velocidadRanetizado: 0
-  isVertical: 1
-  moveUpToDown: 0
-  moveLeftToRight: 0
-  tipoObjeto: 3
+  objetoBase: {fileID: 11400000, guid: 0a23cc9f76d8b074d807a4737d1a259a, type: 2}
+--- !u!114 &7365515399926761728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684669883572772485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c85ad32a9a58264abe4102dd2d06007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particulasDiamante: {fileID: 6066985761684802205, guid: ddc47be2297ffdc42b15b27ccd7aedc8,
+    type: 3}
+  puntuacion: 1
+--- !u!114 &-8495028904529799302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684669883572772485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8d603fcf1da394bbf51e090d219aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetForce: 3
 --- !u!65 &4338761302088450439
 BoxCollider:
   m_ObjectHideFlags: 0

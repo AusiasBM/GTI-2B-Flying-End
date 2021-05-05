@@ -11,18 +11,17 @@ public class CrearPajaros : MonoBehaviour
 
     //Radio de la circunferencia
     public float rangoCreacion = 5.25f;
-    public bool ralentizar = false;
 
     private Dictionary<GameObject, int> pajarosPrioridades = new Dictionary<GameObject, int>();
 
     CrearGameObject crear;
+    RalentizadorVelocidad ralentizador;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameObject = new GameObject();
-        gameObject.AddComponent<CrearGameObject>();
-        crear = gameObject.GetComponent<CrearGameObject>();
-        Destroy(gameObject);
+        ralentizador = RalentizadorVelocidad.Instance;
+        crear = CrearGameObject.Instance;
+
 
         for (int i = 0; i < listaPajaros.Length; i++)
         {
@@ -37,7 +36,7 @@ public class CrearPajaros : MonoBehaviour
     void crearPajaro()
     {
         StartCoroutine(crear.crearObjetoPrioridad(this.transform, pajarosPrioridades, rangoCreacion, false));
-        if (ralentizar)
+        if (ralentizador.ralentizar)
         {
             Invoke("crearPajaro", Random.Range(8f, 10f));
         }

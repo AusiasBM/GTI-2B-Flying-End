@@ -14,94 +14,56 @@ public class Colision : MonoBehaviour
     public GameObject particulasDiamante;
     public GameObject particulasAvion;
     public GameObject particulasPajaro;
-    public GameObject jugador;
     public Image UIImageBoost;
     public Image UIImageBoostVida;
-
-    public GameObject vida;
-    private Image barraSalud;
 
     public float fuerzaImpactoPajaro = 3f;
     public float fuerzaImpactoPieza = 2f;
 
-    private bool isInmune = false;
-
-    private bool tiempoRalentizado = false;
-    private bool controlRalentizacion = false;
-
-    GameObject[] piezas;
-    GameObject[] pajaros;
-    GameObject[] spawnLateral;
     
-    private int salud = 9;
+
+    
 
     private TiemblaCamara tiemblaCamara;
-
-    private void quitarVida(int vidaMenos)
-    {
-
-        salud = salud - vidaMenos;
-
-        if (salud == 0)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene("GameOver");
-        }
-
-        barraSalud.sprite = Resources.Load<Sprite>("Sprites/Hud/Vida/vida" + salud);
-    }
+    
 
     Rigidbody rb;
     private bool tiembla;
 
+    RalentizadorVelocidad ralentizador;
+
     // Start is called before the first frame update
     void Start()
     {
+        ralentizador = RalentizadorVelocidad.Instance;
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
         UIImageBoost = GameObject.Find("ImgBoost").GetComponent<Image>();
         UIImageBoostVida = GameObject.Find("barraVidaBoost").GetComponent<Image>();
-        barraSalud = vida.GetComponent<Image>();
     }
 
 
     void Update()
     {
 
-        if (tiempoRalentizado)
-        {
-            ralentizarTiempo("Pieza", true);
-            ralentizarTiempo("Pajaro", true);
-            ralentizarTiempo("Lateral", true);
-            ralentizarTiempo("Superior", true);
-        }
-
-        if (controlRalentizacion)
-        {
-            controlRalentizacion = false;
-
-            ralentizarTiempo("Pieza", false);
-            ralentizarTiempo("Pajaro", false);
-            ralentizarTiempo("Lateral", false);
-            ralentizarTiempo("Superior", false);
-        }//*/
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<ObjetoJuego>() != null)
+        if (collision.gameObject.GetComponent<MovimientoObjeto>() != null)
         {
-            ObjetoJuego oj = collision.gameObject.GetComponent<ObjetoJuego>();
-            ObjetoJuego.Tipo value = oj.tipoObjeto;
+            MovimientoObjeto oj = collision.gameObject.GetComponent<MovimientoObjeto>();
+            var value = oj.objetoBase.tipoObjeto;
+
             Debug.Log(value);
 
-            switch (oj.tipoObjeto)
+            switch (value)
             {
-                case ObjetoJuego.Tipo.PiezaAvion:
+                /*case ObjetoScrptBase.Tipo.PiezaAvion:
                     if (!isInmune)
                     {
-                        quitarVida(2);
+                        Salud -= 0.2f;
                     }
 
                     GameObject particulas = generarParticulas(particulasAvion, oj.transform);
@@ -120,14 +82,14 @@ public class Colision : MonoBehaviour
                     StartCoroutine(delay(particulas, 1));
                     break;
 
-                case ObjetoJuego.Tipo.Pajaro:
+                case ObjetoScrptBase.Tipo.Pajaro:
                     if (!isInmune)
                     {
-                        quitarVida(1);
+                        Salud -= 0.1f;
                     }
 
                     GameObject p2 = generarParticulas(particulasPajaro, oj.transform);
-                    if (oj.moveLeftToRight)
+                    if (oj.objetoBase.moveLeftToRight)
                     {
                         rb.AddForce(transform.right * fuerzaImpactoPajaro, ForceMode.Impulse);
                     }
@@ -138,50 +100,43 @@ public class Colision : MonoBehaviour
 
                     Destroy(collision.gameObject);
                     StartCoroutine(delay(p2, 1));
-                    break;
+                    break;*/
 
-                case ObjetoJuego.Tipo.Moneda:
+                /*case ObjetoScrptBase.Tipo.Moneda:
                     GameObject p3 = generarParticulas(particulasMoneda, oj.transform);
                     GameController.Score += puntuacion;
                     Destroy(collision.gameObject);
                     StartCoroutine(delay(p3, 1));
-                    break;
+                    break;*/
 
-                case ObjetoJuego.Tipo.Diamante:
+               /* case ObjetoScrptBase.Tipo.Diamante:
                     GameObject p4 = generarParticulas(particulasDiamante, oj.transform);
                     GameController.ScoreDiamante += puntuacionDiamante;
                     Destroy(collision.gameObject);
                     StartCoroutine(delay(p4, 1));
                     break;
 
-                case ObjetoJuego.Tipo.BoostIman:
-                    Debug.Log("IMAN!!");
+                case ObjetoScrptBase.Tipo.BoostIman:
                     Destroy(collision.gameObject);
                     UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/iman");
                     UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/barra");
                     StartCoroutine(delayImgBoost(5));
                     break;
 
-                case ObjetoJuego.Tipo.BoostInmunidad:
-                    isInmune = true;
-                    StartCoroutine(delayInmunidad(10));
-                    Debug.Log("INMUNIDAD!!");
-                    Destroy(collision.gameObject);
+                /*case ObjetoScrptBase.Tipo.BoostInmunidad:
                     UIImageBoost.sprite = Resources.Load<Sprite>("Sprites/inmunidad");
                     UIImageBoostVida.sprite = Resources.Load<Sprite>("Sprites/barra");
                     StartCoroutine(delayImgBoost(10));
-                    break;
+                    break;*/
 
-                case ObjetoJuego.Tipo.BoostTiempo:
-                    Destroy(collision.gameObject);
-                    tiempoRalentizado = true;
+                /*case ObjetoScrptBase.Tipo.BoostTiempo:
                     StartCoroutine(delayTiempo(10));
-                    break;
+                    break;*/
 
                 default:
                     Debug.Log("Nada!!");
                     break;
-            }
+            }//*/
 
         }
     }
@@ -203,17 +158,7 @@ public class Colision : MonoBehaviour
     IEnumerator delayInmunidad(int seconds)
     {
         yield return new WaitForSeconds(seconds);
-        isInmune = false;
         Debug.Log("NO INMUNEEEE!!");
-    }
-
-
-    IEnumerator delayTiempo(int seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        tiempoRalentizado = false;
-        controlRalentizacion = true;
-
     }
 
     private GameObject generarParticulas(GameObject tipoParticulas, Transform objeto)
@@ -222,30 +167,11 @@ public class Colision : MonoBehaviour
         return Instantiate(tipoParticulas, pos, Quaternion.identity);
     }
 
-    private void ralentizarTiempo(string tag, bool isRalentizado)
+    IEnumerator delayTiempo(int seconds)
     {
-        GameObject[] lista = GameObject.FindGameObjectsWithTag(tag);
-        if (lista.Length != 0)
-        {
-            foreach (GameObject g in lista)
-            {
-                if (tag == "Pieza" || tag == "Pajaro")
-                {
-                    g.GetComponent<ObjetoJuego>().ralentizar = isRalentizado;
-                }
-                else if(tag == "Lateral")
-                {
-                    g.GetComponent<CrearPajaros>().ralentizar = isRalentizado;
-                }
-                else
-                {
-                    g.GetComponent<CrearPiezas>().ralentizar = isRalentizado;
-                }
-
-            }
-        }
+        yield return new WaitForSeconds(seconds);
+        ralentizador.ralentizarObjetos(false);
     }
-
 
 }
 

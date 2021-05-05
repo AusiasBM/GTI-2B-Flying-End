@@ -92,7 +92,8 @@ GameObject:
   - component: {fileID: 436376039662482293}
   - component: {fileID: -8858183549189068}
   - component: {fileID: 947921386747141614}
-  - component: {fileID: 8557534458548554702}
+  - component: {fileID: -4642296614488192790}
+  - component: {fileID: 5777234550117494981}
   m_Layer: 0
   m_Name: HalconDcha
   m_TagString: Pajaro
@@ -144,7 +145,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8557534458548554702
+--- !u!114 &-4642296614488192790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,17 +154,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6263236608512586234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d7aa788f24be5d546a480a80286edd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 14
-  destruir: -14
-  ralentizar: 0
-  velocidadRanetizado: 1
-  isVertical: 0
-  moveUpToDown: 0
-  moveLeftToRight: 0
-  tipoObjeto: 1
+  objetoBase: {fileID: 11400000, guid: f24ca23e8ef2104419d081d75e77da9e, type: 2}
+--- !u!114 &5777234550117494981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263236608512586234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5ebfe7f1bf9f748a7d674490ae3a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particulasPajaro: {fileID: 6774833530543770311, guid: b75b3c7843dc943939be08989ccb00d8,
+    type: 3}
+  fuerzaImpactoPajaro: 3
 --- !u!1 &8411537922751107887
 GameObject:
   m_ObjectHideFlags: 0

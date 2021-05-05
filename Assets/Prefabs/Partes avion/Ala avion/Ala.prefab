@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6962836190810212188}
   - component: {fileID: 7730703990742070438}
-  - component: {fileID: 1114569780395060125}
+  - component: {fileID: 5997498150176086646}
+  - component: {fileID: -3276151194533108285}
+  - component: {fileID: -6004230337810824076}
   m_Layer: 0
   m_Name: Ala
   m_TagString: Pieza
@@ -50,7 +52,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1114569780395060125
+--- !u!114 &5997498150176086646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,17 +61,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 6701690948012980539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d7aa788f24be5d546a480a80286edd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 15
-  destruir: -9.5
-  ralentizar: 0
-  velocidadRanetizado: 1
-  isVertical: 1
-  moveUpToDown: 1
-  moveLeftToRight: 0
-  tipoObjeto: 0
+  objetoBase: {fileID: 11400000, guid: 32610f60eb2607d4f939a9367dbe903a, type: 2}
+--- !u!114 &-3276151194533108285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701690948012980539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe91bcc580d82684d90d4815ca38bd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particulasAvion: {fileID: 6774833530543770311, guid: b75b3c7843dc943939be08989ccb00d8,
+    type: 3}
+  fuerzaImpactoPieza: 2
+--- !u!114 &-6004230337810824076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701690948012980539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2cf00519a4c4247880b292bf3ba91f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7106042515244236024
 GameObject:
   m_ObjectHideFlags: 0

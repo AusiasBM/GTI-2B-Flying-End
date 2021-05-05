@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2056714297282593728}
   - component: {fileID: 3812810063628392821}
-  - component: {fileID: 3687283610462928404}
+  - component: {fileID: 8426340032864023345}
+  - component: {fileID: -3538593373103609107}
+  - component: {fileID: -8114924917709183838}
   m_Layer: 0
   m_Name: prefabMoneda
   m_TagString: Untagged
@@ -49,7 +51,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3687283610462928404
+--- !u!114 &8426340032864023345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,17 +60,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 785572107618429042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d7aa788f24be5d546a480a80286edd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 3
-  destruir: 9.5
-  ralentizar: 0
-  velocidadRanetizado: 0
-  isVertical: 1
-  moveUpToDown: 0
-  moveLeftToRight: 0
-  tipoObjeto: 2
+  objetoBase: {fileID: 11400000, guid: 1b045ed59ec53aa41a7d5d3b1d09c868, type: 2}
+--- !u!114 &-3538593373103609107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785572107618429042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c206cfee071f4684b931ac3a1e6e5b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntuacion: 20
+  particulasMoneda: {fileID: 6774833530543770311, guid: c1d61802a6cd5364c9902c0660e92537,
+    type: 3}
+--- !u!114 &-8114924917709183838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785572107618429042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8d603fcf1da394bbf51e090d219aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetForce: 3
+--- !u!135 &1991482476979283416
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011848969439837427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &4969912572398974789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118,19 +154,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9011848969439837427}
   m_Mesh: {fileID: 0}
---- !u!135 &1991482476979283416
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9011848969439837427}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.25
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8201597212415967650
 PrefabInstance:
   m_ObjectHideFlags: 0

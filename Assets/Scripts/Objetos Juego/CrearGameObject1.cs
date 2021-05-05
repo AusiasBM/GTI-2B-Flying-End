@@ -15,6 +15,19 @@ public class CrearGameObject : MonoBehaviour
 
     */
 
+    private static CrearGameObject instance;
+
+    public static CrearGameObject Instance { get => instance; }
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+    }
+
     public IEnumerator crearObjeto(Transform spawner, IList<GameObject> array, float radio, bool rotarObjeto, bool isVertical)
     {
         yield return new WaitForSeconds(0);

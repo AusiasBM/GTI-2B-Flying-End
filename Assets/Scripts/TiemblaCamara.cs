@@ -6,15 +6,21 @@ public class TiemblaCamara : MonoBehaviour
 {
     public Animator AnimacionCamara;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static TiemblaCamara instance;
 
-    // Update is called once per frame
-    void Update()
+    public static TiemblaCamara Instance { get => instance; }
+
+    void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            DestroyImmediate(gameObject);
+        }
     }
 
     public void CamTiembla()

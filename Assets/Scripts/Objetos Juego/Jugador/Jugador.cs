@@ -10,8 +10,26 @@ public class Jugador : MonoBehaviour
     public Transform LimiteUp;
     public Transform LimiteDown;
 
+    public bool isInmune = false;
+    public bool isMagnetic = false;
 
-    Rigidbody rb;
+    private static Jugador instance;
+    public static Jugador Instance { get => instance; }
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            DestroyImmediate(gameObject);
+        }
+    }
+
+    public Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +79,31 @@ public class Jugador : MonoBehaviour
             transform.position = new Vector3(transform.position.x, LimiteDown.position.y, 0);
         }
 
+    }
+
+    public void efectoTemporal(int seconds)
+    {
+        StartCoroutine(delay(10));
+    }
+
+    public IEnumerator delay(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        isInmune = false;
+        isMagnetic = false;
+    }
+
+    public void generarParticulas(GameObject tipoParticulas, Transform objeto)
+    {
+        Vector3 pos = new Vector3(objeto.transform.position.x, objeto.transform.position.y, 0);
+        GameObject particulas = Instantiate(tipoParticulas, pos, Quaternion.identity);
+        StartCoroutine(delay(particulas, 1));
+    }
+
+    IEnumerator delay(GameObject particulas, int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(particulas);
     }
 
 }

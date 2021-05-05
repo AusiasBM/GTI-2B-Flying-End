@@ -37,7 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3035265954425380712}
   - component: {fileID: 107115587441626549}
-  - component: {fileID: 6626544842103591033}
+  - component: {fileID: 7164698519165517618}
+  - component: {fileID: -3037796114616993808}
   m_Layer: 0
   m_Name: prefabIman
   m_TagString: Untagged
@@ -76,7 +77,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6626544842103591033
+--- !u!114 &7164698519165517618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,17 +86,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4844643883530458213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d7aa788f24be5d546a480a80286edd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 3
-  destruir: 9.5
-  ralentizar: 0
-  velocidadRanetizado: 0
-  isVertical: 1
-  moveUpToDown: 0
-  moveLeftToRight: 0
-  tipoObjeto: 5
+  objetoBase: {fileID: 11400000, guid: 41844ff4614205d479a218e9260c27a4, type: 2}
+--- !u!114 &-3037796114616993808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844643883530458213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ddfd0244386e241b546d1c7a6fcccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3972523493804467908
 PrefabInstance:
   m_ObjectHideFlags: 0

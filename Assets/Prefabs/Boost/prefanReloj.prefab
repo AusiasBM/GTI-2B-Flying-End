@@ -86,7 +86,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2728087793381626275}
   - component: {fileID: 4739616016488958402}
-  - component: {fileID: 8172683301574329587}
+  - component: {fileID: -3657599326011139096}
+  - component: {fileID: -4993199198375105699}
   m_Layer: 0
   m_Name: prefanReloj
   m_TagString: Untagged
@@ -125,7 +126,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8172683301574329587
+--- !u!114 &-3657599326011139096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,17 +135,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5905265489006865330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639d7ee43ec2f8d458bd9f8ee584ccbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d7aa788f24be5d546a480a80286edd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 3
-  destruir: 9.5
-  ralentizar: 0
-  velocidadRanetizado: 0
-  isVertical: 1
-  moveUpToDown: 0
-  moveLeftToRight: 0
-  tipoObjeto: 6
+  objetoBase: {fileID: 11400000, guid: 62421057bdb2f134797c2564dccaae1a, type: 2}
+--- !u!114 &-4993199198375105699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905265489006865330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468041d58a058be4eb50910aed367c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3671775448323613516
 PrefabInstance:
   m_ObjectHideFlags: 0
