@@ -29,7 +29,7 @@ public class Jugador : MonoBehaviour
         }
     }
 
-    public Rigidbody rb;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
