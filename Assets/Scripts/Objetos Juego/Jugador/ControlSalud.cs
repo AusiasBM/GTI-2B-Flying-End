@@ -15,7 +15,7 @@ public class ControlSalud : MonoBehaviour
     public void quitarVida(int vidaMenos)
     {
 
-       /* salud = salud - vidaMenos;
+       salud = salud - vidaMenos;
 
         if (salud == 0)
         {
@@ -23,7 +23,7 @@ public class ControlSalud : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-        barraSalud.sprite = Resources.Load<Sprite>("Sprites/Hud/Vida/vida" + salud);*/
+        barraSalud.sprite = Resources.Load<Sprite>("Sprites/Hud/Vida/vida" + salud);
     }
 
     private static ControlSalud instance;
