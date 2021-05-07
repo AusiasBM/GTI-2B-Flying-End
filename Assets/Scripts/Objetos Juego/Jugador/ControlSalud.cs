@@ -17,7 +17,8 @@ public class ControlSalud : MonoBehaviour
 
        salud = salud - vidaMenos;
 
-        if (salud <= 0.1)
+        //Evitar errors de coma flotant
+        if (salud <= 0)
         {
             Destroy(gameObject);
             SceneManager.LoadScene("GameOver");
