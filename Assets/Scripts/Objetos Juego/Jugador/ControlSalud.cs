@@ -17,7 +17,7 @@ public class ControlSalud : MonoBehaviour
 
        salud = salud - vidaMenos;
 
-        if (salud == 0)
+        if (salud <= 0.1)
         {
             Destroy(gameObject);
             SceneManager.LoadScene("GameOver");

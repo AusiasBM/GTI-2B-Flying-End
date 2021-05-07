@@ -64,7 +64,16 @@ public class Fondo : MonoBehaviour
         }
         else
         {
-            CarrilDownNiebla.GetComponent<CrearNiebla>().activo = false;
+            try
+            {
+                CarrilDownNiebla.GetComponent<CrearNiebla>().activo = false;
+            }
+            catch
+            {
+                //Destruir objeto cuando se ponga la escena de Game Over
+                Destroy(gameObject);
+            }
+            
         }
     }
 
