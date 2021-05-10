@@ -15,18 +15,12 @@ public class Fondo : MonoBehaviour
 
     public Sprite sprite1;
 
-    private SpriteRenderer spriteRenderer1;
-
     public Sprite sprite2;
-
-    private SpriteRenderer spriteRenderer2;
 
 
     void Start()
     {
         estaFondo1 = true;
-        spriteRenderer1 = fondo2.GetComponent<SpriteRenderer>();
-        spriteRenderer2 = fondo1.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -36,45 +30,45 @@ public class Fondo : MonoBehaviour
         fondo1.transform.Translate(fondo1.transform.up * velocidad * Time.deltaTime);
         fondo2.transform.Translate(fondo2.transform.up * velocidad * Time.deltaTime);
 
-        GameController.ScoreMetros += 0.1f;
+        GameController.ScoreMetros += 0.1f * velocidad * Time.deltaTime;
 
         if (fondo2.transform.position.y >= 0 && !estaFondo2)
         {
             Debug.Log("CAMBIA DE FONDO");
-            fondo1.transform.Translate(0, posRecolocar, 0);
-            //fondo1.position = new Vector3(0, posRecolocar, fondo1.position.z);
+            fondo1.transform.position = new Vector3(0, posRecolocar, fondo1.transform.position.z);
             estaFondo2 = true;
             estaFondo1 = false;
             //spriteRenderer1.sprite = sprite1;
-
+            if (GameController.ScoreMetros >= 2f && GameController.ScoreMetros <= 100f)
+            {
+                fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+            }
         }
 
         if (fondo1.transform.position.y >= 0 && !estaFondo1)
         {
             Debug.Log("CAMBIA DE FONDO");
-            fondo2.transform.Translate(0, posRecolocar, 0);
+            fondo2.transform.position = new Vector3(0, posRecolocar, fondo2.transform.position.z);
             estaFondo1 = true;
             estaFondo2 = false;
             //spriteRenderer2.sprite = sprite2;
+            if (GameController.ScoreMetros >= 2f && GameController.ScoreMetros <= 100f)
+            {
+                fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+            }
         }
 
-        if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 20f)
+        if (GameController.ScoreMetros >= 1000f && GameController.ScoreMetros <= 20f)
         {
             CarrilDownNiebla.GetComponent<CrearNiebla>().activo = true;
         }
         else
         {
-            try
-            {
-                CarrilDownNiebla.GetComponent<CrearNiebla>().activo = false;
-            }
-            catch
-            {
-                //Destruir objeto cuando se ponga la escena de Game Over
-                Destroy(gameObject);
-            }
-            
+            CarrilDownNiebla.GetComponent<CrearNiebla>().activo = false;
         }
+
+
+
     }
 
 }
