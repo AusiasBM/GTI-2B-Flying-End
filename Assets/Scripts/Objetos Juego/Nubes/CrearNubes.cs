@@ -11,6 +11,7 @@ public class CrearNubes : MonoBehaviour
 
     public GameObject[] nubes;
     public float rangoCreacion = 8f;
+    public bool activo = true;
 
     CrearGameObject crear;
     // Start is called before the first frame update
@@ -28,6 +29,6 @@ public class CrearNubes : MonoBehaviour
     void crearNube()
     {
         StartCoroutine(crear.crearObjeto(this.transform, nubes, rangoCreacion, false, true));
-        Invoke("crearNube", Random.Range(2f, 5f));
+        if (activo) Invoke("crearNube", Random.Range(2f, 5f));
     }
 }

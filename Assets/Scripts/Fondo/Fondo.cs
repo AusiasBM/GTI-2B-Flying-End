@@ -11,11 +11,9 @@ public class Fondo : MonoBehaviour
     private bool estaFondo2 = false;
     private bool estaFondo1 = false;
 
-    public GameObject CarrilDownNiebla;
+    private bool nieblaHecho = false;
 
-    public Sprite sprite1;
-
-    public Sprite sprite2;
+    public GameObject CarrilDown;
 
 
     void Start()
@@ -39,9 +37,19 @@ public class Fondo : MonoBehaviour
             estaFondo2 = true;
             estaFondo1 = false;
             //spriteRenderer1.sprite = sprite1;
-            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 100f)
+            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 20f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+            }
+            if (GameController.ScoreMetros >= 20f && GameController.ScoreMetros <= 30f)
+            {
+                fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+            }
+            if (GameController.ScoreMetros >= 30f && GameController.ScoreMetros <= 40f)
+            {
+                CarrilDown.GetComponent<CrearNubes>().enabled = false;
+                CarrilDown.GetComponent<CrearNubes>().activo = false;
+                fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan1");
             }
         }
 
@@ -52,21 +60,35 @@ public class Fondo : MonoBehaviour
             estaFondo1 = true;
             estaFondo2 = false;
             //spriteRenderer2.sprite = sprite2;
-            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 100f)
+            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 20f)
             {
                 fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
             }
+            if (GameController.ScoreMetros >= 20f && GameController.ScoreMetros <= 30f)
+            {
+                fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+            }
+            if (GameController.ScoreMetros >= 30f && GameController.ScoreMetros <= 40f)
+            {
+                CarrilDown.GetComponent<CrearNubes>().enabled = false;
+                CarrilDown.GetComponent<CrearNubes>().activo = false;
+                fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan2");
+            }
         }
 
-        if (GameController.ScoreMetros > 5f && GameController.ScoreMetros < 15f)
+        if (GameController.ScoreMetros > 5f && GameController.ScoreMetros < 10f)
         {
-            CarrilDownNiebla.GetComponent<CrearNiebla>().activo = true;
-            CarrilDownNiebla.GetComponent<CrearNiebla>().enabled = true;
+            CarrilDown.GetComponent<CrearNiebla>().activo = true;
+            CarrilDown.GetComponent<CrearNiebla>().enabled = true;
+            nieblaHecho = true;
         }
-        else
+
+        if(GameController.ScoreMetros > 10f && nieblaHecho)
         {
-            CarrilDownNiebla.GetComponent<CrearNiebla>().activo = false;
-            CarrilDownNiebla.GetComponent<CrearNiebla>().enabled = false;
+            
+            CarrilDown.GetComponent<CrearNiebla>().activo = false;
+            CarrilDown.GetComponent<CrearNiebla>().enabled = false;
+            nieblaHecho = false;
         }
 
 

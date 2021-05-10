@@ -272,6 +272,7 @@ MonoBehaviour:
   - {fileID: 2563298894726766571, guid: 5d7ebc6ff3d3dad41892a67100222483, type: 3}
   - {fileID: 4992324197017597283, guid: b663805fa97b6f14984d6ff0fc6d45e2, type: 3}
   rangoCreacion: 8
+  activo: 1
 --- !u!114 &129997600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,9 +1263,7 @@ MonoBehaviour:
   posRecolocar: -42.7
   fondo1: {fileID: 1082402121}
   fondo2: {fileID: 389436040}
-  CarrilDownNiebla: {fileID: 129997596}
-  sprite1: {fileID: 21300000, guid: 449205827b89944ac8eaa9f391338bf2, type: 3}
-  sprite2: {fileID: 21300000, guid: 449205827b89944ac8eaa9f391338bf2, type: 3}
+  CarrilDown: {fileID: 129997596}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
