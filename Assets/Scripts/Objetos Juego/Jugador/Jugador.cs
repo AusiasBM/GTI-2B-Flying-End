@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Jugador : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Jugador : MonoBehaviour
     public Transform LimiteIzquierda;
     public Transform LimiteUp;
     public Transform LimiteDown;
+    public GameObject barraVidaBoost;
+    public GameObject imgBoost;
 
     public bool isInmune = false;
     public bool isMagnetic = false;
@@ -59,7 +62,7 @@ public class Jugador : MonoBehaviour
         }
 
 
-        //Evitar que salga de los límites por posibles colisiones
+        //Evitar que salga de los l?mites por posibles colisiones
         //Eje x
         if (transform.position.x > LimiteDerecha.position.x)
         {
@@ -81,14 +84,25 @@ public class Jugador : MonoBehaviour
 
     }
 
-    public void efectoTemporal(int seconds)
+    public void efectoTemporal(int seconds, string img)
     {
-        StartCoroutine(delay(10));
+        StartCoroutine(delay(10, img));
+        
     }
 
-    public IEnumerator delay(int seconds)
+    public IEnumerator delay(int seconds, string img)
     {
-        yield return new WaitForSeconds(seconds);
+        imgBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Hud/imgBoost/" + img);
+        int nombreVidaBoost = 5;
+        for (int i = 0; i <= seconds; i = i + 2)
+        {
+            barraVidaBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Hud/VidaBoost/boost" + nombreVidaBoost);
+            yield return new WaitForSeconds(seconds/5);
+            nombreVidaBoost--;
+        }
+
+        barraVidaBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/base");
+        imgBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/base");
         isInmune = false;
         isMagnetic = false;
     }

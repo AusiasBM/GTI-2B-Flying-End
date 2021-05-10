@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColisionInmunidad : MonoBehaviour
 {
@@ -15,8 +16,7 @@ public class ColisionInmunidad : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         jugador.isInmune = true;
-        jugador.efectoTemporal(10);
+        jugador.efectoTemporal(10, "inmunidad");
         Destroy(gameObject);
-        
     }
 }

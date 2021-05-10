@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346953826b140d14fb4f9409df1a414d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageBoost: {fileID: 192699786253651298, guid: 3ffb549fb47b44740baf2c1a0e0bb8e0,
+    type: 3}
 --- !u!65 &3335410719550241391
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ddfd0244386e241b546d1c7a6fcccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageBoost: {fileID: 192699786253651298, guid: 3ffb549fb47b44740baf2c1a0e0bb8e0,
+    type: 3}
 --- !u!1001 &3972523493804467908
 PrefabInstance:
   m_ObjectHideFlags: 0

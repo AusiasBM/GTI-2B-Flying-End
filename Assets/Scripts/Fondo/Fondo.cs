@@ -39,7 +39,7 @@ public class Fondo : MonoBehaviour
             estaFondo2 = true;
             estaFondo1 = false;
             //spriteRenderer1.sprite = sprite1;
-            if (GameController.ScoreMetros >= 2f && GameController.ScoreMetros <= 100f)
+            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 100f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
             }
@@ -52,19 +52,21 @@ public class Fondo : MonoBehaviour
             estaFondo1 = true;
             estaFondo2 = false;
             //spriteRenderer2.sprite = sprite2;
-            if (GameController.ScoreMetros >= 2f && GameController.ScoreMetros <= 100f)
+            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 100f)
             {
                 fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
             }
         }
 
-        if (GameController.ScoreMetros >= 1000f && GameController.ScoreMetros <= 20f)
+        if (GameController.ScoreMetros > 5f && GameController.ScoreMetros < 15f)
         {
             CarrilDownNiebla.GetComponent<CrearNiebla>().activo = true;
+            CarrilDownNiebla.GetComponent<CrearNiebla>().enabled = true;
         }
         else
         {
             CarrilDownNiebla.GetComponent<CrearNiebla>().activo = false;
+            CarrilDownNiebla.GetComponent<CrearNiebla>().enabled = false;
         }
 
 

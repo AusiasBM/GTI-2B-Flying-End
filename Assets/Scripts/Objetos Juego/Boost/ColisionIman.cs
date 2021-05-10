@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColisionIman : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class ColisionIman : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         jugador.isMagnetic = true;
-        jugador.efectoTemporal(10);
+        jugador.efectoTemporal(10, "iman");
         Destroy(gameObject);
     }
 }
