@@ -10,15 +10,17 @@ public class ColisionMoneda : MonoBehaviour
     public GameObject particulasMoneda;
 
     Jugador jugador;
+    GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
         jugador = Jugador.Instance;
+        gameController = GameController.Instance;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameController.Score += puntuacion;
+        gameController.Score += puntuacion;
         jugador.generarParticulas(particulasMoneda, this.transform);
         Destroy(gameObject);
     }

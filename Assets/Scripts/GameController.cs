@@ -5,25 +5,34 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public static int Score = 0;
-    public static int ScoreDiamante = 0;
-    public static float ScoreMetros = 0f;
+    public int Score = 0;
+    public int ScoreDiamante = 0;
+    public float ScoreMetros = 0f;
     public Text TextScore;
     public Text TextScoreDiamante;
     public Text TextScoreMetros;
-    public static GameController Gamecontroller;
+    private static GameController instance;
+    public static GameController Instance { get => instance; }
 
     void Awake()
     {
-        Gamecontroller = this;
+        if (instance == null)
+        {
+            instance = this;
+
+        }
+        else
+        {
+            DestroyImmediate(gameObject);
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Score = 0;
+        /*Score = 0;
         ScoreDiamante = 0;
-        ScoreMetros = 0f;
+        ScoreMetros = 0f;*/
     }
 
     // Update is called once per frame

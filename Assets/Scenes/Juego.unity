@@ -2078,7 +2078,6 @@ GameObject:
   - component: {fileID: 837325433}
   - component: {fileID: 837325432}
   - component: {fileID: 837325431}
-  - component: {fileID: 837325430}
   m_Layer: 5
   m_Name: PLAY
   m_TagString: Untagged
@@ -2105,18 +2104,6 @@ RectTransform:
   m_AnchoredPosition: {x: 900, y: 987}
   m_SizeDelta: {x: 50, y: 11}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &837325430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837325428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7081fe3b49d1d5047a36406d3208780b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &837325431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3443,7 +3430,6 @@ GameObject:
   - component: {fileID: 1861343145}
   - component: {fileID: 1861343144}
   - component: {fileID: 1861343143}
-  - component: {fileID: 1861343142}
   m_Layer: 5
   m_Name: pausedBtn
   m_TagString: Untagged
@@ -3470,18 +3456,6 @@ RectTransform:
   m_AnchoredPosition: {x: 900, y: 987}
   m_SizeDelta: {x: 50, y: 11}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &1861343142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861343140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7081fe3b49d1d5047a36406d3208780b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1861343143
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 956025168210588441}
-  - component: {fileID: 7947653700603136059}
   - component: {fileID: 5910491570316588125}
   - component: {fileID: 6114420647297127846}
   - component: {fileID: 4093947929395052855}
@@ -39,28 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7947653700603136059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336125250779687262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03381d844094e646995d51faa5e24a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntuacion: 20
-  puntuacionDiamante: 1
-  particulasMoneda: {fileID: 0}
-  particulasDiamante: {fileID: 0}
-  particulasAvion: {fileID: 0}
-  particulasPajaro: {fileID: 0}
-  UIImageBoost: {fileID: 0}
-  UIImageBoostVida: {fileID: 0}
-  fuerzaImpactoPajaro: 3
-  fuerzaImpactoPieza: 2
 --- !u!54 &5910491570316588125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -122,9 +99,10 @@ MonoBehaviour:
   LimiteIzquierda: {fileID: 0}
   LimiteUp: {fileID: 0}
   LimiteDown: {fileID: 0}
+  barraVidaBoost: {fileID: 0}
+  imgBoost: {fileID: 0}
   isInmune: 0
   isMagnetic: 0
-  rb: {fileID: 0}
 --- !u!114 &6291808591075635297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8245ef63fa4fbd048b78ee72a3b8434a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barraSalud: {fileID: 0}
-  salud: 1
+  vida: {fileID: 0}
 --- !u!114 &4551521184429784473
 MonoBehaviour:
   m_ObjectHideFlags: 0

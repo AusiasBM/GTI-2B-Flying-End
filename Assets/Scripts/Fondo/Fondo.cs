@@ -14,21 +14,22 @@ public class Fondo : MonoBehaviour
     private bool nieblaHecho = false;
 
     public GameObject CarrilDown;
-
+    GameController gameController;
 
     void Start()
     {
+        Debug.Log("INICIOOOOOOOOOOOOOOOOOOOOO");
         estaFondo1 = true;
+        gameController = GameController.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // En menos(-=) desplazamiento hacia abajo; en mas (+=) hacia arriba
         fondo1.transform.Translate(fondo1.transform.up * velocidad * Time.deltaTime);
         fondo2.transform.Translate(fondo2.transform.up * velocidad * Time.deltaTime);
 
-        GameController.ScoreMetros += 0.1f * velocidad * Time.deltaTime;
+        gameController.ScoreMetros += 0.1f * velocidad * Time.deltaTime;
 
         if (fondo2.transform.position.y >= 0 && !estaFondo2)
         {
@@ -36,16 +37,16 @@ public class Fondo : MonoBehaviour
             fondo1.transform.position = new Vector3(0, posRecolocar, fondo1.transform.position.z);
             estaFondo2 = true;
             estaFondo1 = false;
-            //spriteRenderer1.sprite = sprite1;
-            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 20f)
+
+            if (gameController.ScoreMetros >= 10f && gameController.ScoreMetros <= 20f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
             }
-            if (GameController.ScoreMetros >= 20f && GameController.ScoreMetros <= 30f)
+            if (gameController.ScoreMetros >= 20f && gameController.ScoreMetros <= 30f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
             }
-            if (GameController.ScoreMetros >= 30f && GameController.ScoreMetros <= 40f)
+            if (gameController.ScoreMetros >= 30f && gameController.ScoreMetros <= 40f)
             {
                 CarrilDown.GetComponent<CrearNubes>().enabled = false;
                 CarrilDown.GetComponent<CrearNubes>().activo = false;
@@ -59,16 +60,16 @@ public class Fondo : MonoBehaviour
             fondo2.transform.position = new Vector3(0, posRecolocar, fondo2.transform.position.z);
             estaFondo1 = true;
             estaFondo2 = false;
-            //spriteRenderer2.sprite = sprite2;
-            if (GameController.ScoreMetros >= 10f && GameController.ScoreMetros <= 20f)
+
+            if (gameController.ScoreMetros >= 10f && gameController.ScoreMetros <= 20f)
             {
                 fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
             }
-            if (GameController.ScoreMetros >= 20f && GameController.ScoreMetros <= 30f)
+            if (gameController.ScoreMetros >= 20f && gameController.ScoreMetros <= 30f)
             {
                 fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
             }
-            if (GameController.ScoreMetros >= 30f && GameController.ScoreMetros <= 40f)
+            if (gameController.ScoreMetros >= 30f && gameController.ScoreMetros <= 40f)
             {
                 CarrilDown.GetComponent<CrearNubes>().enabled = false;
                 CarrilDown.GetComponent<CrearNubes>().activo = false;
@@ -76,22 +77,20 @@ public class Fondo : MonoBehaviour
             }
         }
 
-        if (GameController.ScoreMetros > 5f && GameController.ScoreMetros < 10f)
+        if (gameController.ScoreMetros > 5f && gameController.ScoreMetros < 10f)
         {
             CarrilDown.GetComponent<CrearNiebla>().activo = true;
             CarrilDown.GetComponent<CrearNiebla>().enabled = true;
             nieblaHecho = true;
         }
 
-        if(GameController.ScoreMetros > 10f && nieblaHecho)
+        if(gameController.ScoreMetros > 10f && nieblaHecho)
         {
             
             CarrilDown.GetComponent<CrearNiebla>().activo = false;
             CarrilDown.GetComponent<CrearNiebla>().enabled = false;
             nieblaHecho = false;
         }
-
-
 
     }
 

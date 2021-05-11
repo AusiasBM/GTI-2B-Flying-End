@@ -11,15 +11,17 @@ public class ColisionDiamante : MonoBehaviour
 
 
     Jugador jugador;
+    GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
         jugador = Jugador.Instance;
+        gameController = GameController.Instance;
     }
 
         private void OnCollisionEnter(Collision collision)
     {
-        GameController.ScoreDiamante += puntuacion;
+        gameController.ScoreDiamante += puntuacion;
         jugador.generarParticulas(particulasDiamante, this.transform);
         Destroy(gameObject);
     }
