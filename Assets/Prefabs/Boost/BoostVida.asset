@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9b71c721832c444b22669c6bfbbf7c, type: 3}
   m_Name: BoostVida
   m_EditorClassIdentifier: 
-  velocidad: 0
-  destruir: 0
-  isVertical: 0
+  velocidad: 3
+  destruir: 9.5
+  isVertical: 1
   moveUpToDown: 0
   moveLeftToRight: 0
-  tipoObjeto: 0
+  tipoObjeto: 7
