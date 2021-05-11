@@ -12,12 +12,12 @@ public class ControlSalud : MonoBehaviour
     private Image barraSalud;
     private int salud = 9;
 
+    //Metodo para quitar vida cuando impacte un objeto o pajaro
     public void quitarVida(int vidaMenos)
     {
 
        salud = salud - vidaMenos;
 
-        //Evitar errors de coma flotant
         if (salud <= 0)
         {
             Destroy(gameObject);
@@ -25,6 +25,24 @@ public class ControlSalud : MonoBehaviour
         }
 
         barraSalud.sprite = Resources.Load<Sprite>("Sprites/Hud/Vida/vida" + salud);
+    }
+
+    //Metodo para ganar vida al coger el boost de vida
+    public void ganarVida(int vidaMas)
+    {
+        if(salud < 9)
+        {
+            if((salud + vidaMas) < 9){
+                salud += vidaMas;
+            }
+            else
+            {
+                salud = 9;
+            }
+            barraSalud.sprite = Resources.Load<Sprite>("Sprites/Hud/Vida/vida" + salud);
+
+        }
+        Debug.Log(salud);
     }
 
     private static ControlSalud instance;
