@@ -18,7 +18,6 @@ public class Fondo : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("INICIOOOOOOOOOOOOOOOOOOOOO");
         estaFondo1 = true;
         gameController = GameController.Instance;
     }
@@ -29,7 +28,7 @@ public class Fondo : MonoBehaviour
         fondo1.transform.Translate(fondo1.transform.up * velocidad * Time.deltaTime);
         fondo2.transform.Translate(fondo2.transform.up * velocidad * Time.deltaTime);
 
-        gameController.ScoreMetros += 0.1f * velocidad * Time.deltaTime;
+        gameController.ScoreMetros += 1f * velocidad * Time.deltaTime;
 
         if (fondo2.transform.position.y >= 0 && !estaFondo2)
         {
@@ -38,15 +37,15 @@ public class Fondo : MonoBehaviour
             estaFondo2 = true;
             estaFondo1 = false;
 
-            if (gameController.ScoreMetros >= 10f && gameController.ScoreMetros <= 20f)
+            if (gameController.ScoreMetros >= 100f && gameController.ScoreMetros <= 200f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
             }
-            if (gameController.ScoreMetros >= 20f && gameController.ScoreMetros <= 30f)
+            if (gameController.ScoreMetros >= 200f && gameController.ScoreMetros <= 300f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
             }
-            if (gameController.ScoreMetros >= 30f && gameController.ScoreMetros <= 40f)
+            if (gameController.ScoreMetros >= 300f && gameController.ScoreMetros <= 400f)
             {
                 CarrilDown.GetComponent<CrearNubes>().enabled = false;
                 CarrilDown.GetComponent<CrearNubes>().activo = false;
@@ -61,15 +60,15 @@ public class Fondo : MonoBehaviour
             estaFondo1 = true;
             estaFondo2 = false;
 
-            if (gameController.ScoreMetros >= 10f && gameController.ScoreMetros <= 20f)
+            if (gameController.ScoreMetros >= 100f && gameController.ScoreMetros <= 200f)
             {
                 fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
             }
-            if (gameController.ScoreMetros >= 20f && gameController.ScoreMetros <= 30f)
+            if (gameController.ScoreMetros >= 200f && gameController.ScoreMetros <= 300f)
             {
                 fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
             }
-            if (gameController.ScoreMetros >= 30f && gameController.ScoreMetros <= 40f)
+            if (gameController.ScoreMetros >= 300f && gameController.ScoreMetros <= 400f)
             {
                 CarrilDown.GetComponent<CrearNubes>().enabled = false;
                 CarrilDown.GetComponent<CrearNubes>().activo = false;
@@ -77,14 +76,14 @@ public class Fondo : MonoBehaviour
             }
         }
 
-        if (gameController.ScoreMetros > 5f && gameController.ScoreMetros < 10f)
+        if (gameController.ScoreMetros > 50f && gameController.ScoreMetros < 100f)
         {
             CarrilDown.GetComponent<CrearNiebla>().activo = true;
             CarrilDown.GetComponent<CrearNiebla>().enabled = true;
             nieblaHecho = true;
         }
 
-        if(gameController.ScoreMetros > 10f && nieblaHecho)
+        if(gameController.ScoreMetros > 100f && nieblaHecho)
         {
             
             CarrilDown.GetComponent<CrearNiebla>().activo = false;

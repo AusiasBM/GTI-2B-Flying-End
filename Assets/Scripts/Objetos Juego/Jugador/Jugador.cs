@@ -84,6 +84,7 @@ public class Jugador : MonoBehaviour
 
     }
 
+    //Metodo para la duración del efecto de los boosts cuando el jugador los coge(colisión)
     public void efectoTemporal(int seconds, string img)
     {
         StartCoroutine(delay(10, img));
@@ -107,6 +108,7 @@ public class Jugador : MonoBehaviour
         isMagnetic = false;
     }
 
+    //Generar partículas al colisionar con algunos objetos
     public void generarParticulas(GameObject tipoParticulas, Transform objeto)
     {
         Vector3 pos = new Vector3(objeto.transform.position.x, objeto.transform.position.y, 0);
