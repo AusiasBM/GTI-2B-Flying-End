@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9b71c721832c444b22669c6bfbbf7c, type: 3}
   m_Name: PiezaAvion
   m_EditorClassIdentifier: 
-  velocidad: 15
+  velocidad: 13
   destruir: -9.5
-  ralentizar: 0
-  velocidadRanetizado: 1
   isVertical: 1
   moveUpToDown: 1
   moveLeftToRight: 0
