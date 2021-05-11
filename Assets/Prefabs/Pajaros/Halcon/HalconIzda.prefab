@@ -198,6 +198,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: halconVolador
       objectReference: {fileID: 0}
+    - target: {fileID: 1863191399037859163, guid: 72e98196e16ecb448a29d57dc3f72de4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -9061296667661982993, guid: 72e98196e16ecb448a29d57dc3f72de4,
+        type: 3}
     - target: {fileID: 7492160409703099469, guid: 72e98196e16ecb448a29d57dc3f72de4,
         type: 3}
       propertyPath: m_DirtyAABB
@@ -233,6 +239,12 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.38865227
       objectReference: {fileID: 0}
+    - target: {fileID: 7492160409703099469, guid: 72e98196e16ecb448a29d57dc3f72de4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -9061296667661982993, guid: 72e98196e16ecb448a29d57dc3f72de4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e98196e16ecb448a29d57dc3f72de4, type: 3}
 --- !u!1 &8071944514218661936 stripped
