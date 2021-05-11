@@ -29,6 +29,7 @@ public class ObjetoScrptBase : ScriptableObject
         Diamante,
         BoostInmunidad,
         BoostIman,
-        BoostTiempo
+        BoostTiempo,
+        BoostVida
     }
 }
