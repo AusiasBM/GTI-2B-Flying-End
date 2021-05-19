@@ -21,6 +21,8 @@ public class FirebaseManager : MonoBehaviour
     private TMP_InputField loginPassword;
     [SerializeField]
     private TMP_InputField loginOutputText;
+    [SerializeField]
+    private TMP_InputField loginError;
     [Space(5f)]
 
     [Header("Register References")]
@@ -100,12 +102,12 @@ public class FirebaseManager : MonoBehaviour
 
     public void LoginButton()
     {
-
+        StartCoroutine(LoginLogic(loginEmail.text, loginPassword.text));
     }
 
     public void RegisterButton()
     {
-
+        StartCoroutine(RegisterLogic(registerUsername.text, registerEmail.text, registerPassword.text, registerConfirmPassword.text));
     }
 
     private IEnumerator LoginLogic(string _email, string _password)
@@ -141,7 +143,7 @@ public class FirebaseManager : MonoBehaviour
                     output = "Account Does Not Exist";
                     break;
             }
-            loginOutputText.text = output;
+            loginError.text = output;
         }
         else
         {
@@ -152,7 +154,7 @@ public class FirebaseManager : MonoBehaviour
             }
             else
             {
-                GameManager.instance.ChangeScene("Tienda");
+                loginError.text = "Verifique su correo y vuelva a intentarlo";
             }
         }
     }
@@ -239,4 +241,5 @@ public class FirebaseManager : MonoBehaviour
         }
 
     }
+   
 }
