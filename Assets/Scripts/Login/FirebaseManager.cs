@@ -36,6 +36,8 @@ public class FirebaseManager : MonoBehaviour
     private TMP_InputField registerConfirmPassword;
     [SerializeField]
     private TMP_InputField registerOutputText;
+    [SerializeField]
+    private TMP_InputField registerError;
 
     private void Awake()
     {
@@ -163,11 +165,11 @@ public class FirebaseManager : MonoBehaviour
     {
         if (_username == "")
         {
-            registerOutputText.text = "Please Enter A Username";
+            registerError.text = "Please Enter A Username";
         }
         else if(_password != _confirmPassword)
         {
-            registerOutputText.text = "Passwords Do not Match!";
+            registerError.text = "Passwords Do not Match!";
         }
         else
         {
@@ -200,7 +202,7 @@ public class FirebaseManager : MonoBehaviour
                         output = "Please Enter Your Password";
                         break;
                 }
-                registerOutputText.text = output;
+                registerError.text = output;
             }
             else
             {
@@ -231,11 +233,12 @@ public class FirebaseManager : MonoBehaviour
                             output = "Session Expired";
                             break;
                     }
-                    registerOutputText.text = output;
+                    registerError.text = output;
                 }
                 else
                 {
                     Debug.Log("Firebase User Create");
+                    
                 }
             }
         }
