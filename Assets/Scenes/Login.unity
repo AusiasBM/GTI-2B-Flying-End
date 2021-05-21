@@ -1457,13 +1457,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Loading...
+  m_Text: Waiting for verification
 --- !u!222 &349207783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2890,8 +2890,6 @@ MonoBehaviour:
   registerConfirmPassword: {fileID: 2120981995}
   registerOutputText: {fileID: 598189782}
   registerError: {fileID: 598189782}
-  loginUI: {fileID: 1901971323}
-  registerUI: {fileID: 1969561079}
 --- !u!1 &947192461
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,7 +3123,7 @@ MonoBehaviour:
   loginUI: {fileID: 1901971323}
   registerUI: {fileID: 1969561079}
   verifyEmailUI: {fileID: 97999519}
-  verifyEmailText: {fileID: 349207780}
+  verifyEmailText: {fileID: 0}
 --- !u!1 &1088077682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3360,10 +3358,22 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1177516259}
+  m_TargetGraphic: {fileID: 395586648}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1051491776}
+        m_TargetAssemblyTypeName: AuthUIManager, Assembly-CSharp
+        m_MethodName: LoginScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1177516259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3384,8 +3394,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e140652bdf3684ba38b03bbb6f7dcb9b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4860,7 +4870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VIRIFIED!
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 2f0a14d07bb9645d2ab9af5813a95da3, type: 2}
@@ -4870,7 +4880,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4893,7 +4903,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
