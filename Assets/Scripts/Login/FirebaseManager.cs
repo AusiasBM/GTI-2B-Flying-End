@@ -72,7 +72,7 @@ public class FirebaseManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Error check dependancies");
+            Debug.LogError("Error check dependencias");
         }
     }
 
@@ -127,7 +127,7 @@ public class FirebaseManager : MonoBehaviour
 
             if (!signedIn && user != null)
             {
-                Debug.Log("Signed Out");
+                Debug.Log("Sesión cerrada");
             }
 
             user = auth.CurrentUser;
@@ -173,19 +173,19 @@ public class FirebaseManager : MonoBehaviour
             switch (error)
             {
                 case AuthError.MissingEmail:
-                    output = "Please Enter Your Email";
+                    output = "Introduzca correo electrónico";
                     break;
                 case AuthError.MissingPassword:
-                    output = "Please Enter Your Password";
+                    output = "Introduzca contraseña";
                     break;
                 case AuthError.InvalidEmail:
-                    output = "Incorrect account";
+                    output = "Usuario incorrecto";
                     break;
                 case AuthError.WrongPassword:
-                    output = "Incorrect account";
+                    output = "Usuario incorrecto";
                     break;
                 case AuthError.UserNotFound:
-                    output = "Account Does Not Exist";
+                    output = "No existe esta cuenta";
                     break;
             }
             loginError.text = output;
@@ -209,11 +209,11 @@ public class FirebaseManager : MonoBehaviour
     {
         if (_username == "")
         {
-            registerError.text = "Please Enter A Username";
+            registerError.text = "Introduzca un nombre de usuario";
         }
         else if(_password != _confirmPassword)
         {
-            registerError.text = "Passwords Do not Match!";
+            registerError.text = "Las contraseñas no coinciden";
         }
         else
         {
@@ -231,19 +231,19 @@ public class FirebaseManager : MonoBehaviour
                 switch (error)
                 {
                     case AuthError.InvalidEmail:
-                        output = "Invalid Email";
+                        output = "Correo electrónico no válido";
                         break;
                     case AuthError.EmailAlreadyInUse:
-                        output = "Email Already In Use";
+                        output = "Ya existe una cuenta con este correo";
                         break;
                     case AuthError.WeakPassword:
-                        output = "Weak Password";
+                        output = "Contraseña errónea";
                         break;
                     case AuthError.MissingEmail:
-                        output = "Please Enter Your Email";
+                        output = "Introduzca su correo electrónico";
                         break;
                     case AuthError.MissingPassword:
-                        output = "Please Enter Your Password";
+                        output = "Introduzca su contraseña";
                         break;
                 }
                 registerError.text = output;
@@ -265,23 +265,23 @@ public class FirebaseManager : MonoBehaviour
 
                     FirebaseException firebaseException = (FirebaseException)registerTask.Exception.GetBaseException();
                     AuthError error = (AuthError)firebaseException.ErrorCode;
-                    string output = "Unknown Error, Please Try Again";
+                    string output = "Error inesperado, vuélvalo a intentar";
 
 
                     switch (error)
                     {
                         case AuthError.Cancelled:
-                            output = "Update User Cancelled";
+                            output = "Creación usuario cancelada";
                             break;
                         case AuthError.SessionExpired:
-                            output = "Session Expired";
+                            output = "La sesión ha caducado";
                             break;
                     }
                     registerError.text = output;
                 }
                 else
                 {
-                    Debug.Log("Firebase User Create");
+                    Debug.Log("Usuario creado en firebase");
 
                     StartCoroutine(SendVerificationEmail());
                 }
@@ -303,15 +303,15 @@ public class FirebaseManager : MonoBehaviour
                 FirebaseException firebaseException = (FirebaseException)emailTask.Exception.GetBaseException();
                 AuthError error = (AuthError)firebaseException.ErrorCode;
 
-                string output = "Unknown Error, try again";
+                string output = "Error inesperado, vuélvalo a intentar";
 
                 switch (error)
                 {
                     case AuthError.Cancelled:
-                        output = "Verification task was cancelled";
+                        output = "Verificación correo cancelada";
                         break;
                     case AuthError.InvalidRecipientEmail:
-                        output = "Invalid email";
+                        output = "Correo electrónico no válido";
                         break;
                     case AuthError.TooManyRequests:
                         output = "Too many request";
@@ -323,7 +323,7 @@ public class FirebaseManager : MonoBehaviour
             else
             {
                 AuthUIManager.instance.AwaitVerification(true, user.Email, null);
-                Debug.Log("Email sent successfully");
+                Debug.Log("Correo enviado exitosamente");
             }
         }
     }

@@ -63,11 +63,11 @@ public class AuthUIManager : MonoBehaviour
         verifyEmailUI.SetActive(true);
         if (_emailSent)
         {
-            verifyEmailText.text = $"Sent email!\nPlease verify {_email}";
+            verifyEmailText.text = $"Correo enviado!\nPor favor, verifique {_email}";
         }
         else
         {
-            verifyEmailText.text = $"Email not sent: {_output}\nPlease verify {_email}";
+            verifyEmailText.text = $"Correo no enviado: {_output}\nPor favor, verifique {_email}";
         }
     }
 }
