@@ -12,6 +12,8 @@ public class CrearPajaros : MonoBehaviour
     //Radio de la circunferencia
     public float rangoCreacion = 5.25f;
 
+    public bool activo = true;
+
     private Dictionary<GameObject, int> pajarosPrioridades = new Dictionary<GameObject, int>();
 
     CrearGameObject crear;
@@ -28,7 +30,7 @@ public class CrearPajaros : MonoBehaviour
             pajarosPrioridades.Add(listaPajaros[i], listaPrioridades[i]);
         }
 
-        //Repetir la invocación del método 
+        //Repetir la invocaci?n del m?todo 
         Invoke("crearPajaro", Random.Range(2f, 3.5f));
     }
 
@@ -36,14 +38,18 @@ public class CrearPajaros : MonoBehaviour
     void crearPajaro()
     {
         StartCoroutine(crear.crearObjetoPrioridad(this.transform, pajarosPrioridades, rangoCreacion, false));
-        if (ralentizador.ralentizar)
+        if (activo)
         {
-            Invoke("crearPajaro", Random.Range(8f, 10f));
+            if (ralentizador.ralentizar)
+            {
+                Invoke("crearPajaro", Random.Range(8f, 10f));
+            }
+            else
+            {
+                Invoke("crearPajaro", Random.Range(2f, 5.0f));
+            }
         }
-        else
-        {
-            Invoke("crearPajaro", Random.Range(2f, 5.0f));
-        }
+        
 
     }
 

@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 129997600}
   - component: {fileID: 129997601}
   - component: {fileID: 129997602}
+  - component: {fileID: 129997603}
   m_Layer: 0
   m_Name: CarrilDown
   m_TagString: Untagged
@@ -324,6 +325,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nieblas:
   - {fileID: 7956606639171865804, guid: 4101beb39074242fba17a47449879dc4, type: 3}
+  rangoCreacion: 8
+  activo: 1
+--- !u!114 &129997603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129997596}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390fba8e6bdcc4cb18532073db103768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocas:
+  - {fileID: 770373868938348786, guid: 289552b7d7a354207803653544a61417, type: 3}
   rangoCreacion: 8
   activo: 1
 --- !u!1 &131439465

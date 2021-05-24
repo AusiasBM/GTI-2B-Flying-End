@@ -49,6 +49,10 @@ public class Fondo : MonoBehaviour
             {
                 CarrilDown.GetComponent<CrearNubes>().enabled = false;
                 CarrilDown.GetComponent<CrearNubes>().activo = false;
+                CarrilDown.GetComponent<CrearRocas>().enabled = true;
+                CarrilDown.GetComponent<CrearPajaros>().enabled = false;
+                CarrilDown.GetComponent<CrearPajaros>().activo = false;
+
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan1");
             }
         }

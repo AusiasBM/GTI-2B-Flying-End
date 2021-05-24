@@ -9,10 +9,10 @@ public class ObjetoScrptBase : ScriptableObject
     //Velocidad de desplazamiento
     public float velocidad = 0f;
 
-    //Coordenada (X o Y segun su tipo de movimiento) a la que se destruirá
+    //Coordenada (X o Y segun su tipo de movimiento) a la que se destruir?
     public float destruir = 0f;
 
-    //Dirección del objeto
+    //Direcci?n del objeto
     public bool isVertical = false;
     public bool moveUpToDown = false;
     public bool moveLeftToRight = false;
@@ -20,7 +20,7 @@ public class ObjetoScrptBase : ScriptableObject
     //Tipo de objeto
     public Tipo tipoObjeto;
 
-    //En caso de crear un nuevo tipo de objeto, añadir al enum
+    //En caso de crear un nuevo tipo de objeto, a?adir al enum
     public enum Tipo
     {
         PiezaAvion,
@@ -30,6 +30,7 @@ public class ObjetoScrptBase : ScriptableObject
         BoostInmunidad,
         BoostIman,
         BoostTiempo,
-        BoostVida
+        BoostVida,
+        RocaVolcanica
     }
 }
