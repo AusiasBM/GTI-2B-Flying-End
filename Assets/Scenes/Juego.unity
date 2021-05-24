@@ -291,7 +291,7 @@ MonoBehaviour:
   - {fileID: 2533754496081381325, guid: e1103ac762ed649ebbf711a59c6a7337, type: 3}
   - {fileID: 5905265489006865330, guid: 3966f477103127b41a7abebd8c717eb1, type: 3}
   - {fileID: 2313252742523140015, guid: 5c124c13a05bcd0458d919698a2f2398, type: 3}
-  listaPrioridades: 05000000050000000500000005000000
+  listaPrioridades: 05000000f40100000f00000005000000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
@@ -2084,6 +2084,7 @@ MonoBehaviour:
   - {fileID: 6263236608512586234, guid: 12147a19e7a8c10498afca82b2adbd3a, type: 3}
   listaPrioridades: 050000000300000002000000
   rangoCreacion: 5.5
+  activo: 1
 --- !u!1 &837325428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2549,7 @@ MonoBehaviour:
   - {fileID: 636517733563486495, guid: 973f6b4f14ddae4408fd7d174a7ae169, type: 3}
   listaPrioridades: 050000000300000002000000
   rangoCreacion: 5.5
+  activo: 1
 --- !u!1 &1352950444
 GameObject:
   m_ObjectHideFlags: 0
