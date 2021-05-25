@@ -1,13 +1,21 @@
 using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
+using Firebase.Firestore;
+using Firebase.Unity;
 using TMPro;
 
 public class FirebaseManager : MonoBehaviour
 {
 
     public static FirebaseManager instance;
+
+    Usuario usuario;
+
+    FirestoreManager firestoreManager;
 
     [Header("Firebase")]
     public FirebaseAuth auth;
@@ -55,7 +63,9 @@ public class FirebaseManager : MonoBehaviour
 
     private void Start()
     {
+        firestoreManager = FirestoreManager.Instance;
         StartCoroutine(CheckAndFixDependancies());
+
     }
 
     private IEnumerator CheckAndFixDependancies()
@@ -66,7 +76,7 @@ public class FirebaseManager : MonoBehaviour
 
         var dependancyResult = checkAndFixDependanciesTask.Result;
 
-        if(dependancyResult == DependencyStatus.Available)
+        if (dependancyResult == DependencyStatus.Available)
         {
             InitializeFirebase();
         }
@@ -89,7 +99,7 @@ public class FirebaseManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        if(user != null)
+        if (user != null)
         {
             var reloadUserTask = user.ReloadAsync();
 
@@ -115,7 +125,7 @@ public class FirebaseManager : MonoBehaviour
             {
                 StartCoroutine(SendVerificationEmail());
             }
-            
+
         }
     }
 
@@ -195,6 +205,9 @@ public class FirebaseManager : MonoBehaviour
             if (user.IsEmailVerified)
             {
                 yield return new WaitForSeconds(1f);
+
+                firestoreManager.cargarInformacionUsuario(user.UserId);
+
                 GameManager.instance.ChangeScene("Menu");
             }
             else
@@ -211,7 +224,7 @@ public class FirebaseManager : MonoBehaviour
         {
             registerError.text = "Introduzca un nombre de usuario";
         }
-        else if(_password != _confirmPassword)
+        else if (_password != _confirmPassword)
         {
             registerError.text = "Las contraseñas no coinciden";
         }
@@ -283,12 +296,27 @@ public class FirebaseManager : MonoBehaviour
                 {
                     Debug.Log("Usuario creado en firebase");
 
+                    //Crear Documento del usuario en la colección "Users" de Firestore
+                    usuario = new Usuario
+                    {
+                        Username = _username,
+                        Email = _email,
+                        Uid = user.UserId,
+                        Monedas = 0,
+                        Diamantes = 0
+                    };
+
+
+                    firestoreManager.guardarInformacionUsuario(user.UserId, usuario);
+
                     StartCoroutine(SendVerificationEmail());
+
                 }
             }
         }
 
     }
+
 
     private IEnumerator SendVerificationEmail()
     {
@@ -298,7 +326,7 @@ public class FirebaseManager : MonoBehaviour
 
             yield return new WaitUntil(predicate: () => emailTask.IsCompleted);
 
-            if(emailTask.Exception != null)
+            if (emailTask.Exception != null)
             {
                 FirebaseException firebaseException = (FirebaseException)emailTask.Exception.GetBaseException();
                 AuthError error = (AuthError)firebaseException.ErrorCode;
@@ -327,5 +355,5 @@ public class FirebaseManager : MonoBehaviour
             }
         }
     }
-   
+
 }

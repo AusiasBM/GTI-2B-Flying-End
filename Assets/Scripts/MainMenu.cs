@@ -5,19 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    FirestoreManager firestoreManager;
+
     void Start()
     {
-        
+        firestoreManager = FirestoreManager.Instance;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+
     }
     public void CargarEscena(string nombreNivel)
     {
+        Debug.Log(firestoreManager.user.Monedas);
+        Debug.Log(firestoreManager.user.Diamantes);
         SceneManager.LoadScene(nombreNivel);
     }
 

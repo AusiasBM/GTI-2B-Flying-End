@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class ControlSalud : MonoBehaviour
 {
-
+    FirestoreManager firestoreManager;
+    GameController gameController;
     public GameObject vida;
     private Image barraSalud;
     private int salud = 9;
@@ -16,11 +17,13 @@ public class ControlSalud : MonoBehaviour
     public void quitarVida(int vidaMenos)
     {
 
-       salud = salud - vidaMenos;
+        salud = salud - vidaMenos;
 
         if (salud <= 0)
         {
             Destroy(gameObject);
+            firestoreManager.user.Monedas += gameController.Score;
+            firestoreManager.user.Diamantes += gameController.ScoreDiamante;
             SceneManager.LoadScene("GameOver");
         }
 
@@ -30,9 +33,10 @@ public class ControlSalud : MonoBehaviour
     //Metodo para ganar vida al coger el boost de vida
     public void ganarVida(int vidaMas)
     {
-        if(salud < 9)
+        if (salud < 9)
         {
-            if((salud + vidaMas) < 9){
+            if ((salud + vidaMas) < 9)
+            {
                 salud += vidaMas;
             }
             else
@@ -64,11 +68,13 @@ public class ControlSalud : MonoBehaviour
     void Start()
     {
         barraSalud = vida.GetComponent<Image>();
+        firestoreManager = FirestoreManager.Instance;
+        gameController = GameController.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

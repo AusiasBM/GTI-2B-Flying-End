@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "com.google.external-dependency-manager": "file:C:\\Users\\aibes\\Downloads\\External_dependency\\package",
     "com.google.firebase.app": "7.2.0",
     "com.google.firebase.auth": "7.2.0",
+    "com.google.firebase.firestore": "file:C:\\Users\\aibes\\Desktop\\package",
     "com.unity.2d.animation": "5.0.5",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.0.2",
