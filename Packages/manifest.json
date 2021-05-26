@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.google.external-dependency-manager": "file:C:\\Users\\aibes\\Downloads\\External_dependency\\package",
     "com.google.firebase.app": "7.2.0",
     "com.google.firebase.auth": "7.2.0",
     "com.unity.2d.animation": "5.0.5",
