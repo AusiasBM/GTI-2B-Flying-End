@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6291808591075635297}
   - component: {fileID: 2289269391327291697}
   - component: {fileID: 5677693852899744639}
+  - component: {fileID: 7246619170097687074}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -144,6 +145,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ralentizar: 0
   velocidadRalentizada: 1
+--- !u!65 &7246619170097687074
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336125250779687262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 25, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &4255517628642642161
 MeshRenderer:
   m_ObjectHideFlags: 0

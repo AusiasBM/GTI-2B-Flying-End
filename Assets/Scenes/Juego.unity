@@ -291,7 +291,7 @@ MonoBehaviour:
   - {fileID: 2533754496081381325, guid: e1103ac762ed649ebbf711a59c6a7337, type: 3}
   - {fileID: 5905265489006865330, guid: 3966f477103127b41a7abebd8c717eb1, type: 3}
   - {fileID: 2313252742523140015, guid: 5c124c13a05bcd0458d919698a2f2398, type: 3}
-  listaPrioridades: 05000000f40100000f00000005000000
+  listaPrioridades: f4010000050000000f00000005000000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
@@ -572,6 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222552293}
   - component: {fileID: 222552294}
+  - component: {fileID: 222552295}
   m_Layer: 0
   m_Name: CarrilUp
   m_TagString: Superior
@@ -610,6 +611,22 @@ MonoBehaviour:
   - {fileID: 6701690948012980539, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
   - {fileID: 6407376096148926779, guid: c159387fe6b461341a4d94f492d8016f, type: 3}
   - {fileID: 1421722927531340730, guid: 7f827008ec3554fb4b5f6165e19921c2, type: 3}
+--- !u!114 &222552295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222552292}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c72a76abe973c4b8633c10500dbd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lluvias:
+  - {fileID: 8487066515585845733, guid: ed21ec95ce59a7d4fbc1a24ac1f830dc, type: 3}
+  rangoCreacion: 8
+  activo: 1
 --- !u!1 &298047989 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2885995401056014458, guid: 41c3c931c8d4a5448a31bc4d64ae9978,
@@ -1282,6 +1299,7 @@ MonoBehaviour:
   fondo1: {fileID: 1082402121}
   fondo2: {fileID: 389436040}
   CarrilDown: {fileID: 129997596}
+  CarrilUp: {fileID: 222552292}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,6 +1561,21 @@ PrefabInstance:
       propertyPath: barraSalud
       value: 
       objectReference: {fileID: 1255236379}
+    - target: {fileID: 7246619170097687074, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246619170097687074, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246619170097687074, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
       propertyPath: vida

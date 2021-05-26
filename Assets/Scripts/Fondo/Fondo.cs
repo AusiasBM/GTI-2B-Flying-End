@@ -12,8 +12,10 @@ public class Fondo : MonoBehaviour
     private bool estaFondo1 = false;
 
     private bool nieblaHecho = false;
+    private bool lluviaHecho = false;
 
     public GameObject CarrilDown;
+    public GameObject CarrilUp;
     GameController gameController;
 
     void Start()
@@ -93,6 +95,21 @@ public class Fondo : MonoBehaviour
             CarrilDown.GetComponent<CrearNiebla>().activo = false;
             CarrilDown.GetComponent<CrearNiebla>().enabled = false;
             nieblaHecho = false;
+        }
+
+        if (gameController.ScoreMetros >= 247f && gameController.ScoreMetros <= 350f)
+        {
+            CarrilUp.GetComponent<CrearLluvia>().activo = true;
+            CarrilUp.GetComponent<CrearLluvia>().enabled = true;
+            lluviaHecho = true;
+        }
+
+        if (gameController.ScoreMetros > 350f && lluviaHecho)
+        {
+
+            CarrilUp.GetComponent<CrearLluvia>().activo = false;
+            CarrilUp.GetComponent<CrearLluvia>().enabled = false;
+            lluviaHecho = false;
         }
 
     }
