@@ -1463,6 +1463,16 @@ PrefabInstance:
       propertyPath: velocidadJugador
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2289269391327291697, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: fuerza
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093947929395052855, guid: 1b485f66c68a75245af57fb7fc071d7e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5561418231486449363, guid: 1b485f66c68a75245af57fb7fc071d7e,
         type: 3}
       propertyPath: ms
@@ -1620,30 +1630,7 @@ PrefabInstance:
       propertyPath: fuerzaImpactoPajaro
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 8869623360137260478, guid: 1b485f66c68a75245af57fb7fc071d7e,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869623360137260478, guid: 1b485f66c68a75245af57fb7fc071d7e,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869623360137260478, guid: 1b485f66c68a75245af57fb7fc071d7e,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869623360137260478, guid: 1b485f66c68a75245af57fb7fc071d7e,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4295415694939355828, guid: 1b485f66c68a75245af57fb7fc071d7e, type: 3}
-    - {fileID: 4551521184429784473, guid: 1b485f66c68a75245af57fb7fc071d7e, type: 3}
-    - {fileID: 7947653700603136059, guid: 1b485f66c68a75245af57fb7fc071d7e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b485f66c68a75245af57fb7fc071d7e, type: 3}
 --- !u!1 &630666450
 GameObject:
@@ -3038,46 +3025,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 556942090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1626123659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626123653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c8d37d7e4e08524a8dc595b91a4b821, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuerza: 4
---- !u!114 &1626123662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626123653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be91d3dc95775864e9ff4eb9e4d83706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ralentizar: 0
-  velocidadRalentizada: 1
---- !u!135 &1626123663
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626123653}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1638356307
 GameObject:
   m_ObjectHideFlags: 0

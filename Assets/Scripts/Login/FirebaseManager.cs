@@ -63,6 +63,7 @@ public class FirebaseManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("HOLA1");
         firestoreManager = FirestoreManager.Instance;
         StartCoroutine(CheckAndFixDependancies());
 
@@ -207,7 +208,7 @@ public class FirebaseManager : MonoBehaviour
                 yield return new WaitForSeconds(1f);
 
                 firestoreManager.cargarInformacionUsuario(user.UserId);
-
+                
                 GameManager.instance.ChangeScene("Menu");
             }
             else
@@ -305,7 +306,6 @@ public class FirebaseManager : MonoBehaviour
                         Monedas = 0,
                         Diamantes = 0
                     };
-
 
                     firestoreManager.guardarInformacionUsuario(user.UserId, usuario);
 

@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Firestore;
+using System;
+using System.Globalization;
 
 public class FirestoreManager : MonoBehaviour
 {
 
     FirebaseFirestore db;
     public Usuario user;
+    public Score score;
 
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if (instance != this)
         {
@@ -30,6 +34,7 @@ public class FirestoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("HOLA2");
         db = FirebaseFirestore.DefaultInstance;
     }
 
@@ -72,4 +77,28 @@ public class FirestoreManager : MonoBehaviour
         });
 
     }
+
+    public void guardarPuntosUsuario(Score score)
+    {
+        long t = CurrentTimeMillis();
+        db.Collection("Scores").Document(t.ToString()).SetAsync(score).ContinueWith(task =>
+        {
+            if (task.IsCompleted)
+            {
+                Debug.Log("Puntuacion");
+            }
+            else
+            {
+                Debug.Log("Error al guardar Puntuacion");
+            }
+        });
+    }
+
+    public long CurrentTimeMillis()
+    {
+        DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        return (long) (DateTime.UtcNow - Jan1st1970).TotalMilliseconds;
+    }
+
 }
+

@@ -13,8 +13,11 @@ public class gameOverScript : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("HOLA3");
         firestoreManager = FirestoreManager.Instance;
         firestoreManager.guardarInformacionUsuario(firestoreManager.user.Uid, firestoreManager.user);
+        
+        firestoreManager.guardarPuntosUsuario(firestoreManager.score);
         //gameOverScript.GameOverStatic = GameOverText;
         //gameOverScript.GameOverStatic.SetActive(true);
 

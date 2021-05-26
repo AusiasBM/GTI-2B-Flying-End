@@ -24,6 +24,13 @@ public class ControlSalud : MonoBehaviour
             Destroy(gameObject);
             firestoreManager.user.Monedas += gameController.Score;
             firestoreManager.user.Diamantes += gameController.ScoreDiamante;
+            firestoreManager.score = new Score
+            {
+                Username = firestoreManager.user.Username,
+                Uid = firestoreManager.user.Uid,
+                Puntos = (int)gameController.ScoreMetros
+            };
+            //firestoreManager.score.Puntos = (int)gameController.ScoreMetros;
             SceneManager.LoadScene("GameOver");
         }
 
