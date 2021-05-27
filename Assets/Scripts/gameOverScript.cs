@@ -11,6 +11,16 @@ public class gameOverScript : MonoBehaviour
 
     FirestoreManager firestoreManager;
 
+    public GameController gameController;
+
+    public GameObject scoreMoneda;
+    public GameObject scoreMetros;
+    public GameObject scoreDiamantes;
+
+    public string scoreMonedaString = "";
+    public string scoreMetrosString = "";
+    public string scoreDiamantesString = "";
+
     void Start()
     {
         Debug.Log("HOLA3");
@@ -21,6 +31,21 @@ public class gameOverScript : MonoBehaviour
         //gameOverScript.GameOverStatic = GameOverText;
         //gameOverScript.GameOverStatic.SetActive(true);
 
+        gameController = GameController.Instance;
+        gameController.cargarPuntuacion();
+
+        scoreMoneda = new GameObject(scoreMonedaString);
+        scoreMetros = new GameObject(scoreMetrosString);
+        scoreDiamantes = new GameObject(scoreDiamantesString);
+
+
+        scoreMetrosString = "Metros recorridos: " + gameController.ScoreMetros;
+        scoreMonedaString = "Monedas recolectadas: " + gameController.Score;
+        scoreMetrosString = "Diamantes recolectados: " + gameController.ScoreDiamante;
+
+        Debug.Log(gameController.ScoreMetros);
+        Debug.Log(gameController.ScoreDiamante);
+        Debug.Log(gameController.Score);
     }
 
 
