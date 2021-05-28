@@ -12,10 +12,13 @@ public class Fondo : MonoBehaviour
     private bool estaFondo1 = false;
 
     private bool nieblaHecho = false;
-    private bool lluviaHecho = false;
+
+    private bool transDiaNoche = false, transNocheTormenta = false, transTormentaVolcan = false;
 
     public GameObject CarrilDown;
     public GameObject CarrilUp;
+    public GameObject CarrilIzda1;
+    public GameObject CarrilDrcha1;
     GameController gameController;
 
     void Start()
@@ -27,61 +30,117 @@ public class Fondo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fondo1.transform.Translate(fondo1.transform.up * velocidad * Time.deltaTime);
-        fondo2.transform.Translate(fondo2.transform.up * velocidad * Time.deltaTime);
+        fondo1.transform.Translate(fondo1.transform.up * velocidad * Time.deltaTime); // Hace que la img del fondo 1 se desplaze arriba
+        fondo2.transform.Translate(fondo2.transform.up * velocidad * Time.deltaTime); // lo mismo con el fondo 2
 
-        gameController.ScoreMetros += 1f * velocidad * Time.deltaTime;
+        gameController.ScoreMetros += 1f * velocidad * Time.deltaTime; // Contador de metros
 
         if (fondo2.transform.position.y >= 0 && !estaFondo2)
         {
-            Debug.Log("CAMBIA DE FONDO");
+            //Debug.Log("CAMBIA DE FONDO");
             fondo1.transform.position = new Vector3(0, posRecolocar, fondo1.transform.position.z);
             estaFondo2 = true;
             estaFondo1 = false;
 
-            if (gameController.ScoreMetros >= 100f && gameController.ScoreMetros <= 200f)
+            if (gameController.ScoreMetros >= 120f && gameController.ScoreMetros < 220f)
             {
-                fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+                CarrilDown.GetComponent<CrearNubes>().activo = false;
+                CarrilDown.GetComponent<CrearNubesFondo>().activo = false;
+
+                if (!transDiaNoche && gameController.ScoreMetros <= 140f)
+                {
+                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionDiaNoche");
+                    transDiaNoche = true;
+                }
+                else
+                {
+                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+                }
             }
-            if (gameController.ScoreMetros >= 200f && gameController.ScoreMetros <= 300f)
+            if (gameController.ScoreMetros >= 220f && gameController.ScoreMetros < 350f)
             {
-                fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+                CarrilIzda1.GetComponent<CrearPajaros>().activo = false;
+                CarrilDrcha1.GetComponent<CrearPajaros>().activo = false;
+
+                if (!transNocheTormenta && gameController.ScoreMetros <= 270f)
+                {
+                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionNocheTormenta");
+                    transNocheTormenta = true;
+                }
+                else
+                {
+                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+                }
+                CarrilUp.GetComponent<CrearLluvia>().activo = true;
+                CarrilUp.GetComponent<CrearLluvia>().enabled = true;
                 CarrilDown.GetComponent<CrerNubeElectrica>().enabled = true;
             }
-            if (gameController.ScoreMetros >= 300f && gameController.ScoreMetros <= 400f)
+            if (gameController.ScoreMetros >= 350f && gameController.ScoreMetros <= 500f)
             {
-                CarrilDown.GetComponent<CrerNubeElectrica>().enabled = false;
+                CarrilUp.GetComponent<CrearLluvia>().activo = false;
                 CarrilDown.GetComponent<CrerNubeElectrica>().activo = false;
-                CarrilDown.GetComponent<CrearNubes>().enabled = false;
-                CarrilDown.GetComponent<CrearNubes>().activo = false;
                 CarrilDown.GetComponent<CrearRocas>().enabled = true;
-                CarrilDown.GetComponent<CrearPajaros>().enabled = false;
-                CarrilDown.GetComponent<CrearPajaros>().activo = false;
 
-                fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan1");
+                if (!transTormentaVolcan && gameController.ScoreMetros <= 400f)
+                {
+                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionTormentaVolcan");
+                    transTormentaVolcan = true;
+                }
+                else
+                {
+                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan2");
+                }
             }
         }
 
         if (fondo1.transform.position.y >= 0 && !estaFondo1)
         {
-            Debug.Log("CAMBIA DE FONDO");
+            //Debug.Log("CAMBIA DE FONDO");
             fondo2.transform.position = new Vector3(0, posRecolocar, fondo2.transform.position.z);
             estaFondo1 = true;
             estaFondo2 = false;
 
-            if (gameController.ScoreMetros >= 100f && gameController.ScoreMetros <= 200f)
+            if (gameController.ScoreMetros >= 120f && gameController.ScoreMetros < 220f)
             {
-                fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+                if (!transDiaNoche && gameController.ScoreMetros <= 140f)
+                {
+                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionDiaNoche");
+                    transDiaNoche = true;
+                }
+                else
+                {
+                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+                }
             }
-            if (gameController.ScoreMetros >= 200f && gameController.ScoreMetros <= 300f)
+            if (gameController.ScoreMetros >= 220f && gameController.ScoreMetros < 350f)
             {
-                fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+                CarrilIzda1.GetComponent<CrearPajaros>().activo = false;
+                CarrilDrcha1.GetComponent<CrearPajaros>().activo = false;
+
+                if (!transNocheTormenta && gameController.ScoreMetros <= 270f)
+                {
+                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionNocheTormenta");
+                    transNocheTormenta = true;
+                }
+                else
+                {
+                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+                }
             }
-            if (gameController.ScoreMetros >= 300f && gameController.ScoreMetros <= 400f)
+            if (gameController.ScoreMetros >= 350f && gameController.ScoreMetros <= 500f)
             {
-                CarrilDown.GetComponent<CrearNubes>().enabled = false;
-                CarrilDown.GetComponent<CrearNubes>().activo = false;
-                fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan2");
+
+                if (!transTormentaVolcan && gameController.ScoreMetros <= 400f)
+                {
+                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionTormentaVolcan");
+                    transTormentaVolcan = true;
+                }
+                else
+                {
+                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan1");
+                }
+
+                
             }
         }
 
@@ -98,21 +157,6 @@ public class Fondo : MonoBehaviour
             CarrilDown.GetComponent<CrearNiebla>().activo = false;
             CarrilDown.GetComponent<CrearNiebla>().enabled = false;
             nieblaHecho = false;
-        }
-
-        if (gameController.ScoreMetros >= 247f && gameController.ScoreMetros <= 350f)
-        {
-            CarrilUp.GetComponent<CrearLluvia>().activo = true;
-            CarrilUp.GetComponent<CrearLluvia>().enabled = true;
-            lluviaHecho = true;
-        }
-
-        if (gameController.ScoreMetros > 350f && lluviaHecho)
-        {
-
-            CarrilUp.GetComponent<CrearLluvia>().activo = false;
-            CarrilUp.GetComponent<CrearLluvia>().enabled = false;
-            lluviaHecho = false;
         }
 
     }

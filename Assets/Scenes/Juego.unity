@@ -312,6 +312,7 @@ MonoBehaviour:
   - {fileID: 9007023186680884966, guid: 2b3b3900af347c347bb92ac2648353c6, type: 3}
   rangoCreacion: 10
   posicionZ: 2
+  activo: 1
 --- !u!114 &129997602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +980,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1510398d2e72a454381a30ae73b90fd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c8cd69a3493f47a0a96d01defb2f51d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1317,6 +1318,8 @@ MonoBehaviour:
   fondo2: {fileID: 389436040}
   CarrilDown: {fileID: 129997596}
   CarrilUp: {fileID: 222552292}
+  CarrilIzda1: {fileID: 1257978097}
+  CarrilDrcha1: {fileID: 803615603}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2450,12 +2453,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 704d6fc826dcc4f9bab420d1ffccc376, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c8cd69a3493f47a0a96d01defb2f51d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.12, y: 4.08}
+  m_Size: {x: 76.799995, y: 43.199997}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
