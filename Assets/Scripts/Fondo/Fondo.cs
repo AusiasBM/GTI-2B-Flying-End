@@ -46,9 +46,12 @@ public class Fondo : MonoBehaviour
             if (gameController.ScoreMetros >= 200f && gameController.ScoreMetros <= 300f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+                CarrilDown.GetComponent<CrerNubeElectrica>().enabled = true;
             }
             if (gameController.ScoreMetros >= 300f && gameController.ScoreMetros <= 400f)
             {
+                CarrilDown.GetComponent<CrerNubeElectrica>().enabled = false;
+                CarrilDown.GetComponent<CrerNubeElectrica>().activo = false;
                 CarrilDown.GetComponent<CrearNubes>().enabled = false;
                 CarrilDown.GetComponent<CrearNubes>().activo = false;
                 CarrilDown.GetComponent<CrearRocas>().enabled = true;

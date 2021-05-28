@@ -31,6 +31,7 @@ public class ObjetoScrptBase : ScriptableObject
         BoostIman,
         BoostTiempo,
         BoostVida,
-        RocaVolcanica
+        RocaVolcanica,
+        NubeElectrica
     }
 }

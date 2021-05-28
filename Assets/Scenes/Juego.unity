@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 129997601}
   - component: {fileID: 129997602}
   - component: {fileID: 129997603}
+  - component: {fileID: 129997604}
   m_Layer: 0
   m_Name: CarrilDown
   m_TagString: Untagged
@@ -341,6 +342,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocas:
   - {fileID: 770373868938348786, guid: 289552b7d7a354207803653544a61417, type: 3}
+  rangoCreacion: 8
+  activo: 1
+--- !u!114 &129997604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129997596}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371b328214072bc4ba2bf4aafbea96bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nubesElectricas:
+  - {fileID: 7071029794776382853, guid: 7085ebd64c9a9f449945d24e27faa644, type: 3}
   rangoCreacion: 8
   activo: 1
 --- !u!1 &131439465
