@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public class gameOverScript : MonoBehaviour
 {
@@ -13,17 +13,12 @@ public class gameOverScript : MonoBehaviour
 
     public GameController gameController;
 
-    public GameObject scoreMoneda;
-    public GameObject scoreMetros;
-    public GameObject scoreDiamantes;
-
-    public string scoreMonedaString = "";
-    public string scoreMetrosString = "";
-    public string scoreDiamantesString = "";
+    public Text scoreMoneda;
+    public Text scoreMetros;
+    public Text scoreDiamantes;
 
     void Start()
     {
-        Debug.Log("HOLA3");
         firestoreManager = FirestoreManager.Instance;
         firestoreManager.guardarInformacionUsuario(firestoreManager.user.Uid, firestoreManager.user);
         
@@ -34,25 +29,15 @@ public class gameOverScript : MonoBehaviour
         gameController = GameController.Instance;
         gameController.cargarPuntuacion();
 
-        scoreMoneda = new GameObject(scoreMonedaString);
-        scoreMetros = new GameObject(scoreMetrosString);
-        scoreDiamantes = new GameObject(scoreDiamantesString);
-
-
-        scoreMetrosString = "Metros recorridos: " + gameController.ScoreMetros;
-        scoreMonedaString = "Monedas recolectadas: " + gameController.Score;
-        scoreMetrosString = "Diamantes recolectados: " + gameController.ScoreDiamante;
+        scoreMoneda.text = "Monedas recolectadas: " + gameController.Score.ToString();
+        scoreMetros.text = "Metros recorridos: " + gameController.ScoreMetros.ToString();
+        scoreDiamantes.text = "Diamantes recolectados: " + gameController.ScoreDiamante.ToString();
 
         Debug.Log(gameController.ScoreMetros);
         Debug.Log(gameController.ScoreDiamante);
         Debug.Log(gameController.Score);
     }
 
-
-    void Update()
-    {
-
-    }
 
     public void CargarEscena(string nombreNivel)
     {
