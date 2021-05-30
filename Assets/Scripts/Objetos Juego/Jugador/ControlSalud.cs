@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class ControlSalud : MonoBehaviour
 {
     FirestoreManager firestoreManager;
+    EfectoDanyo efectoDanyo;
     GameController gameController;
     public GameObject vida;
     private Image barraSalud;
@@ -16,7 +17,7 @@ public class ControlSalud : MonoBehaviour
     //Metodo para quitar vida cuando impacte un objeto o pajaro
     public void quitarVida(int vidaMenos)
     {
-
+        efectoDanyo.golpe = true;
         salud = salud - vidaMenos;
 
         if (salud <= 0)
@@ -77,6 +78,7 @@ public class ControlSalud : MonoBehaviour
         barraSalud = vida.GetComponent<Image>();
         firestoreManager = FirestoreManager.Instance;
         gameController = GameController.Instance;
+        efectoDanyo = EfectoDanyo.Instance;
     }
 
     // Update is called once per frame

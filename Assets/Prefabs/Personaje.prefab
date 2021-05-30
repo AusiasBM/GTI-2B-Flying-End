@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2289269391327291697}
   - component: {fileID: 5677693852899744639}
   - component: {fileID: 7246619170097687074}
+  - component: {fileID: 7913262163510185284}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -49,7 +50,7 @@ Rigidbody:
   m_GameObject: {fileID: 336125250779687262}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb541edad90fe5c4ead16e6f927b263d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadJugador: 6
+  velocidadJugador: 2
   LimiteDerecha: {fileID: 0}
   LimiteIzquierda: {fileID: 0}
   LimiteUp: {fileID: 0}
@@ -105,6 +106,7 @@ MonoBehaviour:
   imgBoost: {fileID: 0}
   isInmune: 0
   isMagnetic: 0
+  isTormenta: 0
 --- !u!114 &6291808591075635297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +160,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 25, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7913262163510185284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336125250779687262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f8bc29f3b6d1945b7874f9cec86f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerzaViento: 0.3
 --- !u!23 &4255517628642642161
 MeshRenderer:
   m_ObjectHideFlags: 0

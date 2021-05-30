@@ -9,7 +9,7 @@ namespace Unity101.ControlObjetos
     public class MoverRigidbody : MonoBehaviour
     {
 
-        public float fuerza = 10f;
+        public float fuerza = 4f;
 
         private new Rigidbody rigidbody;
 

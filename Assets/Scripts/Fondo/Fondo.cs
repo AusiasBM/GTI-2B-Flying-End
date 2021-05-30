@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Fondo : MonoBehaviour
 {
     public float velocidad = 3f;
@@ -20,11 +21,19 @@ public class Fondo : MonoBehaviour
     public GameObject CarrilIzda1;
     public GameObject CarrilDrcha1;
     GameController gameController;
+    Jugador jugador;
+
+    EfectosColorGrading efectos;
 
     void Start()
     {
         estaFondo1 = true;
         gameController = GameController.Instance;
+        efectos = EfectosColorGrading.Instance;
+        jugador = Jugador.Instance;
+
+        //Cambio del gradiente de color segun cada escenario
+        StartCoroutine(efectos.cambiarParametros(100f, 5f, 0f));
     }
 
     // Update is called once per frame
@@ -54,6 +63,8 @@ public class Fondo : MonoBehaviour
                 }
                 else
                 {
+                    //Cambio del gradiente de color segun cada escenario
+                    StartCoroutine(efectos.cambiarParametros(80f, -10f, 0f));
                     fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
                 }
             }
@@ -66,9 +77,12 @@ public class Fondo : MonoBehaviour
                 {
                     fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionNocheTormenta");
                     transNocheTormenta = true;
+                    jugador.isTormenta = true;
                 }
                 else
                 {
+                    //Cambio del gradiente de color segun cada escenario
+                    StartCoroutine(efectos.cambiarParametros(60f, 0f, 0f));
                     fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
                 }
                 CarrilUp.GetComponent<CrearLluvia>().activo = true;
@@ -85,9 +99,12 @@ public class Fondo : MonoBehaviour
                 {
                     fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionTormentaVolcan");
                     transTormentaVolcan = true;
+                    jugador.isTormenta = false;
                 }
                 else
                 {
+                    //Cambio del gradiente de color segun cada escenario
+                    StartCoroutine(efectos.cambiarParametros(0f, -20f, -40f));
                     fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan2");
                 }
             }
@@ -109,6 +126,7 @@ public class Fondo : MonoBehaviour
                 }
                 else
                 {
+                    StartCoroutine(efectos.cambiarParametros(80f, -10f, 0f));
                     fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
                 }
             }
@@ -121,9 +139,11 @@ public class Fondo : MonoBehaviour
                 {
                     fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionNocheTormenta");
                     transNocheTormenta = true;
+                    jugador.isTormenta = true;
                 }
                 else
                 {
+                    StartCoroutine(efectos.cambiarParametros(60f, 0f, 0f));
                     fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
                 }
             }
@@ -134,9 +154,11 @@ public class Fondo : MonoBehaviour
                 {
                     fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionTormentaVolcan");
                     transTormentaVolcan = true;
+                    jugador.isTormenta = false;
                 }
                 else
                 {
+                    StartCoroutine(efectos.cambiarParametros(0f, -20f, -40f));
                     fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan1");
                 }
 

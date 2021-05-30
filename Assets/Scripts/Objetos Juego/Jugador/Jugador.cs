@@ -15,6 +15,7 @@ public class Jugador : MonoBehaviour
 
     public bool isInmune = false;
     public bool isMagnetic = false;
+    public bool isTormenta = false;
 
     private static Jugador instance;
     public static Jugador Instance { get => instance; }
