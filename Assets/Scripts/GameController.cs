@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Firebase.Firestore;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    FirestoreManager firestoreManager;
+
     public int Score = 0;
     public int ScoreDiamante = 0;
     public float ScoreMetros = 0f;
@@ -16,6 +19,8 @@ public class GameController : MonoBehaviour
     public Text TextScore;
     public Text TextScoreDiamante;
     public Text TextScoreMetros;
+
+    public Text Username;
     private static GameController instance;
     public static GameController Instance { get => instance; }
 
@@ -35,7 +40,10 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
+        
+        //Debug.Log(string.Format("Nom usuari", firestoreManager.user.Username));
+
+        //Username.text = firestoreManager.user.Username;
     }
 
     // Update is called once per frame
@@ -45,7 +53,15 @@ public class GameController : MonoBehaviour
         {
             TextScore.text = Score.ToString();
             TextScoreDiamante.text = ScoreDiamante.ToString();
-            TextScoreMetros.text = Mathf.Round(ScoreMetros).ToString() + " M";
+            if (ScoreMetros >= 10000)
+            {
+                TextScoreMetros.text = Mathf.Round(ScoreMetros/1000).ToString() + " Km";
+            }
+            else
+            {
+                TextScoreMetros.text = Mathf.Round(ScoreMetros).ToString() + " M";
+            }
+            
         }
     }
 

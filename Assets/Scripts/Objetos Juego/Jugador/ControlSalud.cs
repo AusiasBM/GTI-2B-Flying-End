@@ -25,6 +25,13 @@ public class ControlSalud : MonoBehaviour
             Destroy(gameObject);
             firestoreManager.user.Monedas += gameController.Score;
             firestoreManager.user.Diamantes += gameController.ScoreDiamante;
+
+            //Si la distancia recorrida es mayor a la última más alta se guarda esta
+            if(firestoreManager.user.Distancia < (int)gameController.ScoreMetros)
+            {
+                firestoreManager.user.Distancia = (int)gameController.ScoreMetros;
+            }
+            
             firestoreManager.score = new Score
             {
                 Username = firestoreManager.user.Username,

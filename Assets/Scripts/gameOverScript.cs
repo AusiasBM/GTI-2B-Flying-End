@@ -16,6 +16,7 @@ public class gameOverScript : MonoBehaviour
     public Text scoreMoneda;
     public Text scoreMetros;
     public Text scoreDiamantes;
+   
 
     float mts = 0;
     void Start()
@@ -45,6 +46,12 @@ public class gameOverScript : MonoBehaviour
         
         scoreDiamantes.text = "Diamantes recolectados: " + gameController.ScoreDiamante.ToString();
 
+
+        /*if (firestoreManager.user.Distancia < (int)gameController.ScoreMetros)
+        {
+            Debug.Log("REEEECORD");
+            record.GetComponent<Image>().color = new Color32(255,0, 0, 100);
+        }*/
         Debug.Log(gameController.ScoreMetros);
         Debug.Log(gameController.ScoreDiamante);
         Debug.Log(gameController.Score);

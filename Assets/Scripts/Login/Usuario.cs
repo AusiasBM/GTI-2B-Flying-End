@@ -16,6 +16,9 @@ public class Usuario
     public string Uid { get; set; }
 
     [FirestoreProperty]
+    public int Distancia { get; set; }
+
+    [FirestoreProperty]
     public int Monedas { get; set; }
 
     [FirestoreProperty]

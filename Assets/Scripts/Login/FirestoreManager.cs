@@ -4,6 +4,7 @@ using UnityEngine;
 using Firebase.Firestore;
 using System;
 using System.Globalization;
+using UnityEngine.UI;
 
 public class FirestoreManager : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class FirestoreManager : MonoBehaviour
     FirebaseFirestore db;
     public Usuario user;
     public Score score;
-
 
     private void Awake()
     {
@@ -65,6 +65,7 @@ public class FirestoreManager : MonoBehaviour
                 {
                     //Debug.Log("Document data for {0} document:" + snapshot.Id);
                     user = snapshot.ConvertTo<Usuario>();
+                    
                     Debug.Log(string.Format("Name: {0}", user.Username));
                 }
                 else
