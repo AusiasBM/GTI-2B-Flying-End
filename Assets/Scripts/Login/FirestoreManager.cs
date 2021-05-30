@@ -21,10 +21,9 @@ public class FirestoreManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if (instance != this)
+        else
         {
             Destroy(instance.gameObject);
-            instance = this;
         }
     }
 

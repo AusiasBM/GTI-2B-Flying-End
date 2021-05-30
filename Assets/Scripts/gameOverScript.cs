@@ -10,13 +10,14 @@ public class gameOverScript : MonoBehaviour
     public static GameObject GameOverStatic;
 
     FirestoreManager firestoreManager;
-
+    
     public GameController gameController;
 
     public Text scoreMoneda;
     public Text scoreMetros;
     public Text scoreDiamantes;
-   
+
+    //public Image record;
 
     float mts = 0;
     void Start()
@@ -50,7 +51,7 @@ public class gameOverScript : MonoBehaviour
         /*if (firestoreManager.user.Distancia < (int)gameController.ScoreMetros)
         {
             Debug.Log("REEEECORD");
-            record.GetComponent<Image>().color = new Color32(255,0, 0, 100);
+            record.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
         }*/
         Debug.Log(gameController.ScoreMetros);
         Debug.Log(gameController.ScoreDiamante);

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     FirestoreManager firestoreManager;
-
+    
     public int Score = 0;
     public int ScoreDiamante = 0;
     public float ScoreMetros = 0f;
@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public Text TextScoreMetros;
 
     public Text Username;
+
     private static GameController instance;
     public static GameController Instance { get => instance; }
 
@@ -40,10 +41,10 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        firestoreManager = FirestoreManager.Instance;
         //Debug.Log(string.Format("Nom usuari", firestoreManager.user.Username));
 
-        //Username.text = firestoreManager.user.Username;
+        Username.text = firestoreManager.user.Username;
     }
 
     // Update is called once per frame
