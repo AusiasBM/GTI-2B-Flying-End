@@ -2098,7 +2098,7 @@ MonoBehaviour:
   - {fileID: 6263236608512586234, guid: 12147a19e7a8c10498afca82b2adbd3a, type: 3}
   listaPrioridades: 050000000300000002000000
   rangoCreacion: 5.5
-  activo: 0
+  activo: 1
 --- !u!1 &837325428
 GameObject:
   m_ObjectHideFlags: 0
