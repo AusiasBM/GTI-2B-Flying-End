@@ -9,7 +9,8 @@ public class ColisionNubeElectrica : MonoBehaviour
     public float fuerzaImpactoPieza = 2f;
     TiemblaCamara tiembla;
     Rigidbody rb;
-    
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class ColisionNubeElectrica : MonoBehaviour
         Debug.Log("IMPACTO!!");
         rb.AddForce(transform.right * -fuerzaImpactoPieza, ForceMode.Impulse);
         Destroy(gameObject);
+        
 
     }
 }
