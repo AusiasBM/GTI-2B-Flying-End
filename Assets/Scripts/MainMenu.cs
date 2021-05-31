@@ -8,19 +8,16 @@ public class MainMenu : MonoBehaviour
 {
     FirestoreManager firestoreManager;
 
-    public Text user;
-    public Text moneda;
-    public Text diamante;
+    public Text Username;
+    public string user;
     //public Text Distancia;
     void Start()
     {
         firestoreManager = FirestoreManager.Instance;
+        Debug.Log(string.Format("Nom usuari", firestoreManager.user.Username));
 
-        Debug.Log(firestoreManager.user.Username + ", " + firestoreManager.user.Monedas.ToString() + ", " + firestoreManager.user.Diamantes.ToString());
-
-        user.text = firestoreManager.user.Username;
-        moneda.text = firestoreManager.user.Monedas.ToString();
-        diamante.text = firestoreManager.user.Diamantes.ToString();
+        Username.text = firestoreManager.user.Username;
+        user = firestoreManager.user.Username;
         //Distancia.text = firestoreManager.user.Distancia.ToString();
     }
 
