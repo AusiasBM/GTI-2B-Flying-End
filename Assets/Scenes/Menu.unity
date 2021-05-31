@@ -1560,7 +1560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Username: {fileID: 1978391515}
-  user: 
+  Monedas: {fileID: 1871159937}
+  Diamantes: {fileID: 168588656}
 --- !u!4 &1983726907
 Transform:
   m_ObjectHideFlags: 0

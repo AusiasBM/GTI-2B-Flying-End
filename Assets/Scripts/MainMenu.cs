@@ -9,16 +9,18 @@ public class MainMenu : MonoBehaviour
     FirestoreManager firestoreManager;
 
     public Text Username;
-    public string user;
-    //public Text Distancia;
+    public Text Monedas;
+    public Text Diamantes;
+
     void Start()
     {
         firestoreManager = FirestoreManager.Instance;
         Debug.Log(string.Format("Nom usuari", firestoreManager.user.Username));
 
         Username.text = firestoreManager.user.Username;
-        user = firestoreManager.user.Username;
-        //Distancia.text = firestoreManager.user.Distancia.ToString();
+        Monedas.text = firestoreManager.user.Monedas.ToString();
+        Diamantes.text = firestoreManager.user.Diamantes.ToString();
+
     }
 
 
@@ -28,8 +30,6 @@ public class MainMenu : MonoBehaviour
     }
     public void CargarEscena(string nombreNivel)
     {
-        Debug.Log(firestoreManager.user.Monedas);
-        Debug.Log(firestoreManager.user.Diamantes);
         SceneManager.LoadScene(nombreNivel);
     }
 

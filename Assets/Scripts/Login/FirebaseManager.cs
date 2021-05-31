@@ -209,7 +209,7 @@ public class FirebaseManager : MonoBehaviour
 
                 firestoreManager.cargarInformacionUsuario(user.UserId);
                 
-                GameManager.instance.ChangeScene("Menu");
+                GameManager.instance.ChangeScene("Loading");
             }
             else
             {
