@@ -629,7 +629,7 @@ MonoBehaviour:
   piezasAvion:
   - {fileID: 6701690948012980539, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
   - {fileID: 6407376096148926779, guid: c159387fe6b461341a4d94f492d8016f, type: 3}
-  - {fileID: 6789375215970288124, guid: 895444a68f1b0004381a368270ed2161, type: 3}
+  - {fileID: 1421722927531340730, guid: 7f827008ec3554fb4b5f6165e19921c2, type: 3}
 --- !u!114 &222552295
 MonoBehaviour:
   m_ObjectHideFlags: 0

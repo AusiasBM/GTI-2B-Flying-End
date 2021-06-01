@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PiezaAvion
   m_EditorClassIdentifier: 
   velocidad: 13
-  destruir: -9.5
+  destruir: -10
   isVertical: 1
   moveUpToDown: 1
   moveLeftToRight: 0
