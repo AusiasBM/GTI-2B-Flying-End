@@ -159,7 +159,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 25, z: 1}
+  m_Size: {x: 40, y: 25, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7913262163510185284
 MonoBehaviour:
@@ -401,11 +401,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4235973287689565306, guid: e7f131d44b9594f6ca23bea4b1a537d4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ac21f8b0bac9af14987c72a0bd2ef937, type: 2}
+    - target: {fileID: -4235973287689565306, guid: e7f131d44b9594f6ca23bea4b1a537d4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d4357819b610284ab23830c4272c19d, type: 2}
+    - target: {fileID: -4235973287689565306, guid: e7f131d44b9594f6ca23bea4b1a537d4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44e3805d4cfd846448fa17a265aaa85d, type: 2}
     - target: {fileID: 919132149155446097, guid: e7f131d44b9594f6ca23bea4b1a537d4,
         type: 3}
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 2378016770739500900, guid: e7f131d44b9594f6ca23bea4b1a537d4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ac21f8b0bac9af14987c72a0bd2ef937, type: 2}
+    - target: {fileID: 2378016770739500900, guid: e7f131d44b9594f6ca23bea4b1a537d4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d4357819b610284ab23830c4272c19d, type: 2}
+    - target: {fileID: 2378016770739500900, guid: e7f131d44b9594f6ca23bea4b1a537d4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44e3805d4cfd846448fa17a265aaa85d, type: 2}
+    - target: {fileID: 5500436077478298816, guid: e7f131d44b9594f6ca23bea4b1a537d4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ac03a730e0a964f41b55950ee60e9345, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f131d44b9594f6ca23bea4b1a537d4, type: 3}
 --- !u!1 &9160281973818864202 stripped

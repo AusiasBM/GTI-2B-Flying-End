@@ -17,7 +17,7 @@ public class CollisionTeletransporte : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        gameController.ScoreMetros += 50;
+        //gameController.ScoreMetros += 50;
         Destroy(gameObject);
     }
 }

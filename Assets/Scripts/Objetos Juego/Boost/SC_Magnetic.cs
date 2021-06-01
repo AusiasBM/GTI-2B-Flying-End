@@ -21,7 +21,8 @@ public class SC_Magnetic : MonoBehaviour
     {
         if (p != null && jugador.isMagnetic)
         {
-            transform.position -= (transform.position - p.transform.position) * magnetForce * Time.deltaTime;
+
+            transform.position -= magnetForce * Time.deltaTime * (transform.position - p.transform.position);           
         }
     }
 

@@ -293,7 +293,7 @@ MonoBehaviour:
   - {fileID: 5905265489006865330, guid: 3966f477103127b41a7abebd8c717eb1, type: 3}
   - {fileID: 2313252742523140015, guid: 5c124c13a05bcd0458d919698a2f2398, type: 3}
   - {fileID: 5184004680171492629, guid: 26108d82a3228164286e98c7f9bcc161, type: 3}
-  listaPrioridades: 05000000050000000500000005000000f4010000
+  listaPrioridades: 0500000005000000050000000500000005000000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
@@ -629,7 +629,7 @@ MonoBehaviour:
   piezasAvion:
   - {fileID: 6701690948012980539, guid: eb3f47751bdd3df4492b0e2f315479cb, type: 3}
   - {fileID: 6407376096148926779, guid: c159387fe6b461341a4d94f492d8016f, type: 3}
-  - {fileID: 1421722927531340730, guid: 7f827008ec3554fb4b5f6165e19921c2, type: 3}
+  - {fileID: 6789375215970288124, guid: 895444a68f1b0004381a368270ed2161, type: 3}
 --- !u!114 &222552295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3126,7 +3126,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745747041}
-  - component: {fileID: 1745747040}
   - component: {fileID: 1745747039}
   - component: {fileID: 1745747038}
   - component: {fileID: 1745747037}
@@ -3179,19 +3178,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!65 &1745747040
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745747036}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1745747041
 Transform:
   m_ObjectHideFlags: 0
