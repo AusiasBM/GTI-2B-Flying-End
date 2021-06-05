@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Fondo : MonoBehaviour
 {
@@ -15,6 +15,9 @@ public class Fondo : MonoBehaviour
     private bool nieblaHecho = false;
 
     private bool transDiaNoche = false, transNocheTormenta = false, transTormentaVolcan = false;
+
+    public Sprite[] listSpritesFondos;
+    int numFondo = 0;
 
     public GameObject CarrilDown;
     public GameObject CarrilUp;
@@ -58,14 +61,14 @@ public class Fondo : MonoBehaviour
 
                 if (!transDiaNoche && gameController.ScoreMetros <= 140f)
                 {
-                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionDiaNoche");
+                    fondo1.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[1];
                     transDiaNoche = true;
                 }
                 else
                 {
                     //Cambio del gradiente de color segun cada escenario
                     StartCoroutine(efectos.cambiarParametros(80f, -10f, 0f));
-                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+                    fondo1.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[2];
                 }
             }
             if (gameController.ScoreMetros >= 220f && gameController.ScoreMetros < 350f)
@@ -75,7 +78,7 @@ public class Fondo : MonoBehaviour
 
                 if (!transNocheTormenta && gameController.ScoreMetros <= 270f)
                 {
-                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionNocheTormenta");
+                    fondo1.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[3];
                     transNocheTormenta = true;
                     jugador.isTormenta = true;
                 }
@@ -83,7 +86,7 @@ public class Fondo : MonoBehaviour
                 {
                     //Cambio del gradiente de color segun cada escenario
                     StartCoroutine(efectos.cambiarParametros(60f, 0f, 0f));
-                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+                    fondo1.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[4];
                 }
                 CarrilUp.GetComponent<CrearLluvia>().activo = true;
                 CarrilUp.GetComponent<CrearLluvia>().enabled = true;
@@ -97,7 +100,7 @@ public class Fondo : MonoBehaviour
 
                 if (!transTormentaVolcan && gameController.ScoreMetros <= 400f)
                 {
-                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionTormentaVolcan");
+                    fondo1.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[5];
                     transTormentaVolcan = true;
                     jugador.isTormenta = false;
                 }
@@ -105,7 +108,7 @@ public class Fondo : MonoBehaviour
                 {
                     //Cambio del gradiente de color segun cada escenario
                     StartCoroutine(efectos.cambiarParametros(0f, -20f, -40f));
-                    fondo1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan2");
+                    fondo1.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[6];
                 }
             }
         }
@@ -121,13 +124,13 @@ public class Fondo : MonoBehaviour
             {
                 if (!transDiaNoche && gameController.ScoreMetros <= 140f)
                 {
-                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionDiaNoche");
+                    fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[1];
                     transDiaNoche = true;
                 }
                 else
                 {
                     StartCoroutine(efectos.cambiarParametros(80f, -10f, 0f));
-                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondonoche");
+                    fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[2];
                 }
             }
             if (gameController.ScoreMetros >= 220f && gameController.ScoreMetros < 350f)
@@ -137,14 +140,14 @@ public class Fondo : MonoBehaviour
 
                 if (!transNocheTormenta && gameController.ScoreMetros <= 270f)
                 {
-                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionNocheTormenta");
+                    fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[3];
                     transNocheTormenta = true;
                     jugador.isTormenta = true;
                 }
                 else
                 {
                     StartCoroutine(efectos.cambiarParametros(60f, 0f, 0f));
-                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoTormenta");
+                    fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[4];
                 }
             }
             if (gameController.ScoreMetros >= 350f && gameController.ScoreMetros <= 500f)
@@ -152,14 +155,14 @@ public class Fondo : MonoBehaviour
 
                 if (!transTormentaVolcan && gameController.ScoreMetros <= 400f)
                 {
-                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/transicionTormentaVolcan");
+                    fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[5];
                     transTormentaVolcan = true;
                     jugador.isTormenta = false;
                 }
                 else
                 {
                     StartCoroutine(efectos.cambiarParametros(0f, -20f, -40f));
-                    fondo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fondos/fondoVolcan1");
+                    fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[7];
                 }
 
                 

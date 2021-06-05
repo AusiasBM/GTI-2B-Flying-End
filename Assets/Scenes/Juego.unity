@@ -293,7 +293,7 @@ MonoBehaviour:
   - {fileID: 5905265489006865330, guid: 3966f477103127b41a7abebd8c717eb1, type: 3}
   - {fileID: 2313252742523140015, guid: 5c124c13a05bcd0458d919698a2f2398, type: 3}
   - {fileID: 5184004680171492629, guid: 26108d82a3228164286e98c7f9bcc161, type: 3}
-  listaPrioridades: 0500000005000000050000000500000005000000
+  listaPrioridades: 05000000050000000a0000000500000005000000
   rangoCreacion: 8
 --- !u!114 &129997601
 MonoBehaviour:
@@ -1550,6 +1550,15 @@ MonoBehaviour:
   posRecolocar: -42.7
   fondo1: {fileID: 1082402121}
   fondo2: {fileID: 389436040}
+  listSpritesFondos:
+  - {fileID: 21300000, guid: 7c8cd69a3493f47a0a96d01defb2f51d, type: 3}
+  - {fileID: 21300000, guid: 4448db0bcc8eb4cffb022362ff6396b8, type: 3}
+  - {fileID: 21300000, guid: 449205827b89944ac8eaa9f391338bf2, type: 3}
+  - {fileID: 21300000, guid: bc4a7de875f684113a396f86a879d9a9, type: 3}
+  - {fileID: 21300000, guid: c09bff9932a574f36ba7f8359ce8a93f, type: 3}
+  - {fileID: 21300000, guid: a7dde04d3258c4bbaa2210b06249828b, type: 3}
+  - {fileID: 21300000, guid: a296344d8cab846a78c6417c57d798ea, type: 3}
+  - {fileID: 21300000, guid: a2fd06b7abeb942b7be1a1c57b1550e0, type: 3}
   CarrilDown: {fileID: 129997596}
   CarrilUp: {fileID: 222552292}
   CarrilIzda1: {fileID: 1257978097}
@@ -4409,6 +4418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792369885086179396, guid: 1163c648d8f1d4ada9bd5e54ffa559bf,
+        type: 3}
+      propertyPath: m_FillOrigin
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7792369885086179397, guid: 1163c648d8f1d4ada9bd5e54ffa559bf,
         type: 3}
