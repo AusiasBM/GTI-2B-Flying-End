@@ -15,7 +15,7 @@ public class ColisionIman : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         jugador.isMagnetic = true;
-        jugador.efectoTemporal(10, "iman");
+        jugador.efectoTemporal(10, 1);
         Destroy(gameObject);
     }
 }

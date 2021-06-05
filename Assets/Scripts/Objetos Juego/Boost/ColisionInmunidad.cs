@@ -16,7 +16,7 @@ public class ColisionInmunidad : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         jugador.isInmune = true;
-        jugador.efectoTemporal(10, "inmunidad");
+        jugador.efectoTemporal(10, 2);
         Destroy(gameObject);
     }
 }

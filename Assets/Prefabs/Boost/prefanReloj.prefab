@@ -151,6 +151,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468041d58a058be4eb50910aed367c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estructuraBarraVidaBoost: {fileID: 3274175698746361635, guid: d5b74d74caa4044ea8f31a904be22c38,
+    type: 3}
+  barraVidaBoost: {fileID: 7792369885086179394, guid: 1163c648d8f1d4ada9bd5e54ffa559bf,
+    type: 3}
+  imgBoost: {fileID: 4376330108512680040, guid: df669b6fc82c14a6ca9bb576a185e7c1,
+    type: 3}
+  imagenesBoost:
+  - {fileID: 21300000, guid: cbaf413ddaa19417b92e01c16bd5ba11, type: 3}
+  - {fileID: 21300000, guid: 210c44c094d0f423a9ab3d26511cdcb9, type: 3}
 --- !u!1001 &3671775448323613516
 PrefabInstance:
   m_ObjectHideFlags: 0

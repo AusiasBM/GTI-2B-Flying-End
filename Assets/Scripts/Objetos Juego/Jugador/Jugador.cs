@@ -10,8 +10,11 @@ public class Jugador : MonoBehaviour
     public Transform LimiteIzquierda;
     public Transform LimiteUp;
     public Transform LimiteDown;
+    public GameObject estructuraBarraVidaBoost;
     public GameObject barraVidaBoost;
     public GameObject imgBoost;
+
+    public Sprite[] imagenesBoost;
 
     public bool isInmune = false;
     public bool isMagnetic = false;
@@ -85,31 +88,35 @@ public class Jugador : MonoBehaviour
 
     }
 
-    //Metodo para la duración del efecto de los boosts cuando el jugador los coge(colisión)
-    public void efectoTemporal(int seconds, string img)
+    //Metodo para la duraci?n del efecto de los boosts cuando el jugador los coge(colisi?n)
+    public void efectoTemporal(int seconds, int img)
     {
-        StartCoroutine(delay(10, img));
+        StartCoroutine(delay(seconds, img));
         
     }
 
-    public IEnumerator delay(int seconds, string img)
+    public IEnumerator delay(int seconds, int img)
     {
-        imgBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Hud/imgBoost/" + img);
-        int nombreVidaBoost = 5;
-        for (int i = 0; i <= seconds; i = i + 2)
+
+        estructuraBarraVidaBoost.GetComponent<Image>().enabled = true;
+        barraVidaBoost.GetComponent<Image>().enabled = true;
+        imgBoost.GetComponent<Image>().sprite = imagenesBoost[img];
+        float fragmentado = 10 / seconds;
+
+        for (float i = seconds; i >= 0; i = i - fragmentado)
         {
-            barraVidaBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Hud/VidaBoost/boost" + nombreVidaBoost);
-            yield return new WaitForSeconds(seconds/5);
-            nombreVidaBoost--;
+            yield return new WaitForSeconds(fragmentado);
+            barraVidaBoost.GetComponent<Image>().fillAmount = i/10;
         }
 
-        barraVidaBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/base");
-        imgBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/base");
+        estructuraBarraVidaBoost.GetComponent<Image>().enabled = false;
+        barraVidaBoost.GetComponent<Image>().enabled = false;
+        imgBoost.GetComponent<Image>().sprite = imagenesBoost[0];
         isInmune = false;
         isMagnetic = false;
     }
 
-    //Generar partículas al colisionar con algunos objetos
+    //Generar part?culas al colisionar con algunos objetos
     public void generarParticulas(GameObject tipoParticulas, Transform objeto)
     {
         Vector3 pos = new Vector3(objeto.transform.position.x, objeto.transform.position.y, 0);

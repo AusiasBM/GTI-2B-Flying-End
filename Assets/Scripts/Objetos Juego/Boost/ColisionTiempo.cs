@@ -11,8 +11,10 @@ public class ColisionTiempo : MonoBehaviour
 
     RalentizadorVelocidad ralentizador;
 
+    public GameObject estructuraBarraVidaBoost;
     public GameObject barraVidaBoost;
     public GameObject imgBoost;
+    public Sprite[] imagenesBoost;
 
     // Start is called before the first frame update
     void Start()
@@ -33,17 +35,21 @@ public class ColisionTiempo : MonoBehaviour
     public IEnumerator delayTiempo(int seconds)
     {
 
-        //imgBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Hud/imgBoost/reloj");
-        int nombreVidaBoost = 5;
-        for (int i = 0; i <= seconds; i = i + 2)
+        estructuraBarraVidaBoost.GetComponent<Image>().enabled = true;
+        barraVidaBoost.GetComponent<Image>().enabled = true;
+        imgBoost.GetComponent<Image>().sprite = imagenesBoost[1];
+        float fragmentado = 1 / seconds;
+
+        for (float i = seconds; i >= 0; i = i - fragmentado)
         {
-            //barraVidaBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Hud/VidaBoost/boost" + nombreVidaBoost);
-            yield return new WaitForSeconds(seconds / 5);
-            nombreVidaBoost--;
+            yield return new WaitForSeconds(fragmentado);
+            barraVidaBoost.GetComponent<Image>().fillAmount = i;
         }
 
-        //barraVidaBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/base");
-        //imgBoost.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/base");
+        estructuraBarraVidaBoost.GetComponent<Image>().enabled = false;
+        barraVidaBoost.GetComponent<Image>().enabled = false;
+        imgBoost.GetComponent<Image>().sprite = imagenesBoost[0];
+
         ralentizador.ralentizarObjetos(false);
     }
 
