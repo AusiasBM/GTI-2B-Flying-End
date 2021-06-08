@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
-    FirestoreManager firestoreManager;
     public Image barraLoading;
 
     [Range(0, 1)]
@@ -16,7 +15,7 @@ public class Loading : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firestoreManager = FirestoreManager.Instance;
+
         barraLoading.fillAmount = carga;
     }
 
@@ -26,15 +25,12 @@ public class Loading : MonoBehaviour
         loading();
         if(carga >= 0.99f)
         {
+            SceneManager.LoadScene("Menu");
             //Poner a 0.1f para que al volver al valor inicial la barra no haga efecto de parpadeo
             barraLoading.fillAmount = 0.1f;
             carga = 0.1f;
         }
 
-        if(firestoreManager.user != null)
-        {
-            SceneManager.LoadScene("Menu");
-        }
     }
 
     void loading()

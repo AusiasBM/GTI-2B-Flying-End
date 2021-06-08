@@ -6,20 +6,19 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    FirestoreManager firestoreManager;
 
     public Text Username;
     public Text Monedas;
     public Text Diamantes;
+    Partida partida;
 
     void Start()
     {
-        firestoreManager = FirestoreManager.Instance;
-        Debug.Log(string.Format("Nom usuari", firestoreManager.user.Username));
 
-        Username.text = firestoreManager.user.Username;
-        Monedas.text = firestoreManager.user.Monedas.ToString();
-        Diamantes.text = firestoreManager.user.Diamantes.ToString();
+        partida = Partida.instance;
+        Username.text = partida.user.username;
+        Monedas.text = partida.user.monedas.ToString();
+        Diamantes.text = partida.user.diamantes.ToString();
 
     }
 

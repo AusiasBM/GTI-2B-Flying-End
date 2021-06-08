@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class gameOverScript : MonoBehaviour
 {
-    //public GameObject GameOverText;
-    public static GameObject GameOverStatic;
 
-    FirestoreManager firestoreManager;
+    public static GameObject GameOverStatic;
+    Partida partida;
     
     public GameController gameController;
 
@@ -22,10 +21,13 @@ public class gameOverScript : MonoBehaviour
     float mts = 0;
     void Start()
     {
-        firestoreManager = FirestoreManager.Instance;
-        firestoreManager.guardarInformacionUsuario(firestoreManager.user.Uid, firestoreManager.user);
-        
-        firestoreManager.guardarPuntosUsuario(firestoreManager.score);
+        partida = Partida.instance;
+
+        partida.actualizarDatosPartida();
+        // firestoreManager = FirestoreManager.Instance;
+        //firestoreManager.guardarInformacionUsuario(firestoreManager.user.Uid, firestoreManager.user);
+
+        //firestoreManager.guardarPuntosUsuario(firestoreManager.score);
         //gameOverScript.GameOverStatic = GameOverText;
         //gameOverScript.GameOverStatic.SetActive(true);
 

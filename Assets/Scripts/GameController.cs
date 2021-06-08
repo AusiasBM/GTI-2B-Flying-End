@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Firebase.Firestore;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    FirestoreManager firestoreManager;
     
     public int Score = 0;
     public int ScoreDiamante = 0;
@@ -21,6 +19,8 @@ public class GameController : MonoBehaviour
     public Text TextScoreMetros;
 
     public Text Username;
+
+    Partida partida;
 
     private static GameController instance;
     public static GameController Instance { get => instance; }
@@ -41,10 +41,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firestoreManager = FirestoreManager.Instance;
-        //Debug.Log(string.Format("Nom usuari", firestoreManager.user.Username));
-
-        Username.text = firestoreManager.user.Username;
+        partida = Partida.instance;
+        Username.text = partida.user.username;
     }
 
     // Update is called once per frame
@@ -77,6 +75,13 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt(scoreSave, Score);
         PlayerPrefs.SetInt(scoreDiamanteSave, ScoreDiamante);
         PlayerPrefs.SetFloat(scoreMetrosSave, ScoreMetros);
+        partida.user.monedas += Score;
+        partida.user.diamantes += ScoreDiamante;
+
+        if(ScoreMetros > partida.user.distanciaMaxima)
+        {
+            partida.user.distanciaMaxima = (int)ScoreMetros;
+        }
     }
 
     public void cargarPuntuacion()
