@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         partida = Partida.instance;
-        Username.text = partida.user.username;
+       // Username.text = partida.user.username;
     }
 
     // Update is called once per frame

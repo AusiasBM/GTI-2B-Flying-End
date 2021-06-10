@@ -11,14 +11,16 @@ public class MainMenu : MonoBehaviour
     public Text Monedas;
     public Text Diamantes;
     Partida partida;
-
+    MusicaController musicaController;
     void Start()
     {
 
         partida = Partida.instance;
-        Username.text = partida.user.username;
-        Monedas.text = partida.user.monedas.ToString();
-        Diamantes.text = partida.user.diamantes.ToString();
+        musicaController = MusicaController.instance;
+       
+        /* Username.text = partida.user.username;
+         Monedas.text = partida.user.monedas.ToString();
+         Diamantes.text = partida.user.diamantes.ToString();*/
 
     }
 
@@ -31,5 +33,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(nombreNivel);
     }
+    public void musicaJuego()
+    {
+        musicaController.musicajuego();
 
+    }
 }

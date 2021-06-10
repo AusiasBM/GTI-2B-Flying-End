@@ -15,14 +15,15 @@ public class gameOverScript : MonoBehaviour
     public Text scoreMoneda;
     public Text scoreMetros;
     public Text scoreDiamantes;
-
+    MusicaController musicaController;
   
 
     float mts = 0;
     void Start()
     {
         partida = Partida.instance;
-
+        musicaController = MusicaController.instance;
+        musicaController.audio.Stop();
         partida.actualizarDatosPartida();
         // firestoreManager = FirestoreManager.Instance;
         //firestoreManager.guardarInformacionUsuario(firestoreManager.user.Uid, firestoreManager.user);
@@ -61,7 +62,11 @@ public class gameOverScript : MonoBehaviour
     {
         SceneManager.LoadScene(nombreNivel);
     }
+    
+    public void musicaMenu()
+    {
+        musicaController.musicaMenu();
 
-
+    }
 
 }
