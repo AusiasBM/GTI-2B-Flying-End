@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class CrearNubesFondo : MonoBehaviour
 {
-    private GameObject nube;
+    private PoolNubesFondo pool;
 
-    public GameObject[] nubes;
-    public float rangoCreacion = 10f;
-    public float posicionZ = 2f;
     public bool activo = true;
-
-    CrearGameObject crear;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameObject = new GameObject();
-        gameObject.AddComponent<CrearGameObject>();
-        crear = gameObject.GetComponent<CrearGameObject>();
-        Destroy(gameObject);
-
-        //Repetir la invocaci?n del m?todo crearNube cada cierto tiempo 
-        Invoke("crearNube", Random.Range(0f, 1f));
+        pool = GetComponent<PoolNubesFondo>();
+        Invoke("activarObjeto", Random.Range(0f, 1f));
     }
 
-    void crearNube()
+    void activarObjeto()
     {
-        StartCoroutine(crear.crearObjeto(this.transform, nubes, rangoCreacion, false, true));
-        if(activo) Invoke("crearNube", Random.Range(4f, 6f));
+        Vector3 pos = new Vector3(0, 0, 0);
+
+        // Definimos la posición random desde la que saldrá
+        // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
+        pos = transform.position + Random.onUnitSphere * 10f;
+
+        GameObject obj = pool.chooseNube();
+        pos = new Vector3(pos.x, transform.position.y, 2);
+        obj.transform.position = pos;
+
+        if (activo) Invoke("activarObjeto", Random.Range(4f, 6f));
     }
 }

@@ -49,7 +49,7 @@ public class MovimientoObjeto : MonoBehaviour
 
             if (transform.position.x > destruir)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
         else
@@ -66,7 +66,7 @@ public class MovimientoObjeto : MonoBehaviour
 
             if (transform.position.x < destruir)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
@@ -88,7 +88,7 @@ public class MovimientoObjeto : MonoBehaviour
 
             if (transform.position.y < destruir)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
         else
@@ -105,7 +105,7 @@ public class MovimientoObjeto : MonoBehaviour
 
             if (transform.position.y > destruir)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

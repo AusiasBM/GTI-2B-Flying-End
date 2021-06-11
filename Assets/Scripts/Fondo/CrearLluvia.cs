@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class CrearLluvia : MonoBehaviour
 {
-    private GameObject GeneradorLluvia;
+    private PoolLluvia pool;
 
-    public GameObject[] lluvias;
-    public float rangoCreacion = 10f;
     public bool activo = true;
-
-    CrearGameObject crear;
     // Start is called before the first frame update
     void Start()
     {
-        crear = CrearGameObject.Instance;
-
-        Invoke("crearLluvia", Random.Range(0f,1f));
+        pool = GetComponent<PoolLluvia>();
+        Invoke("activarObjeto", Random.Range(0f, 1f));
     }
 
-
-    void crearLluvia()
+    void activarObjeto()
     {
-        StartCoroutine(crear.crearObjeto(this.transform, lluvias, rangoCreacion, false, true));
-        if (activo) Invoke("crearLluvia", Random.Range(0f,1f));
+        Vector3 pos = new Vector3(0, 0, 0);
+
+        // Definimos la posición random desde la que saldrá
+        // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
+        pos = transform.position + Random.onUnitSphere * 1f;
+
+        GameObject obj = pool.chooseLluvia();
+        pos = new Vector3(pos.x, transform.position.y, 0);
+        obj.transform.position = pos;
+
+        if (activo) Invoke("activarObjeto", Random.Range(1f, 2f));
     }
 }

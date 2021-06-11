@@ -24,7 +24,7 @@ public class Lluvia : MonoBehaviour
 
         if (transform.position.y > destruir)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

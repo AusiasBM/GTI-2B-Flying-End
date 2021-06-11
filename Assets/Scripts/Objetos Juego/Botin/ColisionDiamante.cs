@@ -23,6 +23,6 @@ public class ColisionDiamante : MonoBehaviour
     {
         gameController.ScoreDiamante += puntuacion;
         jugador.generarParticulas(particulasDiamante, this.transform);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

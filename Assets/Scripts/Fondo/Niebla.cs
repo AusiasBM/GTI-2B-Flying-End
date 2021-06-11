@@ -24,7 +24,7 @@ public class Niebla : MonoBehaviour
 
         if (transform.position.y > destruir)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

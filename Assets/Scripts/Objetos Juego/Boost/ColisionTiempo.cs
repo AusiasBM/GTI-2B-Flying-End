@@ -29,7 +29,7 @@ public class ColisionTiempo : MonoBehaviour
     {
         ralentizador.ralentizarObjetos(true);
         StartCoroutine(delayTiempo(10));
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public IEnumerator delayTiempo(int seconds)

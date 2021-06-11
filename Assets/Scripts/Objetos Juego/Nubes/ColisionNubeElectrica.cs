@@ -30,12 +30,9 @@ public class ColisionNubeElectrica : MonoBehaviour
 
         tiembla.CamTiembla();
 
-        
-
         Debug.Log("IMPACTO!!");
         rb.AddForce(transform.right * -fuerzaImpactoPieza, ForceMode.Impulse);
-        Destroy(gameObject);
-        
+        gameObject.SetActive(false);
 
     }
 }

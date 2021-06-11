@@ -16,7 +16,7 @@ public class ColisionBoostVida : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         controlSalud.ganarVida(2);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }

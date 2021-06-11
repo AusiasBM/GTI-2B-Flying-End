@@ -16,6 +16,6 @@ public class ColisionIman : MonoBehaviour
     {
         jugador.isMagnetic = true;
         jugador.efectoTemporal(10, 1);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

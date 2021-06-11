@@ -22,6 +22,6 @@ public class ColisionMoneda : MonoBehaviour
     {
         gameController.Score += puntuacion;
         jugador.generarParticulas(particulasMoneda, this.transform);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

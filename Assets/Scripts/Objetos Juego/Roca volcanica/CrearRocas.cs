@@ -7,28 +7,28 @@ using System.Reflection;
 
 public class CrearRocas : MonoBehaviour
 {
-    private GameObject roca;
+    private PoolRoca pool;
 
-    public GameObject[] rocas;
-    public float rangoCreacion = 8f;
     public bool activo = true;
-
-    CrearGameObject crear;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameObject = new GameObject();
-        gameObject.AddComponent<CrearGameObject>();
-        crear = gameObject.GetComponent<CrearGameObject>();
-        Destroy(gameObject);
-
-        Invoke("crearRoca", Random.Range(2f, 3f));
+        pool = GetComponent<PoolRoca>();
+        Invoke("activarObjeto", Random.Range(2f, 3f));
     }
 
-
-    void crearRoca()
+    void activarObjeto()
     {
-        StartCoroutine(crear.crearObjeto(this.transform, rocas, rangoCreacion, false, true));
-        if (activo) Invoke("crearRoca", Random.Range(2f, 5f));
+        Vector3 pos = new Vector3(0, 0, 0);
+
+        // Definimos la posición random desde la que saldrá
+        // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
+        pos = transform.position + Random.onUnitSphere * 8f;
+
+        GameObject obj = pool.chooseRoca();
+        pos = new Vector3(pos.x, transform.position.y, 0);
+        obj.transform.position = pos;
+
+        if (activo) Invoke("activarObjeto", Random.Range(2f, 5f));
     }
 }

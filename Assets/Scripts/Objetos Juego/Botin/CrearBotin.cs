@@ -4,40 +4,28 @@ using UnityEngine;
 
 public class CrearBotin : MonoBehaviour
 {
-    //Puede ser moneda o diamante
-    private GameObject botin;
+    private PoolBotin pool;
 
-    public GameObject[] listaBotin;
-    public int[] listaPrioridades;
-
-    private Dictionary<GameObject, int> botinPrioridades = new Dictionary<GameObject, int>();
-
-    public float rangoCreacion = 8f;
-
-    CrearGameObject crear;
+    public bool activo = true;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameObject = new GameObject();
-        gameObject.AddComponent<CrearGameObject>();
-        crear = gameObject.GetComponent<CrearGameObject>();
-        Destroy(gameObject);
-
-        for (int i = 0; i < listaBotin.Length; i++)
-        {
-            botinPrioridades.Add(listaBotin[i], listaPrioridades[i]);
-        }
-
-        //Repetir la invocación del método crearPajaro cada cierto tiempo (tiempo inicial de espera de 2s)
-        Invoke("crearBotin", Random.Range(5f, 8f));
+        pool = GetComponent<PoolBotin>();
+        Invoke("activarObjeto", Random.Range(5f, 8f));
     }
 
-
-    void crearBotin()
+    void activarObjeto()
     {
-        StartCoroutine(crear.crearObjetoPrioridad(this.transform, botinPrioridades, rangoCreacion, true));
-        Invoke("crearBotin", Random.Range(1f, 2f));
+        Vector3 pos = new Vector3(0, 0, 0);
 
+        // Definimos la posición random desde la que saldrá
+        // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
+        pos = transform.position + Random.onUnitSphere * 8f;
+
+        GameObject obj = pool.chooseBotin();
+        pos = new Vector3(pos.x, transform.position.y, 0);
+        obj.transform.position = pos;
+
+        if (activo) Invoke("activarObjeto", Random.Range(1f, 2f));
     }
-
 }

@@ -40,7 +40,7 @@ public class ColisionPajaro : MonoBehaviour
 
         jugador.generarParticulas(particulasPajaro, this.transform);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 

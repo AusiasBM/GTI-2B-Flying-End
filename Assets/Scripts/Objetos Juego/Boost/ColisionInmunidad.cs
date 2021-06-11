@@ -17,6 +17,6 @@ public class ColisionInmunidad : MonoBehaviour
     {
         jugador.isInmune = true;
         jugador.efectoTemporal(10, 2);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -4,53 +4,41 @@ using UnityEngine;
 
 public class CrearPajaros : MonoBehaviour
 {
-    private GameObject pajaro;
-
-    public GameObject[] listaPajaros;
-    public int[] listaPrioridades;
-
-    //Radio de la circunferencia
-    public float rangoCreacion = 5.25f;
+    private ObjectPool pool;
 
     public bool activo = true;
 
-    private Dictionary<GameObject, int> pajarosPrioridades = new Dictionary<GameObject, int>();
-
-    CrearGameObject crear;
     RalentizadorVelocidad ralentizador;
     // Start is called before the first frame update
     void Start()
     {
         ralentizador = RalentizadorVelocidad.Instance;
-        crear = CrearGameObject.Instance;
-
-
-        for (int i = 0; i < listaPajaros.Length; i++)
-        {
-            pajarosPrioridades.Add(listaPajaros[i], listaPrioridades[i]);
-        }
-
-        //Repetir la invocaci?n del m?todo 
-        Invoke("crearPajaro", Random.Range(2f, 3.5f));
+        pool = GetComponent<ObjectPool>();
+        Invoke("activarObjeto", Random.Range(2f, 3.5f));
     }
 
-
-    void crearPajaro()
+    void activarObjeto()
     {
-        StartCoroutine(crear.crearObjetoPrioridad(this.transform, pajarosPrioridades, rangoCreacion, false));
+        Vector3 pos = new Vector3(0, 0, 0);
+
+        // Definimos la posición random desde la que saldrá
+        // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
+        pos = transform.position + Random.onUnitSphere * 5.25f;
+
+        GameObject obj = pool.chooseWeigther();
+        pos = new Vector3(transform.position.x, pos.y, 0);
+        obj.transform.position = pos;
+
         if (activo)
         {
             if (ralentizador.ralentizar)
             {
-                Invoke("crearPajaro", Random.Range(8f, 10f));
+                Invoke("activarObjeto", Random.Range(8f, 10f));
             }
             else
             {
-                Invoke("crearPajaro", Random.Range(2f, 5.0f));
+                Invoke("activarObjeto", Random.Range(2f, 5.0f));
             }
         }
-        
-
     }
-
 }

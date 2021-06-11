@@ -37,7 +37,7 @@ public class ColisionPieza : MonoBehaviour
 
         Debug.Log("IMPACTO!!");
         rb.AddForce(transform.up * -fuerzaImpactoPieza, ForceMode.Impulse);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }

@@ -4,35 +4,28 @@ using UnityEngine;
 
 public class CrearBoost : MonoBehaviour
 {
-    public GameObject[] listaBoost;
-    public int[] listaPrioridades;
+    private PoolBoost pool;
 
-    private Dictionary<GameObject, int> boostPrioridades = new Dictionary<GameObject, int>();
-
-    public float rangoCreacion = 8f;
-
-    CrearGameObject crear;
+    public bool activo = true;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameObject = new GameObject();
-        gameObject.AddComponent<CrearGameObject>();
-        crear = gameObject.GetComponent<CrearGameObject>();
-        Destroy(gameObject);
-
-        for (int i = 0; i < listaBoost.Length; i++)
-        {
-            boostPrioridades.Add(listaBoost[i], listaPrioridades[i]);
-        }
-
-        //Repetir la invocaci?n del m?todo 
-        Invoke("crearBoost", Random.Range(15f, 20f));
+        pool = GetComponent<PoolBoost>();
+        Invoke("activarObjeto", Random.Range(15f, 20f));
     }
 
-
-    void crearBoost()
+    void activarObjeto()
     {
-        StartCoroutine(crear.crearObjetoPrioridad(this.transform, boostPrioridades, rangoCreacion, true));
-        Invoke("crearBoost", Random.Range(15f, 20f));
+        Vector3 pos = new Vector3(0, 0, 0);
+
+        // Definimos la posición random desde la que saldrá
+        // Random.onUnitSphere * rangoCreacion elige un punto dentro de una esfera (rangoCreación es el radio de la esfera)
+        pos = transform.position + Random.onUnitSphere * 8f;
+
+        GameObject obj = pool.chooseBoost();
+        pos = new Vector3(pos.x, transform.position.y, 0);
+        obj.transform.position = pos;
+
+        Invoke("activarObjeto", Random.Range(15f, 20f));
     }
 }

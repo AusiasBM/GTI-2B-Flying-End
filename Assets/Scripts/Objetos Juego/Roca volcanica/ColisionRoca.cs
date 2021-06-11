@@ -37,6 +37,6 @@ public class ColisionRoca : MonoBehaviour
 
         Debug.Log("IMPACTO!!");
         rb.AddForce(transform.up * +fuerzaImpactoRoca, ForceMode.Impulse);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
