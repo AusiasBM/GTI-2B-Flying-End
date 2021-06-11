@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 65814072}
   m_Layer: 0
   m_Name: -------PAUSA-------
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,6 +231,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &77698724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 77698725}
+  m_Layer: 0
+  m_Name: ------OBJETOS INSTACIADOS ------
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &77698725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77698724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14, y: 0, z: -0.663911}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129997596
 GameObject:
@@ -487,7 +517,7 @@ MonoBehaviour:
   - {fileID: 4844643883530458213, guid: 026da45ba0ff4b048a992438d7f75933, type: 3}
   - {fileID: 5905265489006865330, guid: 3966f477103127b41a7abebd8c717eb1, type: 3}
   - {fileID: 5184004680171492629, guid: 26108d82a3228164286e98c7f9bcc161, type: 3}
-  listaPrioridades: 0100000001000000010000006400000001000000
+  listaPrioridades: 0100000001000000010000000100000001000000
   amount: 2
 --- !u!1 &131439465
 GameObject:
@@ -579,7 +609,7 @@ GameObject:
   - component: {fileID: 158678568}
   m_Layer: 0
   m_Name: -------CARRILES-------
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2358,7 +2388,7 @@ GameObject:
   - component: {fileID: 789227253}
   m_Layer: 0
   m_Name: "---C\xC1MARA Y ANIMACION---"
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2894,7 +2924,7 @@ GameObject:
   - component: {fileID: 1047053841}
   m_Layer: 0
   m_Name: -------POST-PROCESADO-------
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3335,7 +3365,7 @@ GameObject:
   - component: {fileID: 1407651728}
   m_Layer: 0
   m_Name: -------HUD-------
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3638,7 +3668,7 @@ GameObject:
   - component: {fileID: 1475728205}
   m_Layer: 0
   m_Name: -----PERSONAJE-----
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4281,7 +4311,7 @@ GameObject:
   - component: {fileID: 2023086699}
   m_Layer: 0
   m_Name: -------SCRIPTS-------
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4311,7 +4341,7 @@ GameObject:
   - component: {fileID: 2049338360}
   m_Layer: 0
   m_Name: -------LIMITES-------
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
