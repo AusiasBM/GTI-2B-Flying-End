@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public Text Diamantes;
     Partida partida;
     MusicaController musicaController;
+    public static MusicaController instance;
     void Start()
     {
 
@@ -25,6 +26,28 @@ public class MainMenu : MonoBehaviour
     }
 
 
+    public MusicaController Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+    private void Awake()
+    {
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        else
+        {
+            instance = MusicaController.instance;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     void Update()
     {
 
