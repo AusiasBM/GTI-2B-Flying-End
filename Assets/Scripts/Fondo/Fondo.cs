@@ -9,7 +9,6 @@ public class Fondo : MonoBehaviour
     public float posRecolocar = -43f;
     public GameObject fondo1;
     public GameObject fondo2;
-    MusicaController musicaController;
     private bool estaFondo2 = false;
     private bool estaFondo1 = false;
 
@@ -35,7 +34,7 @@ public class Fondo : MonoBehaviour
         gameController = GameController.Instance;
         efectos = EfectosColorGrading.Instance;
         jugador = Jugador.Instance;
-        musicaController = MusicaController.instance;
+
         //Cambio del gradiente de color segun cada escenario
         StartCoroutine(efectos.cambiarParametros(100f, 5f, 0f));
     }
@@ -50,7 +49,6 @@ public class Fondo : MonoBehaviour
 
         if (fondo2.transform.position.y >= 0 && !estaFondo2)
         {
-            musicapajaros();
             //Debug.Log("CAMBIA DE FONDO");
             fondo1.transform.position = new Vector3(0, posRecolocar, fondo1.transform.position.z);
             estaFondo2 = true;
@@ -75,7 +73,6 @@ public class Fondo : MonoBehaviour
             }
             if (gameController.ScoreMetros >= 220f && gameController.ScoreMetros < 350f)
             {
-                musicalluvia();
                 CarrilIzda1.GetComponent<CrearPajaros>().activo = false;
                 CarrilDrcha1.GetComponent<CrearPajaros>().activo = false;
 
@@ -94,11 +91,9 @@ public class Fondo : MonoBehaviour
                 CarrilUp.GetComponent<CrearLluvia>().activo = true;
                 CarrilUp.GetComponent<CrearLluvia>().enabled = true;
                 CarrilDown.GetComponent<CrerNubeElectrica>().enabled = true;
-                
             }
             if (gameController.ScoreMetros >= 350f && gameController.ScoreMetros <= 500f)
             {
-                musicavolcan();
                 CarrilUp.GetComponent<CrearLluvia>().activo = false;
                 CarrilDown.GetComponent<CrerNubeElectrica>().activo = false;
                 CarrilDown.GetComponent<CrearRocas>().enabled = true;
@@ -189,18 +184,6 @@ public class Fondo : MonoBehaviour
             nieblaHecho = false;
         }
 
-    }
-    public void musicalluvia()
-    {
-        musicaController.musicaLluvia();
-    }
-    public void musicavolcan()
-    {
-        musicaController.musicaVolcan();
-    }
-    public void musicapajaros()
-    {
-        musicaController.musicaPajaros();
     }
 
 }

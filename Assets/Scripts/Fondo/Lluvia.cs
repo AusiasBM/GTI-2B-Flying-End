@@ -7,7 +7,6 @@ public class Lluvia : MonoBehaviour
     //Velocidad de la nube
     public float velocidad = 2f;
     public float destruir = 20f;
- 
 
     //Rigidbody rb;
     // Start is called before the first frame update
@@ -15,7 +14,6 @@ public class Lluvia : MonoBehaviour
     {
         //rb = GetComponent<Rigidbody>();
         //rb.constraints = RigidbodyConstraints.FreezeRotation;
-        
     }
 
     // Update is called once per frame
@@ -26,10 +24,7 @@ public class Lluvia : MonoBehaviour
 
         if (transform.position.y > destruir)
         {
-            
             gameObject.SetActive(false);
-            
         }
     }
- 
 }
