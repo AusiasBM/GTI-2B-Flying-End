@@ -60,15 +60,35 @@ public class MusicaController : MonoBehaviour
         
     }
     public void musicaMoneda() {
-
-        // musicaFondo.clip = musica[2];
-        //  musicaFondo.loop = false;
-        /* musicaFondo.Play();
-          musicajuego();*/
-        //musicajuego();
+        
         audio.PlayOneShot(musica[2], 0.7F);
-       // audio.PlayOneShot(musica[1], 0.7F);
+    }
+    public void musicaLluvia()
+    {
 
+        audio.PlayOneShot(musica[3], 0.7F);
+        audio.loop = true;
+       
+       
+    }
+
+    public void musicaDiamante()
+    {
+
+        audio.PlayOneShot(musica[4], 0.7F);
+    }
+    public void musicaVolcan()
+    {
+
+        audio.PlayOneShot(musica[5], 0.7F);
+        audio.loop = true;
+
+    }
+    public void musicaPajaros()
+    {
+
+        audio.PlayOneShot(musica[6], 0.7F);
+        audio.loop = true;
 
 
     }

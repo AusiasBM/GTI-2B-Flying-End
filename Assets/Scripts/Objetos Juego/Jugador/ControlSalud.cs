@@ -16,7 +16,7 @@ public class ControlSalud : MonoBehaviour
     public void quitarVida(float vidaMenos)
     {
         efectoDanyo.golpe = true;
-        salud = salud - vidaMenos;
+       // salud = salud - vidaMenos;
 
         if (salud <= 0)
         {
