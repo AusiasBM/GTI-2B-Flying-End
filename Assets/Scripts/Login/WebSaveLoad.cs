@@ -64,7 +64,6 @@ public class WebSaveLoad : MonoBehaviour, IDataSaveLoad
             {
                 Error = webRequest.error;
                 onError?.Invoke();
-                
             }
             else
             {
