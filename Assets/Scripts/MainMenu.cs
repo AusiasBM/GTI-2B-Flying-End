@@ -36,4 +36,8 @@ public class MainMenu : MonoBehaviour
     {
         partida.cargarRanking();
     }
+    public void musicaA()
+    {
+        musicaController.musicajuego();
+    }
 }

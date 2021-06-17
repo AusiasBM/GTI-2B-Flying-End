@@ -11,14 +11,14 @@ public class ColisionMoneda : MonoBehaviour
 
     Jugador jugador;
     GameController gameController;
-    MusicaController musicaController;
+ 
 
 
     // Start is called before the first frame update
     void Start()
     {
         jugador = Jugador.Instance;
-        musicaController = MusicaController.instance;
+      
         gameController = GameController.Instance;
        
        
@@ -28,12 +28,9 @@ public class ColisionMoneda : MonoBehaviour
     {
         gameController.Score += puntuacion;
         jugador.generarParticulas(particulasMoneda, this.transform);
-        musicamoneda();
+     
         gameObject.SetActive(false);
      
     }
-    public void musicamoneda()
-    {
-        musicaController.musicaMoneda();
-    }
+  
 }

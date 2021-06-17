@@ -9,6 +9,7 @@ public class Fondo : MonoBehaviour
     public float posRecolocar = -43f;
     public GameObject fondo1;
     public GameObject fondo2;
+    MusicaController musicaController;
     private bool estaFondo2 = false;
     private bool estaFondo1 = false;
 
@@ -34,9 +35,12 @@ public class Fondo : MonoBehaviour
         gameController = GameController.Instance;
         efectos = EfectosColorGrading.Instance;
         jugador = Jugador.Instance;
-
+        musicaController = MusicaController.instance;
         //Cambio del gradiente de color segun cada escenario
         StartCoroutine(efectos.cambiarParametros(100f, 5f, 0f));
+        acorde();
+
+
     }
 
     // Update is called once per frame
@@ -47,8 +51,10 @@ public class Fondo : MonoBehaviour
 
         gameController.ScoreMetros += 1f * velocidad * Time.deltaTime; // Contador de metros
 
+
         if (fondo2.transform.position.y >= 0 && !estaFondo2)
         {
+
             //Debug.Log("CAMBIA DE FONDO");
             fondo1.transform.position = new Vector3(0, posRecolocar, fondo1.transform.position.z);
             estaFondo2 = true;
@@ -56,6 +62,7 @@ public class Fondo : MonoBehaviour
 
             if (gameController.ScoreMetros >= 120f && gameController.ScoreMetros < 220f)
             {
+                musicapajaros();
                 CarrilDown.GetComponent<CrearNubes>().activo = false;
                 CarrilDown.GetComponent<CrearNubesFondo>().activo = false;
 
@@ -73,6 +80,7 @@ public class Fondo : MonoBehaviour
             }
             if (gameController.ScoreMetros >= 220f && gameController.ScoreMetros < 350f)
             {
+                musicalluvia();
                 CarrilIzda1.GetComponent<CrearPajaros>().activo = false;
                 CarrilDrcha1.GetComponent<CrearPajaros>().activo = false;
 
@@ -91,9 +99,11 @@ public class Fondo : MonoBehaviour
                 CarrilUp.GetComponent<CrearLluvia>().activo = true;
                 CarrilUp.GetComponent<CrearLluvia>().enabled = true;
                 CarrilDown.GetComponent<CrerNubeElectrica>().enabled = true;
+
             }
             if (gameController.ScoreMetros >= 350f && gameController.ScoreMetros <= 500f)
             {
+                musicavolcan();
                 CarrilUp.GetComponent<CrearLluvia>().activo = false;
                 CarrilDown.GetComponent<CrerNubeElectrica>().activo = false;
                 CarrilDown.GetComponent<CrearRocas>().enabled = true;
@@ -115,6 +125,7 @@ public class Fondo : MonoBehaviour
 
         if (fondo1.transform.position.y >= 0 && !estaFondo1)
         {
+
             //Debug.Log("CAMBIA DE FONDO");
             fondo2.transform.position = new Vector3(0, posRecolocar, fondo2.transform.position.z);
             estaFondo1 = true;
@@ -122,6 +133,7 @@ public class Fondo : MonoBehaviour
 
             if (gameController.ScoreMetros >= 120f && gameController.ScoreMetros < 220f)
             {
+                musicapajaros();
                 if (!transDiaNoche && gameController.ScoreMetros <= 140f)
                 {
                     fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[1];
@@ -135,6 +147,7 @@ public class Fondo : MonoBehaviour
             }
             if (gameController.ScoreMetros >= 220f && gameController.ScoreMetros < 350f)
             {
+                musicalluvia();
                 CarrilIzda1.GetComponent<CrearPajaros>().activo = false;
                 CarrilDrcha1.GetComponent<CrearPajaros>().activo = false;
 
@@ -152,9 +165,10 @@ public class Fondo : MonoBehaviour
             }
             if (gameController.ScoreMetros >= 350f && gameController.ScoreMetros <= 500f)
             {
-
+                musicavolcan();
                 if (!transTormentaVolcan && gameController.ScoreMetros <= 400f)
                 {
+
                     fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[5];
                     transTormentaVolcan = true;
                     jugador.isTormenta = false;
@@ -165,7 +179,7 @@ public class Fondo : MonoBehaviour
                     fondo2.GetComponent<SpriteRenderer>().sprite = listSpritesFondos[7];
                 }
 
-                
+
             }
         }
 
@@ -176,14 +190,30 @@ public class Fondo : MonoBehaviour
             nieblaHecho = true;
         }
 
-        if(gameController.ScoreMetros > 100f && nieblaHecho)
+        if (gameController.ScoreMetros > 100f && nieblaHecho)
         {
-            
+
             CarrilDown.GetComponent<CrearNiebla>().activo = false;
             CarrilDown.GetComponent<CrearNiebla>().enabled = false;
             nieblaHecho = false;
         }
 
+    }
+    public void musicalluvia()
+    {
+        musicaController.musicaLluvia();
+    }
+    public void musicavolcan()
+    {
+        musicaController.musicaVolcan();
+    }
+    public void musicapajaros()
+    {
+        musicaController.musicaPajaros();
+    }
+    public void acorde()
+    {
+        musicaController.acordeInicio();
     }
 
 }

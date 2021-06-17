@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicaController : MonoBehaviour
 {
 
     string nombreNivel;
     public AudioSource audio;
-    //public AudioSource musicaFondo;
     public AudioClip[] musica;
     public AudioClip m;
     public AudioClip m1;
@@ -31,9 +31,17 @@ public class MusicaController : MonoBehaviour
         else
         {
             instance = this;
+
         }
+
         DontDestroyOnLoad(gameObject);
+
+
+
+
+
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,34 +49,56 @@ public class MusicaController : MonoBehaviour
         audio = GetComponent<AudioSource>();
 
         musicaMenu();
-        
+
+
     }
 
 
-   public void musicaMenu()
+    public void musicaMenu()
     {
         audio.Stop();
         audio.clip = musica[0];
         audio.Play();
-        
+
+
     }
     public void musicajuego()
     {
         audio.Stop();
+
         audio.clip = musica[1];
         audio.Play();
-        
+
     }
-    public void musicaMoneda() {
+    public void acordeInicio()
+    {
 
-        // musicaFondo.clip = musica[2];
-        //  musicaFondo.loop = false;
-        /* musicaFondo.Play();
-          musicajuego();*/
-        //musicajuego();
+        audio.PlayOneShot(musica[5], 0.7F);
+
+
+
+    }
+    public void musicaLluvia()
+    {
+
         audio.PlayOneShot(musica[2], 0.7F);
-       // audio.PlayOneShot(musica[1], 0.7F);
+        audio.loop = true;
 
+
+    }
+
+    public void musicaVolcan()
+    {
+
+        audio.PlayOneShot(musica[3], 0.7F);
+        audio.loop = true;
+
+    }
+    public void musicaPajaros()
+    {
+
+        audio.PlayOneShot(musica[4], 0.7F);
+        audio.loop = true;
 
 
     }

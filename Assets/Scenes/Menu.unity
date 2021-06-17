@@ -841,9 +841,12 @@ MonoBehaviour:
   musica:
   - {fileID: 8300000, guid: f05f7e3f7a756c0429ebdaa233f28f66, type: 3}
   - {fileID: 8300000, guid: 543eb006b774e514eb777a8fc4ab4d63, type: 3}
-  - {fileID: 8300000, guid: b1d8e8e6850fd16448be7bae7f57a62a, type: 3}
-  m: {fileID: 0}
-  m1: {fileID: 0}
+  - {fileID: 8300000, guid: b89a217abed611a4fb5cfe36f0082d8a, type: 3}
+  - {fileID: 8300000, guid: 4852ff1100842e94a8dc811119100976, type: 3}
+  - {fileID: 8300000, guid: 5595af7e2ab0ac446bee402ba535b20b, type: 3}
+  - {fileID: 8300000, guid: f3a20b4e52006e54e9c594a6f6a3dd0d, type: 3}
+  m: {fileID: 8300000, guid: b1d8e8e6850fd16448be7bae7f57a62a, type: 3}
+  m1: {fileID: 8300000, guid: 543eb006b774e514eb777a8fc4ab4d63, type: 3}
 --- !u!82 &1044644988
 AudioSource:
   m_ObjectHideFlags: 0
@@ -853,10 +856,11 @@ AudioSource:
   m_GameObject: {fileID: 1044644986}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4468061754944480763, guid: 76823178c1a7d054da6e4c284e06dcd2,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.175
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1504,6 +1508,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1983726906}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: musicaJuego
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1983726906}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: musicaA
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
