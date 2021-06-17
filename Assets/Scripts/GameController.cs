@@ -82,6 +82,9 @@ public class GameController : MonoBehaviour
         {
             partida.user.distanciaMaxima = (int)ScoreMetros;
         }
+
+        partida.distancia.username = partida.user.username;
+        partida.distancia.distancia = (int)ScoreMetros;
     }
 
     public void cargarPuntuacion()

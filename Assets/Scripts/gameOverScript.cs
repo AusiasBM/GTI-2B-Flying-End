@@ -25,12 +25,7 @@ public class gameOverScript : MonoBehaviour
         musicaController = MusicaController.instance;
         musicaController.audio.Stop();
         partida.actualizarDatosPartida();
-        // firestoreManager = FirestoreManager.Instance;
-        //firestoreManager.guardarInformacionUsuario(firestoreManager.user.Uid, firestoreManager.user);
-
-        //firestoreManager.guardarPuntosUsuario(firestoreManager.score);
-        //gameOverScript.GameOverStatic = GameOverText;
-        //gameOverScript.GameOverStatic.SetActive(true);
+        partida.guardarDistancia();
 
         gameController = GameController.Instance;
         gameController.cargarPuntuacion();

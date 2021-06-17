@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 009208fe13c1c3f4490812452637a152
+  - enabled: 1
+    path: Assets/Scenes/LoadingRanking.unity
+    guid: e79ee20b66a95964aacb66f2bce08f4b
+  - enabled: 1
+    path: Assets/Scenes/Ranking.unity
+    guid: c25b246defe684f348a9ffd2c8159467
   m_configObjects: {}
