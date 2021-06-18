@@ -7,12 +7,13 @@ public class logicaVolumenSFX : MonoBehaviour
 {
     public Slider sliderSFX;
     public float sliderValueSFX;
-    public AudioSource sfx;
+    AudioSource sfx;
 
     // Start is called before the first frame update
     void Start()
     {
         sliderSFX.value = PlayerPrefs.GetFloat("volumenEfectos", 0.5f);
+        sfx = GetComponent<AudioSource>();
         sfx.volume = sliderSFX.value;
 
     }
