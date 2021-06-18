@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Alfonso Garc\xEDa"
+  m_Text: 
 --- !u!222 &18438930
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3072,6 +3072,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1185525641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 336125250779687262, guid: 1b485f66c68a75245af57fb7fc071d7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 474604476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1186947071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,6 +3663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuP: {fileID: 1465591504}
   seguroP: {fileID: 1806381295}
+  jugador: {fileID: 1185525641}
 --- !u!1 &1475728204
 GameObject:
   m_ObjectHideFlags: 0

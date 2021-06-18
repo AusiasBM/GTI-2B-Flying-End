@@ -10,6 +10,8 @@ public class Pausa : MonoBehaviour
 
     public GameObject menuP, seguroP;
 
+    public GameObject jugador;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,10 +46,11 @@ public class Pausa : MonoBehaviour
         gameP = true;
     }
 
-    /*public void mPrincipal(string name)
+    public void mPrincipal(string name)
     {
+        Destroy(jugador);
         SceneManager.LoadScene(name);
-    }*/
+    }
 
     public void panel2()
     {
@@ -58,8 +61,9 @@ public class Pausa : MonoBehaviour
     {
         seguroP.SetActive(false);
     }
-    /*public void salirPsi()
+
+    public void salirPsi()
     {
         Application.Quit();
-    }*/
+    }
 }

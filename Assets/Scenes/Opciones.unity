@@ -917,7 +917,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711206103}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b5c6ff7cce2693428b012e49645d201, type: 3}
   m_Name: 
@@ -1327,13 +1327,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974602527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64368fab7b7951e4ab9b8380b035bb89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sliderSFX: {fileID: 974602529}
   sliderValueSFX: 0
+  sfx: {fileID: 0}
 --- !u!1 &1147761978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderSFX: {fileID: 974602529}
   sliderValueSFX: 0
+  sfx: {fileID: 1460964923}
 --- !u!1 &1480811472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderSFX: {fileID: 974602529}
   sliderValueSFX: 0
+  sfx: {fileID: 0}
 --- !u!114 &2044183877
 MonoBehaviour:
   m_ObjectHideFlags: 0
