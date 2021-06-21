@@ -11,7 +11,7 @@ public class ColisionMoneda : MonoBehaviour
 
     Jugador jugador;
     GameController gameController;
- 
+    private  sonidoMoneda sonidomoneda ;
 
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class ColisionMoneda : MonoBehaviour
         jugador = Jugador.Instance;
       
         gameController = GameController.Instance;
-       
+        sonidomoneda = jugador.GetComponent<sonidoMoneda>();
        
     }
 
@@ -28,8 +28,9 @@ public class ColisionMoneda : MonoBehaviour
     {
         gameController.Score += puntuacion;
         jugador.generarParticulas(particulasMoneda, this.transform);
-     
         gameObject.SetActive(false);
+        sonidomoneda.emitir();
+
      
     }
   

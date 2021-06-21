@@ -16,7 +16,7 @@ public class ControlSalud : MonoBehaviour
     public void quitarVida(float vidaMenos)
     {
         efectoDanyo.golpe = true;
-        salud = salud - vidaMenos;
+         salud = salud - vidaMenos;
 
         if (salud <= 0)
         {
@@ -24,7 +24,7 @@ public class ControlSalud : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-        vida.GetComponent<Image>().fillAmount = salud/10;
+        vida.GetComponent<Image>().fillAmount = salud / 10;
     }
 
     //Metodo para ganar vida al coger el boost de vida
@@ -40,7 +40,7 @@ public class ControlSalud : MonoBehaviour
             {
                 salud = 10;
             }
-            vida.GetComponent<Image>().fillAmount = salud/10;
+            vida.GetComponent<Image>().fillAmount = salud / 10;
 
         }
         Debug.Log(salud);

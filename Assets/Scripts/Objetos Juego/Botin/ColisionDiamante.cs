@@ -8,7 +8,7 @@ public class ColisionDiamante : MonoBehaviour
 {
     public GameObject particulasDiamante;
     public int puntuacion = 1;
-
+    private sonidoDiamante sonidodiamante;
 
     Jugador jugador;
     GameController gameController;
@@ -17,6 +17,7 @@ public class ColisionDiamante : MonoBehaviour
     {
         jugador = Jugador.Instance;
         gameController = GameController.Instance;
+        sonidodiamante= jugador.GetComponent<sonidoDiamante>();
     }
 
         private void OnCollisionEnter(Collision collision)
@@ -24,5 +25,6 @@ public class ColisionDiamante : MonoBehaviour
         gameController.ScoreDiamante += puntuacion;
         jugador.generarParticulas(particulasDiamante, this.transform);
         gameObject.SetActive(false);
+        sonidodiamante.emitir();
     }
 }
