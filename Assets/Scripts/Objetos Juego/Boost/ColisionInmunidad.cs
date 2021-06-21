@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class ColisionInmunidad : MonoBehaviour
 {
     Jugador jugador;
-
+    private sonidoItem sonidoitem;
     void Start()
     {
         jugador = Jugador.Instance;
+
+        sonidoitem = jugador.GetComponent<sonidoItem>();
     }
     
 
@@ -18,5 +20,6 @@ public class ColisionInmunidad : MonoBehaviour
         jugador.isInmune = true;
         jugador.efectoTemporal(10, 2);
         gameObject.SetActive(false);
+       sonidoitem.emitir();
     }
 }

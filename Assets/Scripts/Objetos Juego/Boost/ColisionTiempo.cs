@@ -10,16 +10,19 @@ public class ColisionTiempo : MonoBehaviour
     public Image UIImageBoostVida;*/
 
     RalentizadorVelocidad ralentizador;
-
+    Jugador jugador;
     public GameObject estructuraBarraVidaBoost;
     public GameObject barraVidaBoost;
     public GameObject imgBoost;
     public Sprite[] imagenesBoost;
+    private sonidoItem sonidoitem;
 
     // Start is called before the first frame update
     void Start()
     {
+        jugador = Jugador.Instance;
         ralentizador = RalentizadorVelocidad.Instance;
+        sonidoitem = jugador.GetComponent<sonidoItem>();
 
         /*UIImageBoost = GameObject.Find("ImgBoost").GetComponent<Image>();
         UIImageBoostVida = GameObject.Find("barraVidaBoost").GetComponent<Image>();*/
@@ -30,6 +33,7 @@ public class ColisionTiempo : MonoBehaviour
         ralentizador.ralentizarObjetos(true);
         StartCoroutine(delayTiempo(10));
         gameObject.SetActive(false);
+        sonidoitem.emitir();
     }
 
     public IEnumerator delayTiempo(int seconds)
