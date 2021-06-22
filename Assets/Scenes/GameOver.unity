@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 40451336}
   - component: {fileID: 40451337}
   - component: {fileID: 40451338}
+  - component: {fileID: 40451339}
   m_Layer: 5
   m_Name: MetrosScore num
   m_TagString: Untagged
@@ -202,6 +203,22 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: x
+--- !u!114 &40451339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40451335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1005c9766b4684da796c429d2c4e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueManagerObject: {fileID: 0}
+  variableName: metros
+  useTextMeshPro: 0
+  increment: 1
 --- !u!1001 &97750557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1073,6 +1090,7 @@ GameObject:
   - component: {fileID: 1105849961}
   - component: {fileID: 1105849962}
   - component: {fileID: 1105849963}
+  - component: {fileID: 1105849964}
   m_Layer: 5
   m_Name: MonedasScore num
   m_TagString: Untagged
@@ -1141,6 +1159,22 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: x
+--- !u!114 &1105849964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105849960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1005c9766b4684da796c429d2c4e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueManagerObject: {fileID: 0}
+  variableName: monedas
+  useTextMeshPro: 0
+  increment: 1
 --- !u!1 &1137442279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,9 +1368,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  scoreMoneda: {fileID: 1105849963}
-  scoreMetros: {fileID: 40451338}
-  scoreDiamantes: {fileID: 2087950708}
+  scoreMoneda: {fileID: 0}
+  scoreMetros: {fileID: 0}
+  scoreDiamantes: {fileID: 0}
 --- !u!4 &1224710937
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,6 +1464,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299027199}
   m_CullTransparentMesh: 1
+--- !u!1 &1360698500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360698502}
+  - component: {fileID: 1360698501}
+  m_Layer: 0
+  m_Name: control
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1360698501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360698500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c6efde9e86aa354d8a2ff940d0c53c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 0}
+  moneda: 200
+  diamante: 200
+  metro: 100
+--- !u!4 &1360698502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360698500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1134.6603, y: 381, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388685856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1847,7 @@ GameObject:
   - component: {fileID: 2087950710}
   - component: {fileID: 2087950709}
   - component: {fileID: 2087950708}
+  - component: {fileID: 2087950711}
   m_Layer: 5
   m_Name: 'DiamantesScore num '
   m_TagString: Untagged
@@ -1834,3 +1916,19 @@ RectTransform:
   m_AnchoredPosition: {x: 228, y: 0}
   m_SizeDelta: {x: 199, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2087950711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087950707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1005c9766b4684da796c429d2c4e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueManagerObject: {fileID: 0}
+  variableName: diamantes
+  useTextMeshPro: 0
+  increment: 1

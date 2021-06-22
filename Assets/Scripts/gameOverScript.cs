@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class gameOverScript : MonoBehaviour
+public class gameOverScript : MonoBehaviour,ICounterValueContainer
 {
 
     public static GameObject GameOverStatic;
@@ -56,19 +56,7 @@ public class gameOverScript : MonoBehaviour
     }
 
 
-    private void Update()
-    {
 
-        //scoreMoneda.text += "Monedas recolectadas: " + i.ToString();
-        while(contadorMonedas < gameController.Score+1)
-        {
-
-            scoreMoneda.text = contadorMonedas.ToString();
-           
-        }
-        contadorMonedas++;
-
-    }
 
     public void CargarEscena(string nombreNivel)
     {
@@ -81,4 +69,8 @@ public class gameOverScript : MonoBehaviour
 
     }
 
+    public int GetValue(string s)
+    {
+        throw new NotImplementedException();
+    }
 }
