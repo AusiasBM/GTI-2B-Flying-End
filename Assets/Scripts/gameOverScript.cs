@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,13 @@ public class gameOverScript : MonoBehaviour
     
     public GameController gameController;
 
+    int frames = 0;
+    int contadorMonedas = 0;
+
     public Text scoreMoneda;
     public Text scoreMetros;
     public Text scoreDiamantes;
     MusicaController musicaController;
-  
 
     float mts = 0;
     void Start()
@@ -30,20 +33,20 @@ public class gameOverScript : MonoBehaviour
         gameController = GameController.Instance;
         gameController.cargarPuntuacion();
 
-        scoreMoneda.text = "Monedas recolectadas: " + gameController.Score.ToString();
+        
         
         if (gameController.ScoreMetros >= 1000)
         {
             mts =gameController.ScoreMetros / 1000;
-            scoreMetros.text = "Distancia recorrida: " + mts.ToString("F2") + "km.";
+            scoreMetros.text = mts.ToString("F2") + "km.";
         }
         else
         {
             mts = Mathf.Round(gameController.ScoreMetros);
-            scoreMetros.text = "Distancia recorrida: " + mts.ToString() + "m.";
+            scoreMetros.text = mts.ToString() + "m.";
         }
         
-        scoreDiamantes.text = "Diamantes recolectados: " + gameController.ScoreDiamante.ToString();
+        scoreDiamantes.text = gameController.ScoreDiamante.ToString();
 
 
        
@@ -52,6 +55,20 @@ public class gameOverScript : MonoBehaviour
         Debug.Log(gameController.Score);
     }
 
+
+    private void Update()
+    {
+
+        //scoreMoneda.text += "Monedas recolectadas: " + i.ToString();
+        while(contadorMonedas < gameController.Score+1)
+        {
+
+            scoreMoneda.text = contadorMonedas.ToString();
+           
+        }
+        contadorMonedas++;
+
+    }
 
     public void CargarEscena(string nombreNivel)
     {
