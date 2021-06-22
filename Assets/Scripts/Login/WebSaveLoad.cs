@@ -13,11 +13,13 @@ public class WebSaveLoad : MonoBehaviour, IDataSaveLoad
     public string Error { get; private set; } = "";
     object _data;
     public Distancia[] distancias;
+    public Usuario[] user;
     public bool completado;
 
     public void Load<T>(string resource, ref T data)
     {
         _data = data;
+        Debug.Log(_data.ToString());
         StartCoroutine(GetRequestRanking(resource));
     }
     public void Save(string resource, object data)
@@ -45,6 +47,7 @@ public class WebSaveLoad : MonoBehaviour, IDataSaveLoad
             else
             {
                 distancias = JSONHelper.getJsonArray<Distancia>(webRequest.downloadHandler.text);
+                user = JSONHelper.getJsonArray<Usuario>(webRequest.downloadHandler.text);
                 completado = true;
                 onLoad?.Invoke();
             }
@@ -69,7 +72,6 @@ public class WebSaveLoad : MonoBehaviour, IDataSaveLoad
             {
                 Debug.Log(JsonUtility.ToJson(data));
                 onSave?.Invoke();
-                
             }
         }
     }

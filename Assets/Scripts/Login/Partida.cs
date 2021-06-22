@@ -8,6 +8,7 @@ using TMPro;
 public class Partida : MonoBehaviour
 {
     public User user;
+    public Usuario usuario;
     [System.NonSerialized]
     public Distancia distancia;
 
@@ -41,6 +42,7 @@ public class Partida : MonoBehaviour
     {
         fileSaveLoad = new FileSaveLoad();
         user = new User();
+        usuario = new Usuario();
         distancia = new Distancia();
         saveLoad = GetComponent<WebSaveLoad>();
         cargarRanking();
@@ -168,5 +170,9 @@ public class Partida : MonoBehaviour
         Debug.LogWarning(saveLoad.Error);
     }
 
+    public void cargarJugador()
+    {
+        saveLoad.Load("usuarios", ref usuario);
+    }
 
 }

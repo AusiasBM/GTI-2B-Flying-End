@@ -35,6 +35,7 @@ public class MainMenu : MonoBehaviour
     public void cargarRanking()
     {
         partida.cargarRanking();
+        //partida.cargarJugador();
     }
     public void musicaA()
     {

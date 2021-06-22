@@ -30,6 +30,7 @@ public class Ranking : MonoBehaviour
                 {
                     nombres[i].text = partida.saveLoad.distancias[i].username;
                     distancias[i].text = partida.saveLoad.distancias[i].distancia.ToString();
+                    Debug.Log(partida.saveLoad.user[i].nombre);
                 }
                 catch
                 {
@@ -38,6 +39,7 @@ public class Ranking : MonoBehaviour
                 }
 
             }
+            
         }
         else
         {
@@ -46,8 +48,8 @@ public class Ranking : MonoBehaviour
                 nombres[i].text = "";
                 distancias[i].text = "";
             }
-            Debug.Log("Error en la conexión");
-            errorConexion.text = "ERROR DE CONEXIÓN CON EL SERVIDOR WEB";
+            Debug.Log("Error en la conexi?n");
+            errorConexion.text = "ERROR DE CONEXI?N CON EL SERVIDOR WEB";
             errorConexion.color = Color.red;
         }
         
