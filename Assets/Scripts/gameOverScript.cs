@@ -48,7 +48,6 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
         
         scoreDiamantes.text = gameController.ScoreDiamante.ToString();
 
-
        
         Debug.Log(gameController.ScoreMetros);
         Debug.Log(gameController.ScoreDiamante);
@@ -71,6 +70,26 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
 
     public int GetValue(string s)
     {
-        throw new NotImplementedException();
+        //You can use the s string in a switch to return different values from the same script
+        switch (s)
+        {
+            case "metros":
+                return (int) gameController.ScoreMetros;
+                break;
+
+            case "monedas":
+                return gameController.Score;
+                break;
+            case "diamantes":
+                return gameController.ScoreDiamante;
+                break;
+
+            default:
+                return 0;
+                break;
+
+        }
+
+
     }
 }
