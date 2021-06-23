@@ -257,7 +257,7 @@ public class Partida : MonoBehaviour
             }
             else
             {
-                aviso.text = "Este Nick ya existe, apreta ENTRAR";
+                aviso.text = "Este Nick ya existe";
             }
 
 
