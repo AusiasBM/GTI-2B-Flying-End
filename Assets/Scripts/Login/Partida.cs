@@ -17,6 +17,8 @@ public class Partida : MonoBehaviour
 
     public bool estaSinConexion = false;
 
+    public bool recordRoto = false;
+
     [System.NonSerialized]
     public WebSaveLoad saveLoad;
     IDataSaveLoad fileSaveLoad;

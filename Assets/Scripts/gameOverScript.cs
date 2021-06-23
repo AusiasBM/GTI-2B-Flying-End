@@ -13,6 +13,8 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
     
     public GameController gameController;
 
+    public Image record;
+
     int frames = 0;
     int contadorMonedas = 0;
 
@@ -38,7 +40,10 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
         gameController = GameController.Instance;
         gameController.cargarPuntuacion();
 
-        
+        if (partida.recordRoto)
+        {
+            record.enabled = true;
+        }
         
         if (gameController.ScoreMetros >= 1000)
         {
@@ -57,6 +62,7 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
         Debug.Log(gameController.ScoreMetros);
         Debug.Log(gameController.ScoreDiamante);
         Debug.Log(gameController.Score);
+
     }
 
 
@@ -64,6 +70,8 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
 
     public void CargarEscena(string nombreNivel)
     {
+        partida.recordRoto = false;
+        record.enabled = false;
         SceneManager.LoadScene(nombreNivel);
     }
     
@@ -75,23 +83,19 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
 
     public int GetValue(string s)
     {
-        //You can use the s string in a switch to return different values from the same script
         switch (s)
         {
             case "metros":
                 return (int) gameController.ScoreMetros;
-                break;
 
             case "monedas":
                 return gameController.Score;
-                break;
+
             case "diamantes":
                 return gameController.ScoreDiamante;
-                break;
 
             default:
                 return 0;
-                break;
 
         }
 

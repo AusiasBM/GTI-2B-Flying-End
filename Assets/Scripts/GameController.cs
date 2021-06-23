@@ -81,6 +81,7 @@ public class GameController : MonoBehaviour
         if(ScoreMetros > partida.user.distanciaMaxima)
         {
             partida.user.distanciaMaxima = (int)ScoreMetros;
+            partida.recordRoto = true;
         }
 
         partida.distancia.nombre = partida.user.nombre;
