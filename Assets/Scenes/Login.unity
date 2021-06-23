@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Partida sin registro
+  m_Text: Partida sin registro*
 --- !u!222 &345719314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -242,8 +242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -403.99997, y: -321}
-  m_SizeDelta: {x: 700, y: 120}
+  m_AnchoredPosition: {x: 5.5589, y: -506.21}
+  m_SizeDelta: {x: 1908.8821, y: 67.574}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565595431
 MonoBehaviour:
@@ -272,14 +272,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 50
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Todo lo que obtengas o cambies en este modo, se borrar\xE1 al salir del
-    juego. Este modo es perfecto para cuando no tienes conexi\xF3n a internet."
+  m_Text: "*Todo lo que obtengas o cambies en este modo se borrar\xE1 al salir del
+    juego. "
 --- !u!222 &565595432
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1380,6 +1380,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 817924421090483964, guid: e49e62781c0a41544ac392fc77c37137,
         type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75,
+        type: 3}
+    - target: {fileID: 817924421090483964, guid: e49e62781c0a41544ac392fc77c37137,
+        type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 100
       objectReference: {fileID: 0}
@@ -1745,8 +1751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439.00003, y: 0}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: 0, y: -410}
+  m_SizeDelta: {x: 1920, y: 93.8322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2025322110
 MonoBehaviour:
@@ -1755,12 +1761,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025322108}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.3692763, g: 1, b: 0, a: 0.5}
+  m_EffectColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
 --- !u!114 &2025322111
@@ -1776,7 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.016392907, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1785,12 +1791,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 70
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

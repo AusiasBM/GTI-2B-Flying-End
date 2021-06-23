@@ -492,7 +492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -145}
+  m_AnchoredPosition: {x: 0, y: 26}
   m_SizeDelta: {x: 500, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598027286
@@ -717,7 +717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 26}
+  m_AnchoredPosition: {x: 0, y: -145}
   m_SizeDelta: {x: 500, y: 130}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &928780726
@@ -2369,7 +2369,6 @@ MonoBehaviour:
   Username: {fileID: 1978391515}
   Monedas: {fileID: 1871159937}
   Diamantes: {fileID: 168588656}
-  configuracion: {fileID: 1051695532}
   ranking: {fileID: 928780726}
   tienda: {fileID: 598027286}
 --- !u!4 &1983726907
