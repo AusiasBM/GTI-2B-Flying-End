@@ -17,4 +17,4 @@ MonoBehaviour:
   isVertical: 1
   moveUpToDown: 0
   moveLeftToRight: 0
-  tipoObjeto: 8
+  tipoObjeto: 9

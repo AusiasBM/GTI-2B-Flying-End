@@ -7,11 +7,12 @@ public class CrerNubeElectrica : MonoBehaviour
     private PoolNubesElectricas pool;
 
     public bool activo = true;
+    MaquinaFSM maquina;
     // Start is called before the first frame update
     void Start()
     {
+        maquina = MaquinaFSM.Instance;
         pool = GetComponent<PoolNubesElectricas>();
-        Invoke("activarObjeto", Random.Range(2f, 3f));
     }
 
     void activarObjeto()
@@ -28,4 +29,20 @@ public class CrerNubeElectrica : MonoBehaviour
 
         if (activo) Invoke("activarObjeto", Random.Range(2f, 5f));
     }
+
+    void OnEnable()
+    {
+        Invoke("activarObjeto", Random.Range(2f, 4f));
+    }
+
+    void OnDisable()
+    {
+        if (maquina.desactivarObjetos)
+        {
+            pool.desactivarObjetos();
+            CancelInvoke();
+        }
+    }
+
 }
+

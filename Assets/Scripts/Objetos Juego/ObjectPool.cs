@@ -7,7 +7,6 @@ using System.Linq;
 [DefaultExecutionOrder(-500)]
 public class ObjectPool : MonoBehaviour
 {
-
     public GameObject[] prefab;
     public int[] listaPrioridades;
 
@@ -29,7 +28,6 @@ public class ObjectPool : MonoBehaviour
         }
             
     }
-
 
     public GameObject chooseWeigther()
     { 
@@ -59,14 +57,20 @@ public class ObjectPool : MonoBehaviour
             }
         }
 
-        Debug.Log(objetosPrioridades.Count);
-        Debug.Log(objetosNoActivos.Count);
-
-        Debug.Log("CREAAAR");
-        //GameObject obj = Instantiate(prefab[Random.Range(0, prefab.Length)]);
         return default(GameObject);
-
-        
     }
+
+    public void desactivarObjetos()
+    {
+        foreach (KeyValuePair<GameObject, int> item in objetosPrioridades)
+        {
+            if (item.Key.activeInHierarchy)
+            {
+                item.Key.SetActive(false);
+            }
+        }
+    }
+
+
 }
 

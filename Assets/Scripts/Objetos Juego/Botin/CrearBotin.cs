@@ -11,7 +11,6 @@ public class CrearBotin : MonoBehaviour
     void Start()
     {
         pool = GetComponent<PoolBotin>();
-        Invoke("activarObjeto", Random.Range(5f, 8f));
     }
 
     void activarObjeto()
@@ -28,4 +27,10 @@ public class CrearBotin : MonoBehaviour
 
         if (activo) Invoke("activarObjeto", Random.Range(1f, 2f));
     }
+
+    void OnEnable()
+    {
+        Invoke("activarObjeto", Random.Range(5f, 8f));
+    }
+
 }

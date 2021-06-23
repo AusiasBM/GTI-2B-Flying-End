@@ -10,11 +10,14 @@ public class CrearRocas : MonoBehaviour
     private PoolRoca pool;
 
     public bool activo = true;
+    RalentizadorVelocidad ralentizador;
+    MaquinaFSM maquina;
     // Start is called before the first frame update
     void Start()
     {
+        ralentizador = RalentizadorVelocidad.Instance;
+        maquina = MaquinaFSM.Instance;
         pool = GetComponent<PoolRoca>();
-        Invoke("activarObjeto", Random.Range(2f, 3f));
     }
 
     void activarObjeto()
@@ -29,6 +32,30 @@ public class CrearRocas : MonoBehaviour
         pos = new Vector3(pos.x, transform.position.y, 0);
         obj.transform.position = pos;
 
-        if (activo) Invoke("activarObjeto", Random.Range(2f, 5f));
+        if (activo) 
+        {
+            if (ralentizador.ralentizar)
+            {
+                Invoke("activarObjeto", Random.Range(7f, 10f));
+            }
+            else
+            {
+                Invoke("activarObjeto", Random.Range(2f, 5f));
+            }
+        }
+    }
+
+    void OnEnable()
+    {
+        Invoke("activarObjeto", Random.Range(3f, 5f));
+    }
+
+    void OnDisable()
+    {
+        if (maquina.desactivarObjetos)
+        {
+            pool.desactivarObjetos();
+            CancelInvoke();
+        }
     }
 }

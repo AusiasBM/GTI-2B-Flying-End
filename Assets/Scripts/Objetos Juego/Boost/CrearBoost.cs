@@ -7,11 +7,11 @@ public class CrearBoost : MonoBehaviour
     private PoolBoost pool;
 
     public bool activo = true;
+
     // Start is called before the first frame update
     void Start()
     {
         pool = GetComponent<PoolBoost>();
-        Invoke("activarObjeto", Random.Range(15f, 20f));
     }
 
     void activarObjeto()
@@ -28,4 +28,10 @@ public class CrearBoost : MonoBehaviour
 
         Invoke("activarObjeto", Random.Range(15f, 20f));
     }
+
+    void OnEnable()
+    {
+        Invoke("activarObjeto", Random.Range(15f, 20f));
+    }
+
 }

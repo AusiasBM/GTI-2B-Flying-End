@@ -9,12 +9,13 @@ public class CrearPajaros : MonoBehaviour
     public bool activo = true;
 
     RalentizadorVelocidad ralentizador;
+    MaquinaFSM maquina;
     // Start is called before the first frame update
     void Start()
     {
         ralentizador = RalentizadorVelocidad.Instance;
+        maquina = MaquinaFSM.Instance;
         pool = GetComponent<ObjectPool>();
-        Invoke("activarObjeto", Random.Range(2f, 3.5f));
     }
 
     void activarObjeto()
@@ -41,4 +42,19 @@ public class CrearPajaros : MonoBehaviour
             }
         }
     }
+
+    void OnEnable()
+    {
+        Invoke("activarObjeto", Random.Range(4f, 5f));
+    }
+
+    void OnDisable()
+    {
+        if (maquina.desactivarObjetos)
+        {
+            pool.desactivarObjetos();
+            CancelInvoke();
+        }
+    }
+
 }

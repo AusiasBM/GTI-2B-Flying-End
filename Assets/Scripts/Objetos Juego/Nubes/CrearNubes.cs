@@ -10,11 +10,12 @@ public class CrearNubes : MonoBehaviour
     private PoolNubes pool;
 
     public bool activo = true;
+    MaquinaFSM maquina;
     // Start is called before the first frame update
     void Start()
     {
+        maquina = MaquinaFSM.Instance;
         pool = GetComponent<PoolNubes>();
-        Invoke("activarObjeto", Random.Range(2f, 3f));
     }
 
     void activarObjeto()
@@ -31,4 +32,19 @@ public class CrearNubes : MonoBehaviour
 
         if (activo) Invoke("activarObjeto", Random.Range(2f, 5f));
     }
+
+    void OnEnable()
+    {
+        Invoke("activarObjeto", 0);
+    }
+
+    void OnDisable()
+    {
+        if (maquina.desactivarObjetos)
+        {
+            pool.desactivarObjetos();
+            CancelInvoke();
+        }
+    }
+
 }
