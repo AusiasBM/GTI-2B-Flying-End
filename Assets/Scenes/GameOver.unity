@@ -1368,9 +1368,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  scoreMoneda: {fileID: 0}
-  scoreMetros: {fileID: 0}
-  scoreDiamantes: {fileID: 0}
+  scoreMoneda: {fileID: 1105849963}
+  scoreMetros: {fileID: 40451338}
+  scoreDiamantes: {fileID: 2087950708}
 --- !u!4 &1224710937
 Transform:
   m_ObjectHideFlags: 0

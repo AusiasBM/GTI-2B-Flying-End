@@ -11,16 +11,16 @@ public class WebSaveLoad : MonoBehaviour, IDataSaveLoad
     public UnityEvent onSave;
     public UnityEvent onError;
     public string Error { get; private set; } = "";
-    object _data;
+    object _data = "";
     public Distancia[] distancias;
-    public Usuario[] user;
+    public User[] user;
     public bool completado;
 
     public void Load<T>(string resource, ref T data)
     {
         _data = data;
-        Debug.Log(_data.ToString());
-        StartCoroutine(GetRequestRanking(resource));
+        //Debug.Log(_data.ToString());
+        StartCoroutine(GetRequest(resource));
     }
     public void Save(string resource, object data)
     {
@@ -32,7 +32,7 @@ public class WebSaveLoad : MonoBehaviour, IDataSaveLoad
 
     }
 
-    IEnumerator GetRequestRanking(string resource)
+    public IEnumerator GetRequest(string resource)
     {
         Error = ""; 
         using (UnityWebRequest webRequest = UnityWebRequest.Get(urlBase + resource))
@@ -46,8 +46,15 @@ public class WebSaveLoad : MonoBehaviour, IDataSaveLoad
             }
             else
             {
-                distancias = JSONHelper.getJsonArray<Distancia>(webRequest.downloadHandler.text);
-                user = JSONHelper.getJsonArray<Usuario>(webRequest.downloadHandler.text);
+                if(_data.ToString() == "Distancia")
+                {
+                    distancias = JSONHelper.getJsonArray<Distancia>(webRequest.downloadHandler.text);
+                }
+                else
+                {
+                    user = JSONHelper.getJsonArray<User>(webRequest.downloadHandler.text);
+                }
+                
                 completado = true;
                 onLoad?.Invoke();
             }

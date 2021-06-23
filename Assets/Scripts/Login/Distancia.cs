@@ -6,23 +6,23 @@ using UnityEngine;
 public class Distancia
 {
     public int id, distancia;
-    public string username;
+    public string nombre;
 
     public Distancia()
     {
 
     }
 
-    public Distancia(int id, string username, int distancia)
+    public Distancia(int id, string nombre, int distancia)
     {
         this.id = id;
-        this.username = username;
+        this.nombre = nombre;
         this.distancia = distancia;
     }
 
-    public Distancia(string username, int distancia)
+    public Distancia(string nombre, int distancia)
     {
-        this.username = username;
+        this.nombre = nombre;
         this.distancia = distancia;
     }
 }

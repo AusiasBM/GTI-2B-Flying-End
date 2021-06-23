@@ -12,6 +12,11 @@ public class Partida : MonoBehaviour
     [System.NonSerialized]
     public Distancia distancia;
 
+    public Text nick;
+    public Text aviso;
+
+    public bool estaSinConexion = false;
+
     [System.NonSerialized]
     public WebSaveLoad saveLoad;
     IDataSaveLoad fileSaveLoad;
@@ -45,16 +50,16 @@ public class Partida : MonoBehaviour
         usuario = new Usuario();
         distancia = new Distancia();
         saveLoad = GetComponent<WebSaveLoad>();
-        cargarRanking();
-        fileSaveLoad.Load(FILENAME, ref user);
-        cargarUsuario();
+        saveLoad.Load("usuarios", ref user);
+        //cargarRanking();
+        //cargarUsuario();
     }
 
     void cargarUsuario()
     {
-        if (user.username != "")
+        if (user.nombre != "")
         {
-            partidas.text = user.username;
+            partidas.text = user.nombre;
             partidas.enabled = false;
         }
         else
@@ -80,7 +85,7 @@ public class Partida : MonoBehaviour
 
     public void crearPartida(Text usuario)
     {
-        user.username = usuario.text.ToString();
+        user.nombre = usuario.text.ToString();
         fileSaveLoad.Save(FILENAME, user);
         fileSaveLoad.Load(FILENAME, ref user);
         CargarPartida();
@@ -89,7 +94,7 @@ public class Partida : MonoBehaviour
     public void eliminarPartida()
     {
         fileSaveLoad.Clear(FILENAME);
-        user.username = "";
+        user.nombre = "";
         user.monedas = 0;
         user.diamantes = 0;
         vaciarCamposTexto();
@@ -98,7 +103,7 @@ public class Partida : MonoBehaviour
 
     public void CargarPartida()
     {
-        if (user.username != "")
+        if (user.nombre != "")
         {
             SceneManager.LoadScene("Loading");
 
@@ -172,7 +177,100 @@ public class Partida : MonoBehaviour
 
     public void cargarJugador()
     {
-        saveLoad.Load("usuarios", ref usuario);
+        saveLoad.Load("usuarios", ref user);
+        delay(5);
+        if (nick.text != "")
+        {
+            
+            for (int i = 0; i < saveLoad.user.Length; i++)
+            {
+                if (saveLoad.user[i].nombre == nick.text)
+                {
+                    user.nombre = saveLoad.user[i].nombre;
+                    user.monedas = saveLoad.user[i].monedas;
+                    user.diamantes = saveLoad.user[i].diamantes;
+                    user.distanciaMaxima = saveLoad.user[i].distanciaMaxima;
+                    SceneManager.LoadScene("Loading");
+                }
+            }
+            aviso.text = "El nombre de usuario introducido no existe o no es correcto";
+        }
+        else
+        {
+            aviso.text = "El campo de texto está vacio";
+        }
+        
+    }
+
+    public void partidaSinConexion() {
+
+        if (nick.text == "")
+        {
+            aviso.text = "El campo de texto está vacio";
+        }
+        else
+        {
+            estaSinConexion = true;
+            user.nombre = nick.text;
+            user.monedas = 0;
+            user.diamantes = 0;
+            user.distanciaMaxima = 0;
+            SceneManager.LoadScene("Loading");
+        }
+        
+    }
+
+    public void crearNick()
+    {
+        if (nick.text == "")
+        {
+            aviso.text = "El campo de texto está vacio";
+        }
+        else
+        {
+            saveLoad.Load("usuarios", ref user);
+            delay(5);
+            bool existe = false;
+
+            for (int i = 0; i < saveLoad.user.Length; i++)
+            {
+                if (saveLoad.user[i].nombre == nick.text)
+                {
+                    user.nombre = saveLoad.user[i].nombre;
+                    user.monedas = saveLoad.user[i].monedas;
+                    user.diamantes = saveLoad.user[i].diamantes;
+                    user.distanciaMaxima = saveLoad.user[i].distanciaMaxima;
+                    existe = true;
+                }
+            }
+            if (!existe)
+            {
+                user.nombre = nick.text;
+                user.monedas = 0;
+                user.diamantes = 0;
+                user.distanciaMaxima = 0;
+                saveLoad.Save("usuarios", user);
+                delay(5);
+                SceneManager.LoadScene("Loading");
+            }
+            else
+            {
+                aviso.text = "Este Nick ya existe, apreta ENTRAR";
+            }
+
+
+        }
+    }
+
+    public void actualizarBbdd()
+    {
+        saveLoad.Save("update", user);
+
+    }
+
+    IEnumerator delay(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 
 }

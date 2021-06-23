@@ -28,7 +28,7 @@ public class Ranking : MonoBehaviour
             {
                 try
                 {
-                    nombres[i].text = partida.saveLoad.distancias[i].username;
+                    nombres[i].text = partida.saveLoad.distancias[i].nombre;
                     distancias[i].text = partida.saveLoad.distancias[i].distancia.ToString();
                     Debug.Log(partida.saveLoad.user[i].nombre);
                 }

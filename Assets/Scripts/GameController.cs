@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
             partida.user.distanciaMaxima = (int)ScoreMetros;
         }
 
-        partida.distancia.username = partida.user.username;
+        partida.distancia.nombre = partida.user.nombre;
         partida.distancia.distancia = (int)ScoreMetros;
     }
 

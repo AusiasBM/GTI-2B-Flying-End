@@ -11,15 +11,25 @@ public class MainMenu : MonoBehaviour
     public Text Diamantes;
     Partida partida;
     MusicaController musicaController;
+
+    public Button ranking;
+    public Button tienda;
+
+
     void Start()
     {
 
         partida = Partida.instance;
         musicaController = MusicaController.instance;
-        Username.text = partida.user.username;
+        Username.text = partida.user.nombre;
         Monedas.text = partida.user.monedas.ToString();
         Diamantes.text = partida.user.diamantes.ToString();
 
+        if (partida.estaSinConexion)
+        {
+            ranking.enabled = false;
+            tienda.enabled = false;
+        }
     }
 
     public void CargarEscena(string nombreNivel)

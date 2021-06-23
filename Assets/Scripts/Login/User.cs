@@ -6,19 +6,19 @@ using UnityEngine;
 public class User
 {
     public int id, monedas, diamantes, distanciaMaxima;
-    public string username;
+    public string nombre;
 
-    public User(string name)
+    public User(string nombre)
     {
-        username = name;
+        nombre = nombre;
         monedas = 0;
         diamantes = 0;
     }
 
-    public User(int id, string name, int monedas, int diamantes, int distanciaMaxima)
+    public User(int id, string nombre, int monedas, int diamantes, int distanciaMaxima)
     {
         this.id = id;
-        username = name;
+        nombre = nombre;
         this.monedas = monedas;
         this.diamantes = diamantes;
         this.distanciaMaxima = distanciaMaxima;
@@ -27,7 +27,7 @@ public class User
 
     public User()
     {
-        username = "";
+        nombre = "";
         monedas = 0;
         diamantes = 0;
         distanciaMaxima = 0;

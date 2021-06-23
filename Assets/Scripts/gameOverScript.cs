@@ -27,8 +27,13 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
         partida = Partida.instance;
         musicaController = MusicaController.instance;
         musicaController.audio.Stop();
-        partida.actualizarDatosPartida();
-        partida.guardarDistancia();
+        if (!partida.estaSinConexion)
+        {
+            partida.actualizarBbdd();
+            //partida.actualizarDatosPartida();
+            //partida.guardarDistancia();
+        }
+        
 
         gameController = GameController.Instance;
         gameController.cargarPuntuacion();
