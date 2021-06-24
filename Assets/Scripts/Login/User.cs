@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class User
 {
-    public int id, monedas, diamantes, distanciaMaxima;
+    public int id, monedas, diamantes, distanciaMaxima, paracaidas;
     public string nombre;
 
     public User(string nombre)
@@ -13,15 +13,17 @@ public class User
         nombre = nombre;
         monedas = 0;
         diamantes = 0;
+        paracaidas = 0;
     }
 
-    public User(int id, string nombre, int monedas, int diamantes, int distanciaMaxima)
+    public User(int id, string nombre, int monedas, int diamantes, int distanciaMaxima, int paracaidas)
     {
         this.id = id;
-        nombre = nombre;
+        this.nombre = nombre;
         this.monedas = monedas;
         this.diamantes = diamantes;
         this.distanciaMaxima = distanciaMaxima;
+        this.paracaidas = paracaidas;
         
     }
 
@@ -31,6 +33,7 @@ public class User
         monedas = 0;
         diamantes = 0;
         distanciaMaxima = 0;
+        paracaidas = 0;
     }
 
 }

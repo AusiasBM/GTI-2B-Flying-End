@@ -22,6 +22,10 @@ public class GameController : MonoBehaviour
 
     Partida partida;
 
+    public GameObject paracaidas0;
+    public GameObject paracaidas1;
+    public GameObject paracaidas2;
+
     private static GameController instance;
     public static GameController Instance { get => instance; }
 
@@ -41,8 +45,26 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        paracaidas0.SetActive(false);
+        paracaidas1.SetActive(false);
+        paracaidas2.SetActive(false);
+
         partida = Partida.instance;
-       // Username.text = partida.user.username;
+        Username.text = partida.user.nombre;
+
+        
+        if (partida.user.paracaidas == 0)
+        {
+            paracaidas0.SetActive(true);
+        }
+        if (partida.user.paracaidas == 1)
+        {
+            paracaidas1.SetActive(true);
+        }
+        if (partida.user.paracaidas == 2)
+        {
+            paracaidas2.SetActive(true);
+        }
     }
 
     // Update is called once per frame

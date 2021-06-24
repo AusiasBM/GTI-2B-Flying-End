@@ -9,6 +9,9 @@ TagManager:
   - Pieza
   - Lateral
   - Superior
+  - paracaidas0
+  - paracaidas1
+  - paracaidas2
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - Postproduccion
   - Water
   - UI
-  - 
-  - 
-  - 
+  - paracaidas1
+  - paracaidas2
+  - paracaidas3
   - 
   - 
   - 

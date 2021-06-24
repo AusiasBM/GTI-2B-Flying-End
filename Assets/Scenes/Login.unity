@@ -1683,13 +1683,12 @@ MonoBehaviour:
     monedas: 0
     diamantes: 0
     distanciaMaxima: 0
-    nombre: 
-  usuario:
-    id: 0
+    paracaidas: 0
     nombre: 
   nick: {fileID: 1570545247}
   aviso: {fileID: 2025322111}
   estaSinConexion: 0
+  recordRoto: 0
   partidas: {fileID: 2143526476}
 --- !u!114 &2000757491
 MonoBehaviour:
@@ -1703,7 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e61da9f095b170469b1d68fc8bf9b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  urlBase: https://abaumah.upv.edu.es/proyectoAmi/FlyingEnd_WebGL/
+  urlBase: https://abaumah.upv.edu.es/proyectoAmi/
   onLoad:
     m_PersistentCalls:
       m_Calls: []

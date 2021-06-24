@@ -8,7 +8,6 @@ using TMPro;
 public class Partida : MonoBehaviour
 {
     public User user;
-    public Usuario usuario;
     [System.NonSerialized]
     public Distancia distancia;
 
@@ -49,7 +48,6 @@ public class Partida : MonoBehaviour
     {
         fileSaveLoad = new FileSaveLoad();
         user = new User();
-        usuario = new Usuario();
         distancia = new Distancia();
         saveLoad = GetComponent<WebSaveLoad>();
         saveLoad.Load("usuarios", ref user);
@@ -57,104 +55,6 @@ public class Partida : MonoBehaviour
         //cargarUsuario();
     }
 
-    void cargarUsuario()
-    {
-        if (user.nombre != "")
-        {
-            partidas.text = user.nombre;
-            partidas.enabled = false;
-        }
-        else
-        {
-            partidas.text = "";
-            partidas.enabled = true;
-        }
-
-    }
-
-
-    /*void cargarUsuarios()
-    {
-        users = db.getAllUsers();
-        
-        for(int i = 0; i < users.Count; i++)
-        {
-            Debug.Log(users[i].username);
-            partidas[i].text = users[i].username;
-            partidas[i].enabled = false;
-        }
-    }*/
-
-    public void crearPartida(Text usuario)
-    {
-        user.nombre = usuario.text.ToString();
-        fileSaveLoad.Save(FILENAME, user);
-        fileSaveLoad.Load(FILENAME, ref user);
-        CargarPartida();
-    }
-
-    public void eliminarPartida()
-    {
-        fileSaveLoad.Clear(FILENAME);
-        user.nombre = "";
-        user.monedas = 0;
-        user.diamantes = 0;
-        vaciarCamposTexto();
-        cargarUsuario();
-    }
-
-    public void CargarPartida()
-    {
-        if (user.nombre != "")
-        {
-            SceneManager.LoadScene("Loading");
-
-        }
-        else
-        {
-
-            Debug.Log("No hay ninguna partida creada");
-        }
-
-    }
-
-    /*public void CrearPartida(Text usuario)
-    {
-        user = db.getUser(usuario.text.ToString());
-        if(user.username == "")
-        {
-            user.username = usuario.text.ToString();
-            db.addUser(user);
-            CargarPartida();
-        }
-        else
-        {
-            Debug.Log("Usuario ya creado");
-        }
-    }
-
-    
-
-    public void EliminarPartida(Text usuario)
-    {
-        db.deleteUser(usuario.text.ToString());
-        vaciarCamposTexto();
-        cargarUsuarios();
-    }*/
-
-    void vaciarCamposTexto()
-    {
-
-        partidas.text = "";
-        partidas.enabled = true;
-        
-    }
-
-    /*public void actualizarDatosPartida()
-    {
-        db.updateUser(user);
-
-    }*/
 
     public void actualizarDatosPartida()
     {
@@ -192,6 +92,7 @@ public class Partida : MonoBehaviour
                     user.monedas = saveLoad.user[i].monedas;
                     user.diamantes = saveLoad.user[i].diamantes;
                     user.distanciaMaxima = saveLoad.user[i].distanciaMaxima;
+                    user.paracaidas = saveLoad.user[i].paracaidas;
                     SceneManager.LoadScene("Loading");
                 }
             }
@@ -217,6 +118,7 @@ public class Partida : MonoBehaviour
             user.monedas = 0;
             user.diamantes = 0;
             user.distanciaMaxima = 0;
+            user.paracaidas = 0;
             SceneManager.LoadScene("Loading");
         }
         
@@ -242,6 +144,7 @@ public class Partida : MonoBehaviour
                     user.monedas = saveLoad.user[i].monedas;
                     user.diamantes = saveLoad.user[i].diamantes;
                     user.distanciaMaxima = saveLoad.user[i].distanciaMaxima;
+                    user.paracaidas = saveLoad.user[i].paracaidas;
                     existe = true;
                 }
             }
@@ -251,6 +154,7 @@ public class Partida : MonoBehaviour
                 user.monedas = 0;
                 user.diamantes = 0;
                 user.distanciaMaxima = 0;
+                user.paracaidas = 0;
                 saveLoad.Save("usuarios", user);
                 delay(5);
                 SceneManager.LoadScene("Loading");
