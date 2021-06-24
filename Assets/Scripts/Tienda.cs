@@ -12,7 +12,7 @@ public class Tienda : MonoBehaviour
     public Image paracaidasSeleccionado;
     public Text Monedas;
     public Text Diamantes;
-    // Start is called before the first frame update
+    
     void Start()
     {
         partida = Partida.instance;
@@ -42,6 +42,7 @@ public class Tienda : MonoBehaviour
         {
             partida.actualizarBbdd();
         }
+
         ponerAviso("Paracaídas obtenido");
         
     }
@@ -50,5 +51,6 @@ public class Tienda : MonoBehaviour
     {
         aviso.text = texto;
     }
+
 
 }

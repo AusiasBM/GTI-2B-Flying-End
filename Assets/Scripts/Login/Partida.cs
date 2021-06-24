@@ -20,10 +20,8 @@ public class Partida : MonoBehaviour
 
     [System.NonSerialized]
     public WebSaveLoad saveLoad;
-    IDataSaveLoad fileSaveLoad;
 
     const string KEYNAME = "ranking";
-    const string FILENAME = "users";
 
     public InputField partidas;
 
@@ -46,20 +44,24 @@ public class Partida : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fileSaveLoad = new FileSaveLoad();
         user = new User();
         distancia = new Distancia();
         saveLoad = GetComponent<WebSaveLoad>();
         saveLoad.Load("usuarios", ref user);
+        limpiarUser();
         //cargarRanking();
         //cargarUsuario();
     }
 
-
-    public void actualizarDatosPartida()
+    public void limpiarUser()
     {
-        fileSaveLoad.Save(FILENAME, user);
+        user.nombre = "";
+        user.monedas = 0;
+        user.diamantes = 0;
+        user.distanciaMaxima = 0;
+        user.paracaidas = 0;
     }
+
 
     public void guardarDistancia()
     {

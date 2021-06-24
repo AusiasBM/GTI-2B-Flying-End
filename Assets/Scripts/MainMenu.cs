@@ -12,8 +12,7 @@ public class MainMenu : MonoBehaviour
     Partida partida;
     MusicaController musicaController;
 
-    public Button ranking;
-    public Button tienda;
+    public GameObject ranking;
 
 
     void Start()
@@ -22,13 +21,14 @@ public class MainMenu : MonoBehaviour
         partida = Partida.instance;
         musicaController = MusicaController.instance;
         Username.text = partida.user.nombre;
+        cargarRanking();
         //Monedas.text = partida.user.monedas.ToString();
         //Diamantes.text = partida.user.diamantes.ToString();
 
         if (partida.estaSinConexion)
         {
-            ranking.enabled = false;
-            tienda.enabled = false;
+            ranking.GetComponent<Button>().enabled = false;
+            ranking.GetComponent<Image>().color = Color.gray;
         }
     }
 
@@ -45,7 +45,6 @@ public class MainMenu : MonoBehaviour
     public void cargarRanking()
     {
         partida.cargarRanking();
-        //partida.cargarJugador();
     }
     public void musicaA()
     {
