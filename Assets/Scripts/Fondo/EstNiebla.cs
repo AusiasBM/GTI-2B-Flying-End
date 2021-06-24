@@ -7,6 +7,8 @@ public class EstNiebla : EstadoFSM
     //Contador del estado
     float contador;
 
+    MusicaController musicaController;
+
     protected override void Awake()
     {
         base.Awake();
@@ -16,6 +18,9 @@ public class EstNiebla : EstadoFSM
 
     protected override void OnEnable()
     {
+        musicaController = MusicaController.instance;
+        musicaController.musicaPajaros();
+
         StartCoroutine(maquina.efectos.cambiarParametros(100f, 5f, 0f));
 
         enableDisableObjectsNiebla();

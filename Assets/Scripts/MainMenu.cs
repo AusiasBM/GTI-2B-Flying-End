@@ -50,4 +50,9 @@ public class MainMenu : MonoBehaviour
     {
         musicaController.musicajuego();
     }
+
+    public void salirJuego()
+    {
+        Application.Quit();
+    }
 }

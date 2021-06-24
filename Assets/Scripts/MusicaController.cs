@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MusicaController : MonoBehaviour
 {
-
     string nombreNivel;
     public AudioSource audio;
     public AudioClip[] musica;
@@ -21,25 +20,17 @@ public class MusicaController : MonoBehaviour
     }
     private void Awake()
     {
-
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        else
+        if (instance == null)
         {
             instance = this;
 
         }
+        else
+        {
+            DestroyImmediate(gameObject);
+        }
 
         DontDestroyOnLoad(gameObject);
-
-
-
-
-
     }
 
     // Start is called before the first frame update
@@ -80,11 +71,8 @@ public class MusicaController : MonoBehaviour
     }
     public void musicaLluvia()
     {
-
         audio.PlayOneShot(musica[2], 0.7F);
         audio.loop = true;
-
-
     }
 
     public void musicaVolcan()
@@ -96,10 +84,8 @@ public class MusicaController : MonoBehaviour
     }
     public void musicaPajaros()
     {
-
         audio.PlayOneShot(musica[4], 0.7F);
         audio.loop = true;
-
 
     }
 

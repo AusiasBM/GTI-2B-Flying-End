@@ -15,6 +15,7 @@ public class MaquinaFSM : MonoBehaviour
 
     public float Velocidad = 3f;
     public float PosRecolocar = -43f;
+
     public bool estaFondo2 = false;
     public bool estaFondo1 = false;
 
@@ -94,12 +95,12 @@ public class MaquinaFSM : MonoBehaviour
             fondo1.transform.position = new Vector3(0, PosRecolocar, fondo1.transform.position.z);
             estaFondo2 = true;
             estaFondo1 = false;
-            if (!transicionFondo && contador > 80f)
+            if (!transicionFondo && contador > 125f)
             {
                 fondo1.GetComponent<SpriteRenderer>().sprite = fondoTransicion;
                 transicionFondo = true;
             }
-            else if (transicionFondo && contador > 80f)
+            else if (transicionFondo && contador > 125f)
             {
                 cambioEstado(nuevoEstado);
             }
@@ -110,12 +111,12 @@ public class MaquinaFSM : MonoBehaviour
             fondo2.transform.position = new Vector3(0, PosRecolocar, fondo2.transform.position.z);
             estaFondo1 = true;
             estaFondo2 = false;
-            if (!transicionFondo && contador > 80f)
+            if (!transicionFondo && contador > 125f)
             {
                 fondo2.GetComponent<SpriteRenderer>().sprite = fondoTransicion;
                 transicionFondo = true;
             }
-            else if (transicionFondo && contador > 80f)
+            else if (transicionFondo && contador > 125f)
             {
                 cambioEstado(nuevoEstado);
             }

@@ -6,6 +6,7 @@ public class EstSoleado : EstadoFSM
 {
     //Contador del estado
     float contador;
+    MusicaController musicaController;
 
     protected override void Awake()
     {
@@ -14,11 +15,19 @@ public class EstSoleado : EstadoFSM
         maquina.nombreEstados.Add(Nombre);
     }
 
+    void Start()
+    {
+        
+    }
+
     protected override void OnEnable()
     {
+        musicaController = MusicaController.instance;
         if (Inicial)
         {
             maquina.estaFondo1 = true;
+            musicaController.acordeInicio();
+            Inicial = false;
         }
         else
         {
@@ -28,7 +37,7 @@ public class EstSoleado : EstadoFSM
         enableDisableObjectsSoleado();
         maquina.nombreEstadoActual = Nombre;
 
-        
+        musicaController.musicaPajaros();
 
         contador = 0f;
     }

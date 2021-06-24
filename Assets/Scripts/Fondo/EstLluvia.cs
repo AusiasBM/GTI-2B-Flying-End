@@ -5,6 +5,7 @@ using UnityEngine;
 public class EstLluvia : EstadoFSM
 {
     float contador;
+    MusicaController musicaController;
 
     protected override void Awake()
     {
@@ -16,6 +17,9 @@ public class EstLluvia : EstadoFSM
     protected override void OnEnable()
     {
         StartCoroutine(maquina.efectos.cambiarParametros(60f, 0f, 0f));
+
+        musicaController = MusicaController.instance;
+        musicaController.musicaLluvia();
 
         maquina.nombreEstadoActual = Nombre;
 
@@ -31,6 +35,8 @@ public class EstLluvia : EstadoFSM
         {
             maquina.fondo2.GetComponent<SpriteRenderer>().sprite = maquina.listSpritesFondos[4];
         }
+
+        //maquina.musicalluvia();
 
         contador = 0f;
     }

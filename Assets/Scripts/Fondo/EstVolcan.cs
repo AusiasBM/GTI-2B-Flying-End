@@ -6,6 +6,7 @@ public class EstVolcan : EstadoFSM
 {
     //Contador del estado
     float contador;
+    MusicaController musicaController;
 
     protected override void Awake()
     {
@@ -19,6 +20,9 @@ public class EstVolcan : EstadoFSM
         //Cambio del gradiente de color segun cada escenario
         StartCoroutine(maquina.efectos.cambiarParametros(0f, -20f, -40f));
 
+        musicaController = MusicaController.instance;
+        musicaController.musicaVolcan();
+
         maquina.nombreEstadoActual = Nombre;
 
         enableDisableObjectsVolcan();
@@ -31,6 +35,8 @@ public class EstVolcan : EstadoFSM
         {
             maquina.fondo2.GetComponent<SpriteRenderer>().sprite = maquina.listSpritesFondos[6];
         }
+
+        //maquina.musicavolcan();
 
         contador = 0f;
     }
