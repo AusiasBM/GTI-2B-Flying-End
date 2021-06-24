@@ -22,8 +22,8 @@ public class MainMenu : MonoBehaviour
         partida = Partida.instance;
         musicaController = MusicaController.instance;
         Username.text = partida.user.nombre;
-        Monedas.text = partida.user.monedas.ToString();
-        Diamantes.text = partida.user.diamantes.ToString();
+        //Monedas.text = partida.user.monedas.ToString();
+        //Diamantes.text = partida.user.diamantes.ToString();
 
         if (partida.estaSinConexion)
         {

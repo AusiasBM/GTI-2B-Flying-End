@@ -9,10 +9,16 @@ public class Tienda : MonoBehaviour
     Partida partida;
     public Text aviso;
 
+    public Image paracaidasSeleccionado;
+    public Text Monedas;
+    public Text Diamantes;
     // Start is called before the first frame update
     void Start()
     {
         partida = Partida.instance;
+
+        Monedas.text = partida.user.monedas.ToString();
+        Diamantes.text = partida.user.diamantes.ToString();
     }
 
     // Update is called once per frame
