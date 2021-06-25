@@ -10,7 +10,7 @@ public class ControlSalud : MonoBehaviour
     EfectoDanyo efectoDanyo;
     GameController gameController;
     public GameObject vida;
-    private float salud = 10;
+    public float salud = 10;
 
     //Metodo para quitar vida cuando impacte un objeto o pajaro
     public void quitarVida(float vidaMenos)

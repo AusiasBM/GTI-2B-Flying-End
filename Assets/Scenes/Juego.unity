@@ -1835,7 +1835,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: GameOver
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &407528149
@@ -4750,6 +4750,7 @@ MonoBehaviour:
   menuP: {fileID: 1465591504}
   seguroP: {fileID: 1806381295}
   jugador: {fileID: 1185525641}
+  controlSalud: {fileID: 0}
 --- !u!1 &1475728204
 GameObject:
   m_ObjectHideFlags: 0
@@ -6166,7 +6167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "MEN\xDA PRINCIPAL"
+  m_Text: TERMINAR PARTIDA
 --- !u!222 &2053663066
 CanvasRenderer:
   m_ObjectHideFlags: 0

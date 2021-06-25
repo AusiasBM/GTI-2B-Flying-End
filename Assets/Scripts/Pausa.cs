@@ -12,9 +12,12 @@ public class Pausa : MonoBehaviour
 
     public GameObject jugador;
 
+    public ControlSalud controlSalud;
+
     // Start is called before the first frame update
     void Start()
     {
+        controlSalud = ControlSalud.Instance;
         Time.timeScale = 1;
         menuP.SetActive(false);
         seguroP.SetActive(false);
@@ -48,7 +51,8 @@ public class Pausa : MonoBehaviour
 
     public void mPrincipal(string name)
     {
-        Destroy(jugador);
+        //Destroy(jugador);
+        controlSalud.quitarVida(controlSalud.salud + 1);
         SceneManager.LoadScene(name);
     }
 

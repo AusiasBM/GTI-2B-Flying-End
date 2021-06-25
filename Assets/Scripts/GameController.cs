@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
 
     public Text Username;
 
+    MusicaController musicaController;
+
     Partida partida;
 
     public GameObject paracaidas0;
@@ -49,6 +51,8 @@ public class GameController : MonoBehaviour
         paracaidas1.SetActive(false);
         paracaidas2.SetActive(false);
 
+        musicaController = MusicaController.instance;
+
         partida = Partida.instance;
         Username.text = partida.user.nombre;
 
@@ -65,6 +69,7 @@ public class GameController : MonoBehaviour
         {
             paracaidas2.SetActive(true);
         }
+        musicaMenu();
     }
 
     // Update is called once per frame
@@ -117,5 +122,10 @@ public class GameController : MonoBehaviour
         ScoreMetros = PlayerPrefs.GetFloat(scoreMetrosSave, 0);
 
         
+    }
+
+    public void musicaMenu()
+    {
+        musicaController.musicaMenu();
     }
 }

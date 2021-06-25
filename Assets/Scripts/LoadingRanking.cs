@@ -11,11 +11,12 @@ public class LoadingRanking : MonoBehaviour
     [Range(0, 1)]
     [SerializeField]
     private float carga = 0f;
+    Partida partida;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        partida = Partida.instance;
         barraLoading.fillAmount = carga;
         Invoke("cargarEscena", 3);
     }
@@ -44,4 +45,9 @@ public class LoadingRanking : MonoBehaviour
         SceneManager.LoadScene("Ranking");
     }
 
+
+    public void recargar()
+    {
+        partida.cargarRanking();
+    }
 }

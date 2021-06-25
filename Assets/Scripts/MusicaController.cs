@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,8 +30,15 @@ public class MusicaController : MonoBehaviour
         {
             DestroyImmediate(gameObject);
         }
+        try
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        catch (Exception e)
+        {
 
-        DontDestroyOnLoad(gameObject);
+        }
+        
     }
 
     // Start is called before the first frame update
