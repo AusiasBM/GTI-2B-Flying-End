@@ -638,17 +638,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: LoadingRanking
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1983726906}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: cargarRanking
-        m_Mode: 1
+        m_MethodName: CargarEscena
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Ranking
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &928780727
@@ -2005,18 +2005,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1983726906}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: musicaJuego
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1983726906}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: musicaA
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

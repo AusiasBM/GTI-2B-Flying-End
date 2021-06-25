@@ -63,8 +63,14 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
         Debug.Log(gameController.ScoreDiamante);
         Debug.Log(gameController.Score);
 
+        musicaController.musicaMenu();
+
     }
 
+    public void cargarRanking()
+    {
+        partida.cargarRanking();
+    }
 
 
 
@@ -74,12 +80,12 @@ public class gameOverScript : MonoBehaviour,ICounterValueContainer
         record.enabled = false;
         SceneManager.LoadScene(nombreNivel);
     }
-    
-    public void musicaMenu()
-    {
-        musicaController.musicaMenu();
 
+    public void musicaJuego()
+    {
+        musicaController.musicajuego();
     }
+
 
     public int GetValue(string s)
     {

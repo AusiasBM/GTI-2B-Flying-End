@@ -176,7 +176,7 @@ public class Partida : MonoBehaviour
 
     }
 
-    IEnumerator delay(int seconds)
+    public IEnumerator delay(int seconds)
     {
         yield return new WaitForSeconds(seconds);
     }

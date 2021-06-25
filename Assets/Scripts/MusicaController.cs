@@ -55,16 +55,17 @@ public class MusicaController : MonoBehaviour
 
     public void musicaMenu()
     {
-        audio.Stop();
-        audio.clip = musica[0];
-        audio.Play();
-
-
+        if (audio.clip != musica[0])
+        {
+            audio.Stop();
+            audio.clip = musica[0];
+            audio.Play();
+        }
+        
     }
     public void musicajuego()
     {
         audio.Stop();
-
         audio.clip = musica[1];
         audio.Play();
 

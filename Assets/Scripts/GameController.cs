@@ -69,7 +69,6 @@ public class GameController : MonoBehaviour
         {
             paracaidas2.SetActive(true);
         }
-        musicaMenu();
     }
 
     // Update is called once per frame

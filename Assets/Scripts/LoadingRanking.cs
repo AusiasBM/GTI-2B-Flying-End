@@ -49,5 +49,7 @@ public class LoadingRanking : MonoBehaviour
     public void recargar()
     {
         partida.cargarRanking();
+        partida.delay(5);
+        cargarEscena();
     }
 }
